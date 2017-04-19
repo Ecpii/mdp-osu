@@ -1,0 +1,29 @@
+{
+  "build":{
+    "nwVersion": "0.21.3",
+    "targets": [
+      "zip"
+    ]
+  },
+  "scripts":{
+    "dist": "build --win --x86 --x64 --mirror https://dl.nwjs.io/ .",
+    "start": "run --x86 --mirror https://dl.nwjs.io/ ."
+  },
+  "description": "Markdown Previewer for osu!wiki",
+  "main": "index.html",
+  "name": "mdp-osu",
+  "version": "1.0.0",
+  "webkit": {
+    "plugin": false
+  },
+  "window": {
+    "height": 600,
+    "icon": "favicon.png",
+    "resizable": true,
+    "title": "mdp-osu",
+    "width": 800
+  },
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.9.3"
+  }
+}

@@ -1,0 +1,233 @@
+::selection {
+  color: #fff;
+  background-color: #f6a; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background: #ddd;
+  font-family: Exo\ 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  font-family: sans-serif; }
+  body > menu {
+    align-items: center;
+    background: #696969;
+    color: #fff;
+    display: flex;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 363px);
+    z-index: 1; }
+    body > menu > icon {
+      cursor: pointer;
+      margin: 0 4px;
+      user-select: none; }
+      body > menu > icon[enabled] {
+        color: #ff2052; }
+    body > menu > text {
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none; }
+  body > repo {
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    left: calc(50% - (363px / 2));
+    position: relative;
+    transform: translateX(-50%); }
+    body > repo > container {
+      display: block;
+      height: calc(100% - 32px);
+      overflow-y: auto;
+      position: relative;
+      top: 32px;
+      width: 737px; }
+      body > repo > container > upload {
+        border: 4px dashed #777;
+        border-radius: 16px;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        height: 75%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 4px;
+        position: relative; }
+        body > repo > container > upload > input {
+          height: 100%;
+          filter: opacity(0);
+          width: 100%; }
+        body > repo > container > upload > info {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          pointer-events: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+          body > repo > container > upload > info > text {
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            text-align: center; }
+          body > repo > container > upload > info > icon {
+            display: block;
+            pointer-events: none;
+            user-select: none; }
+      body > repo > container > article {
+        background: #333;
+        padding: 45px;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        font-family: Noto Sans,sans-serif;
+        line-height: 1.35;
+        color: #444;
+        color: inherit;
+        padding: 10px 20px 0;
+        font-size: 14px;
+        word-wrap: break-word;
+        color: #fff; }
+        body > repo > container > article h1, body > repo > container > article h2, body > repo > container > article h3, body > repo > container > article h4, body > repo > container > article h5, body > repo > container > article h6 {
+          line-height: 1.1;
+          font-family: Exo\ 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
+          font-weight: 700;
+          font-style: normal; }
+        body > repo > container > article h1 {
+          margin-bottom: 0;
+          padding-bottom: 15px;
+          border-bottom: 5px solid #fc2;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+          font-size: 32px;
+          margin: -5px -5px 5px;
+          padding: 5px;
+          color: #fff;
+          font-style: italic;
+          font-weight: 400;
+          display: inline-block; }
+        body > repo > container > article h2 {
+          font-size: 26px;
+          margin: 50px -20px 10px;
+          color: #fff;
+          font-weight: 700;
+          font-style: normal; }
+        body > repo > container > article h3 {
+          font-size: 20px;
+          margin: 30px -20px 10px;
+          color: #f9c; }
+        body > repo > container > article h4 {
+          font-size: 18px;
+          margin: 30px -10px 10px;
+          font-style: italic;
+          color: #f9c; }
+        body > repo > container > article h5 {
+          font-size: 16px;
+          font-weight: 400;
+          font-style: italic;
+          margin-top: 20px;
+          color: #f9c; }
+        body > repo > container > article h6 {
+          font-size: 14px;
+          font-weight: 400;
+          font-style: italic;
+          margin-top: 20px;
+          color: #f9c; }
+        body > repo > container > article p {
+          margin: 0 0 10px; }
+        body > repo > container > article a {
+          color: #fc2;
+          text-decoration: none;
+          transition: color 80ms linear; }
+          body > repo > container > article a:hover {
+            color: #fd5;
+            text-decoration: underline; }
+        body > repo > container > article img {
+          max-width: 100%;
+          vertical-align: middle;
+          border: 0; }
+        body > repo > container > article table {
+          font-family: Exo\ 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
+          margin-bottom: 20px;
+          background-color: transparent;
+          border-collapse: collapse;
+          border-spacing: 0; }
+          body > repo > container > article table th {
+            border-top: none;
+            border-bottom: 2px solid #fc2;
+            font-weight: 700;
+            padding: 5px; }
+          body > repo > container > article table td {
+            border-top: 1px solid rgba(255, 204, 34, 0.5);
+            padding: 5px; }
+        body > repo > container > article pre, body > repo > container > article code {
+          font-family: Menlo,Monaco,Consolas,Courier New,monospace; }
+        body > repo > container > article pre {
+          display: block;
+          padding: 9.5px;
+          margin: 0 0 10px;
+          font-size: 15px;
+          line-height: 1.25;
+          word-break: break-all;
+          word-wrap: break-word;
+          color: #333;
+          background-color: #f5f5f5;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          overflow: auto; }
+          body > repo > container > article pre code {
+            padding: 0;
+            font-size: inherit;
+            color: inherit;
+            white-space: pre-wrap;
+            background-color: transparent;
+            border-radius: 0; }
+        body > repo > container > article code {
+          padding: 2px 4px;
+          font-size: 90%;
+          color: #c7254e;
+          background-color: #f9f2f4;
+          border-radius: 4px;
+          padding: 0;
+          font-size: inherit;
+          color: inherit;
+          background: none;
+          border-radius: 0; }
+  body > errors {
+    background: #696969;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    width: 363px;
+    overflow: auto;
+    padding: 4px; }
+    body > errors h1 {
+      font-size: 24px;
+      margin-bottom: 0; }
+    body > errors h2 {
+      font-size: 20px;
+      margin-bottom: 0; }
+    body > errors h3 {
+      font-size: 16px;
+      margin-bottom: 0; }
+    body > errors ul {
+      padding-left: 20px;
+      list-style: square;
+      margin-top: 0; }
+      body > errors ul li {
+        border-bottom: 2px solid #c7254e;
+        padding-bottom: 4px;
+        margin-bottom: 2px;
+        margin-top: 2px; }
+
+/*# sourceMappingURL=index.css.map */

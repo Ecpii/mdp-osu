@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <meta charset="utf-8"/>
+  <title>Markdown Previewer for osu!wiki</title>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/>
+  <link href="css/icon.css" rel="stylesheet"/>
+  <link href="css/index.css" rel="stylesheet"/>
+
+  <!-- jQuery -->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/showdown.js"></script>
+  <!--<script src="js/jquery-timing.min.js"></script>-->
+  <!--<script src="js/jquery.crSpline.js"></script>-->
+  <!--<script src="js/mutate.min.js"></script>-->
+  <!--<script src="js/multithread.js"></script>-->
+ </head>
+ <body>
+  <menu>
+   <!--<icon button="history">history</icon>-->
+   <!--<icon button="error_outline">error_outline</icon>-->
+   <icon button="refresh">refresh</icon>
+   <icon button="autorenew">autorenew</icon>
+   <icon button="file_upload">file_upload</icon>
+   <text></text>
+  </menu>
+  <repo>
+   <container>
+    <upload>
+     <input type="file" accept=".markdown,.mdown,.mkdn,.md,.mkd,.mdwn,.mdtxt,.mdtext,.text,.rmd"/>
+     <info>
+      <icon>file_upload</icon>
+      <text>Drag-and-Drop or<br/>Click Here to Upload Your Markdown</text>
+     </info>
+    </upload>
+    <article style="display: none;"></article>
+   </container>
+  </repo>
+  <errors>
+   <h1>Potential Errors</h1>
+   <h2>Links</h2>
+   <h3>Internal File Links (these do not work)</h3>
+   <ul id="_links"></ul>
+   <h2>Images</h2>
+   <h3>png (use .jpg; ignore if transparency)</h3>
+   <ul id="_imagePng"></ul>
+   <h3>Too Wide (max width: 720px)</h3>
+   <ul id="_imageWide"></ul>
+  </errors>
+  <script src="js/index.js"></script>
+ </body>
+</html>
