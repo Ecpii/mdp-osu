@@ -8,6 +8,7 @@
  const gui = require('nw.gui');
 
  const _FR = new FileReader();
+ const $container_article = $('repo > container');
  const $article = $('article');
  const $upload = $('upload');
  const $input = $('input');
@@ -16,9 +17,11 @@
  const $refresh_button = $('icon[button="refresh"]');
  const $autorenew_button = $('icon[button="autorenew"]');
  const $error_button = $('icon[button="error_outline"]');
- const $path = $('menu > text');
+ const $top_button = $('icon[button="vertical_align_top"]');
+ const $path = $('menu > container > text');
 
  const $links_list = $('#_links');
+ const $images_listBroken = $('#_imageBroken');
  const $images_listPng = $('#_imagePng');
  const $images_listWide = $('#_imageWide');
 
@@ -35,14 +38,8 @@
  };
 
  _FR.onload = function(){
-  $links_list.empty();
-  $images_listPng.empty();
-  $images_listWide.empty();
-  errors ={
-   "images":[],
-   "links":[]
-  };
 
+  thisfile = thisfile.replace(/\//ig, "\\").replace(/\\\\/ig, "\\");
   history.push(thisfile);
 
   $upload.toggle(false);
@@ -63,27 +60,30 @@
 
   $article.append(_html);
 
+  errors ={
+   "images":[],
+   "links":[]
+  };
   $links_list.empty();
+  $images_listBroken.empty();
   $images_listPng.empty();
   $images_listWide.empty();
-
-  //window.scrollTo(0, 0);
 
   //TODO history
   for( let i = 0; i < $('img').length; i++ ){
    let _target = $($('img')[i]);
    let src = _target.attr("src");
    if( /^\.\/|^\.\\/ig.test(src) ){
-    src = src.substring(2, src.length);
-   }
-   if( /\\|\//g.test(src) ){
-    _target.prop("src", working + "\\" + _target.attr("src"));
+    _target.prop("src", directory + "\\" + src.substring(2, src.length));
+   }else if( /\\|\//g.test(src) ){
+    _target.prop("src", working + "\\" + src);
    }else{
-    _target.prop("src", directory + "\\" + _target.attr("src"));
+    _target.prop("src", directory + "\\" + src);
    }
   }
 
-  $('img').on("load", function(e){
+  $('img')
+   .on("load", function(e){
    if( e.target.naturalWidth > $article.outerWidth() ){
     let _li = $('<li/>').append($(e.target).prop("src").substring($(e.target).prop("src").lastIndexOf("/wiki/"), $(e.target).prop("src").length));
     $images_listWide.append(_li);
@@ -92,7 +92,12 @@
     let _li = $('<li/>').append($(e.target).prop("src").substring($(e.target).prop("src").lastIndexOf("/wiki/"), $(e.target).prop("src").length));
     $images_listPng.append(_li);
    }
-  });
+  })
+   .on("error", function(e){
+   let _li = $('<li/>').append($(e.target).prop("src"));
+   $images_listBroken.append(_li);
+  })
+  ;
 
   for( let i = 0; i < $('a').length; i++ ){
    let _target = $($('a')[i]);
@@ -107,24 +112,38 @@
     exLinks(_target);
    }
    else if( /^\\|^\//g.test(href) ){
-    _target.prop("href", working + "\\" + _target.attr("href") + locale);
-    inLinks(_target, true);
-    if( /(pdf|mp3|ogg|wav|mp4|webp|avi)\/?$/ig.test(href) ){
+    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
      errors.links.push(href);
+     _target.prop("href", directory + "\\" + _target.attr("href"));
+     exLinks(_target);
+    }else{
+     _target.prop("href", working + "\\" + _target.attr("href") + locale);
+     inLinks(_target, true);
+    }
+   }
+   else if( /^\.(\\|\/)/ig ){
+    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
+     let _li = $('<li/>').append(href);
+     $links_list.append(_li);
+     _target.prop("href", directory + "\\" + _target.attr("href"));
+     exLinks(_target);
+    }else{
+     _target.prop("href", directory + "\\" + _target.attr("href").substring(_target.attr("href").lastIndexOf("./"), _target.attr("href").length) + locale);
+     inLinks(_target, false);
     }
    }
    else{
-    _target.prop("href", directory + "\\" + _target.attr("href") + locale);
-    inLinks(_target, false);
-    if( /(md|pdf|mp3|ogg|wav|mp4|webp|avi)\/?$/ig.test(href) ){
-     errors.links.push(href);
+    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
+     let _li = $('<li/>').append(href);
+     $links_list.append(_li);
+     _target.prop("href", directory + "\\" + _target.attr("href"));
+     exLinks(_target);
+    }else{
+     _target.prop("href", directory + "\\" + _target.attr("href") + locale);
+     inLinks(_target, false);
     }
    }
    //TOFIX section links will fail this (adds \en.md when it shouldn't)
-  }
-  for( let i = 0; i < errors.links.length; i++ ){
-   let _li = $('<li/>').append(errors.links[i]);
-   $links_list.append(_li);
   }
  };
 
@@ -132,8 +151,6 @@
   target.on("click", function(e){
    e.preventDefault();
   });
-  // TOFIX middle click is acting like a dick
-  // NOTE middle clicking will open a new tab
  }
  function inLinks(target, isRoot){
   if( isRoot ){
@@ -270,5 +287,9 @@
    $history_button.attr("enabled", "");
    isHistory = true;
   }
+ });
+
+ $top_button.on("click", function(){
+  $container_article.scrollTop(0);
  });
 })();
