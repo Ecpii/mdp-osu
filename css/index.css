@@ -17,6 +17,7 @@ body {
     background: #696969;
     color: #fff;
     display: flex;
+    justify-content: space-between;
     height: 32px;
     margin: 0;
     padding: 0;
@@ -24,13 +25,13 @@ body {
     top: 0;
     width: calc(100% - 363px);
     z-index: 1; }
-    body > menu > icon {
+    body > menu > container > icon {
       cursor: pointer;
       margin: 0 4px;
       user-select: none; }
-      body > menu > icon[enabled] {
+      body > menu > container > icon[enabled] {
         color: #ff2052; }
-    body > menu > text {
+    body > menu > container > text {
       cursor: pointer;
       font-size: 16px;
       user-select: none; }

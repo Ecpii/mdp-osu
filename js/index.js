@@ -8,6 +8,7 @@
  const gui = require('nw.gui');
 
  const _FR = new FileReader();
+ const $container_article = $('repo > container');
  const $article = $('article');
  const $upload = $('upload');
  const $input = $('input');
@@ -16,7 +17,8 @@
  const $refresh_button = $('icon[button="refresh"]');
  const $autorenew_button = $('icon[button="autorenew"]');
  const $error_button = $('icon[button="error_outline"]');
- const $path = $('menu > text');
+ const $top_button = $('icon[button="vertical_align_top"]');
+ const $path = $('menu > container > text');
 
  const $links_list = $('#_links');
  const $images_listBroken = $('#_imageBroken');
@@ -66,8 +68,6 @@
   $images_listPng.empty();
   $images_listWide.empty();
 
-  //window.scrollTo(0, 0);
-
   //TODO history
   for( let i = 0; i < $('img').length; i++ ){
    let _target = $($('img')[i]);
@@ -111,7 +111,7 @@
     exLinks(_target);
    }
    else if( /^\\|^\//g.test(href) ){
-    if( /(pdf|mp3|ogg|wav|mp4|webp|avi)\/?$/ig.test(href) ){
+    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
      errors.links.push(href);
      _target.prop("href", directory + "\\" + _target.attr("href"));
      exLinks(_target);
@@ -132,7 +132,7 @@
     }
    }
    else{
-    if( /(md|pdf|mp3|ogg|wav|mp4|webp|avi)\/?$/ig.test(href) ){
+    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
      let _li = $('<li/>').append(href);
      $links_list.append(_li);
      _target.prop("href", directory + "\\" + _target.attr("href"));
@@ -150,8 +150,6 @@
   target.on("click", function(e){
    e.preventDefault();
   });
-  // TOFIX middle click is acting like a dick
-  // NOTE middle clicking will open a new tab
  }
  function inLinks(target, isRoot){
   if( isRoot ){
@@ -257,7 +255,9 @@
   return false;
  };
  $path.on("click", function(){
-  gui.Shell.showItemInFolder(thisfile);
+  let location = thisfile.replace(/\//ig, "\\").replace(/\\\\/ig, "\\");
+  console.log(location);
+  gui.Shell.showItemInFolder(location);
  });
 
  let isError = false;
@@ -288,5 +288,9 @@
    $history_button.attr("enabled", "");
    isHistory = true;
   }
+ });
+
+ $top_button.on("click", function(){
+  $container_article.scrollTop(0);
  });
 })();

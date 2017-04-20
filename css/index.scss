@@ -17,6 +17,7 @@ body{
   background: #696969;
   color: #fff;
   display: flex;
+  justify-content: space-between;
   height: 32px;
   margin: 0;
   padding: 0;
@@ -24,18 +25,20 @@ body{
   top: 0;
   width: calc(100% - 363px);
   z-index: 1;
-  > icon{
-   cursor: pointer;
-   margin: 0 4px;
-   user-select: none;
-   &[enabled]{
-    color: #ff2052;
+  > container{
+   > icon{
+    cursor: pointer;
+    margin: 0 4px;
+    user-select: none;
+    &[enabled]{
+     color: #ff2052;
+    }
    }
-  }
-  > text{
-   cursor: pointer;
-   font-size: 16px;
-   user-select: none;
+   > text{
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+   }
   }
  }
  > repo{
