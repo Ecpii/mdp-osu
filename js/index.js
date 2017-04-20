@@ -69,7 +69,6 @@
 
   //window.scrollTo(0, 0);
 
-  //Cookies.set("history");
   //TODO history
   for( let i = 0; i < $('img').length; i++ ){
    let _target = $($('img')[i]);
@@ -153,11 +152,6 @@
     xhr.open('GET', target.attr("href"));
     xhr.responseType = 'blob';
     xhr.send();
-    /*$.ajax(target.attr("href"))
-     .done(function(e){
-     console.log(e);
-     _FR.readAsText(e);
-    });*/
    });
   }else{
    target.on("click", function(e){
@@ -175,11 +169,6 @@
     xhr.open('GET', target.attr("href"));
     xhr.responseType = 'blob';
     xhr.send();
-    /*$.ajax(target.attr("href"))
-     .done(function(e){
-     console.log(e);
-     _FR.readAsText(e);
-    });*/
    });
   }
  }
@@ -188,6 +177,7 @@
   let _target = e.target;
   let _files = _target.files;
   if( _files.length > 0 ){
+   //TOFIX this file check sometimes doesn't do anything
    //console.log(_files[0].name.split('.').pop(), /markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text|rmd/ig.test(_files[0].name.split('.').pop()));
    if( /markdown|mdown|mkdn|md|mkd|mdwn|mdtxt|mdtext|text|rmd/ig.test(_files[0].name.split('.').pop()) ){
     // directory = from folder
