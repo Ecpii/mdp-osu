@@ -61,11 +61,11 @@
         "height": 600,
         "icon": "icon.png",
         "id": "mdp-osu",
+        "min_height": 450,
+        "min_width": 1200,
         "position": "center",
         "resizable": true,
         "title": "mdp-osu",
-        "width": 1200,
-     "min_width": 1200,
-     "min_height": 450
+        "width": 1200
     }
 }
