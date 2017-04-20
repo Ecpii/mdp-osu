@@ -12,12 +12,14 @@
  const $article = $('article');
  const $upload = $('upload');
  const $input = $('input');
- const $history_button = $('icon[button="history"]');
+ //const $history_button = $('icon[button="history"]');
  const $upload_button = $('icon[button="file_upload"]');
  const $refresh_button = $('icon[button="refresh"]');
+ const $image_button = $('icon[button="broken_image"]');
  const $autorenew_button = $('icon[button="autorenew"]');
- const $error_button = $('icon[button="error_outline"]');
+ //const $error_button = $('icon[button="error_outline"]');
  const $top_button = $('icon[button="vertical_align_top"]');
+ const $edit_button = $('icon[button="edit"]');
  const $path = $('menu > container > text');
 
  const $links_list = $('#_links');
@@ -37,6 +39,9 @@
   "links":[]
  };
 
+ let imageSuffix = "?t=" + Math.random();
+ let oldImageSuffix = imageSuffix;
+
  _FR.onload = function(){
 
   thisfile = thisfile.replace(/\//ig, "\\").replace(/\\\\/ig, "\\");
@@ -46,8 +51,6 @@
   $article.toggle(true);
   let _lines = this.result;
 
-  //TODO check new.ppy.sh to see how it handles section links with /
-  // C:\Users\megaapple_pi\repo\osu-wiki\wiki\List_of_Guides
   showdown.setFlavor("github");
   toMarkdown = new showdown.Converter({
    "prefixHeaderId": false
@@ -70,31 +73,49 @@
   $images_listWide.empty();
 
   //TODO history
+  if( isImage ){
+   oldImageSuffix = imageSuffix;
+   imageSuffix = "?t=" + Math.random();
+  }
   for( let i = 0; i < $('img').length; i++ ){
    let _target = $($('img')[i]);
    let src = _target.attr("src");
-   if( /^\.\/|^\.\\/ig.test(src) ){
+   if( /^(\.(\/|\\))/ig.test(src) ){
     _target.prop("src", directory + "\\" + src.substring(2, src.length));
-   }else if( /\\|\//g.test(src) ){
-    _target.prop("src", working + "\\" + src);
-   }else{
+   }
+   else if( /^[a-zA-Z0-9_]/ig.test(src) ){
     _target.prop("src", directory + "\\" + src);
+   }
+   else if( /\\|\//g.test(src) ){
+    _target.prop("src", working + "\\" + src);
+   }
+   else{
+    _target.prop("src", directory + "\\" + src);
+   }
+   if( isImage ){
+    _target.prop("src", _target.prop("src") + imageSuffix);
+   }else{
+    _target.prop("src", _target.prop("src") + oldImageSuffix);
    }
   }
 
   $('img')
    .on("load", function(e){
    if( e.target.naturalWidth > $article.outerWidth() ){
-    let _li = $('<li/>').append($(e.target).prop("src").substring($(e.target).prop("src").lastIndexOf("/wiki/"), $(e.target).prop("src").length));
+    let src = $(e.target).prop("src");
+    let _li = $('<li/>').append(src.substring(src.lastIndexOf("/wiki/"), src.lastIndexOf("?t")));
     $images_listWide.append(_li);
    }
    if( $(e.target).prop("src").split('.').pop() === "png" ){
-    let _li = $('<li/>').append($(e.target).prop("src").substring($(e.target).prop("src").lastIndexOf("/wiki/"), $(e.target).prop("src").length));
+    let src = $(e.target).prop("src");
+    let _li = $('<li/>').append(src.substring(src.lastIndexOf("/wiki/"), src.lastIndexOf("?t")));
     $images_listPng.append(_li);
    }
   })
    .on("error", function(e){
-   let _li = $('<li/>').append($(e.target).prop("src"));
+   let src = $(e.target).prop("src");
+   let _li = $('<li/>').append(src.substring(src.lastIndexOf("/wiki/"), src.lastIndexOf("?t")));
+   //let _li = $('<li/>').append($(e.target).prop("src").substring($(e.target).prop("src").lastIndexOf("?time=", 0)));
    $images_listBroken.append(_li);
   })
   ;
@@ -228,6 +249,19 @@
   }
  });
 
+ let isImage = false;
+ $image_button.on("click", function(){
+  if( thisfile !== undefined ){
+   if( isImage ){
+    $image_button.removeAttr("enabled");
+    isImage = false;
+   }else{
+    $image_button.attr("enabled", "");
+    isImage = true;
+   }
+  }
+ });
+
  let isAutorenew = false, timerAutorenew;
  $autorenew_button.on("click", function(){
   if( thisfile !== undefined ){
@@ -251,15 +285,24 @@
   e.preventDefault();
 
   let file = e.dataTransfer.files[0];
+
+  thisfile = file.path;
+  path = "~" + file.path.substring(file.path.lastIndexOf("\\osu-wiki"), file.path.length);
+  directory = file.path.substring(0, file.path.lastIndexOf("\\"));
+  working = file.path.substring(0, file.path.lastIndexOf("\\wiki"));
+  locale = file.path.substring(file.path.lastIndexOf("\\"), file.path.length);
+
   _FR.readAsText(file);
 
   return false;
  };
  $path.on("click", function(){
-  gui.Shell.showItemInFolder(thisfile);
+  if( thisfile !== undefined ){
+   gui.Shell.showItemInFolder(thisfile);
+  }
  });
 
- let isError = false;
+ /*let isError = false;
  $error_button.on("click", function(){
   if( isError ){
    $error_button.removeAttr("enabled");
@@ -287,9 +330,14 @@
    $history_button.attr("enabled", "");
    isHistory = true;
   }
- });
+ });*/
 
  $top_button.on("click", function(){
   $container_article.scrollTop(0);
+ });
+ $edit_button.on("click", function(){
+  if( thisfile !== undefined ){
+   gui.Shell.openItem(thisfile);
+  }
  });
 })();

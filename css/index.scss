@@ -30,8 +30,15 @@ body{
     cursor: pointer;
     margin: 0 4px;
     user-select: none;
+    transition: color 100ms;
+    &:hover{
+     color: #d9d9d9;
+    }
     &[enabled]{
      color: #ff2052;
+     &:hover{
+     color: #d3002f;
+    }
     }
    }
    > text{
