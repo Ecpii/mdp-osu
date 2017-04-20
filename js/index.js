@@ -39,6 +39,7 @@
 
  _FR.onload = function(){
 
+  thisfile = thisfile.replace(/\//ig, "\\").replace(/\\\\/ig, "\\");
   history.push(thisfile);
 
   $upload.toggle(false);
@@ -255,9 +256,7 @@
   return false;
  };
  $path.on("click", function(){
-  let location = thisfile.replace(/\//ig, "\\").replace(/\\\\/ig, "\\");
-  console.log(location);
-  gui.Shell.showItemInFolder(location);
+  gui.Shell.showItemInFolder(thisfile);
  });
 
  let isError = false;
