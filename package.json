@@ -38,7 +38,7 @@
         "type": "git",
         "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
     },
-    "version": "0.1.1",
+    "version": "0.2.0",
     "webexe_settings": {
         "blacklist": ".*\ncss/.*\n*_.json",
         "custom_script": "",
