@@ -38,7 +38,7 @@
         "type": "git",
         "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
     },
-    "version": "0.4.0",
+    "version": "1.0.0",
     "webexe_settings": {
         "blacklist": ".*\ncss/.*\n*_.json\ndocs",
         "custom_script": "",
@@ -62,7 +62,7 @@
         "icon": "icon.png",
         "id": "mdp-osu",
         "min_height": 450,
-        "min_width": 1100,
+        "min_width": 363,
         "position": "center",
         "resizable": true,
         "title": "mdp-osu",
