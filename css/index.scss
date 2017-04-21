@@ -20,9 +20,11 @@ body{
   justify-content: space-between;
   height: 32px;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   position: fixed;
   top: 0;
+  white-space: nowrap;
   width: calc(100% - 363px);
   z-index: 1;
   > container{
@@ -37,14 +39,20 @@ body{
     &[enabled]{
      color: #ff2052;
      &:hover{
-     color: #d3002f;
-    }
+      color: #d3002f;
+     }
     }
    }
-   > text{
-    cursor: pointer;
-    font-size: 16px;
-    user-select: none;
+  }
+  > path{
+   background: #8f8f8f;
+   cursor: pointer;
+   flex-grow: 1;
+   font-size: 16px;
+   padding: 4px 0;
+   user-select: none;
+   &:empty{
+    padding: 0;
    }
   }
  }
@@ -66,7 +74,6 @@ body{
     border: 4px dashed #777;
     border-radius: 16px;
     box-sizing: border-box;
-    cursor: pointer;
     display: block;
     height: 75%;
     top: 50%;
@@ -74,8 +81,9 @@ body{
     margin: 4px;
     position: relative;
     > input{
-     height: 100%;
+     cursor: pointer;
      filter: opacity(0);
+     height: 100%;
      width: 100%;
     }
     > info{
