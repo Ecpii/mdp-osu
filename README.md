@@ -8,7 +8,11 @@ Another Markdown Previewer (tailored for osu!wiki)
 2. Download the lastest mdp-osu [release](https://github.com/MegaApplePi/mdp-osu/releases)
 3. Extract everything from the `.zip`
 4. Open `mdp-osu.exe`
-5. (follow on screen instructions)
+5. Upload your markdown
+6. check layout to ensure it is correct
+7. check the "Potential Errors" box
+   - this is quite buggy but will do for most mistakes
+   - some of these "errors" can ignored (such as the `.png` errors when the image obviously has transparency)
 
 ## Features
 
@@ -39,7 +43,7 @@ Another Markdown Previewer (tailored for osu!wiki)
 | Top of Page           | ![](docs/vertical_align_top.png) | Bring current scroll position to top.                                       |
 | Edit                  | ![](docs/edit.png)               | Open current article using the default program.                             |
 
-\* Disable Image Caching does not actually disable image caching, rather this appends a random value to the end of the url to allow reloading of an image
+\*Disable Image Caching does not actually disable image caching, rather this appends a random value to the end of the url to allow reloading of an image
 
 ## External Sources
 
