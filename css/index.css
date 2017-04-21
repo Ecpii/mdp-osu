@@ -234,6 +234,7 @@ body {
         border-bottom: 2px solid #c7254e;
         padding-bottom: 4px;
         margin-bottom: 2px;
-        margin-top: 2px; }
+        margin-top: 2px;
+        cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

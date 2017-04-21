@@ -22,7 +22,8 @@
  const $edit_button = $('icon[button="edit"]');
  const $path = $('menu > container > text');
 
- const $links_list = $('#_links');
+ const $links_listInternal = $('#_linkInternal');
+ const $links_listDead = $('#_linkDead');
  const $images_listBroken = $('#_imageBroken');
  const $images_listPng = $('#_imagePng');
  const $images_listWide = $('#_imageWide');
@@ -34,10 +35,6 @@
  let locale;
 
  let history =[];
- let errors ={
-  "images":[],
-  "links":[]
- };
 
  let imageSuffix = "?t=" + Math.random();
  let oldImageSuffix = imageSuffix;
@@ -63,11 +60,8 @@
 
   $article.append(_html);
 
-  errors ={
-   "images":[],
-   "links":[]
-  };
-  $links_list.empty();
+  $links_listInternal.empty();
+  $links_listDead.empty();
   $images_listBroken.empty();
   $images_listPng.empty();
   $images_listWide.empty();
@@ -120,53 +114,75 @@
   })
   ;
 
-  for( let i = 0; i < $('a').length; i++ ){
-   let _target = $($('a')[i]);
-   let href = _target.attr("href");
-   if( /^\.\/|^\.\\/ig.test(href) ){
-    href = href.substring(2, href.length);
-   }
-   if( /^http/ig.test(href) ){
-    exLinks(_target);
-   }
-   else if( /^mailto/ig.test(href) ){
-    exLinks(_target);
-   }
-   else if( /^\\|^\//g.test(href) ){
-    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
-     errors.links.push(href);
-     _target.prop("href", directory + "\\" + _target.attr("href"));
-     exLinks(_target);
-    }else{
-     _target.prop("href", working + "\\" + _target.attr("href") + locale);
-     inLinks(_target, true);
+  (function links(i){
+   if( i < $('a').length ){
+    //TOFIX section links will fail this (adds \en.md when it shouldn't)
+    let _target = $($('a')[i]);
+    let href = _target.attr("href");
+    if( /^\.\/|^\.\\/ig.test(href) ){
+     href = href.substring(2, href.length);
     }
-   }
-   else if( /^\.(\\|\/)/ig ){
-    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
-     let _li = $('<li/>').append(href);
-     $links_list.append(_li);
-     _target.prop("href", directory + "\\" + _target.attr("href"));
+    if( /^http/ig.test(href) ){
      exLinks(_target);
-    }else{
-     _target.prop("href", directory + "\\" + _target.attr("href").substring(_target.attr("href").lastIndexOf("./"), _target.attr("href").length) + locale);
-     inLinks(_target, false);
     }
-   }
-   else{
-    if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
-     let _li = $('<li/>').append(href);
-     $links_list.append(_li);
-     _target.prop("href", directory + "\\" + _target.attr("href"));
+    else if( /^mailto/ig.test(href) ){
      exLinks(_target);
-    }else{
-     _target.prop("href", directory + "\\" + _target.attr("href") + locale);
-     inLinks(_target, false);
     }
+    else if( /^\\|^\//g.test(href) ){
+     if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
+      _target.prop("href", directory + "\\" + _target.attr("href"));
+      exLinks(_target);
+     }else{
+      _target.prop("href", working + "\\" + _target.attr("href") + locale);
+      inLinks(_target, true);
+     }
+    }
+    else if( /^\.(\\|\/)/ig ){
+     if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
+      let _li = $('<li/>').append(href);
+      $links_listInternal.append(_li);
+      _target.prop("href", directory + "\\" + _target.attr("href"));
+      exLinks(_target);
+     }else{
+      _target.prop("href", directory + "\\" + _target.attr("href").substring(_target.attr("href").lastIndexOf("./"), _target.attr("href").length) + locale);
+      inLinks(_target, false);
+     }
+    }
+    else{
+     if( /\.(md|jpg|png|webp|bmp|pdf|mp3|ogg|wav|mp4|webm|avi)\/?/ig.test(href) ){
+      let _li = $('<li/>').append(href);
+      $links_listInternal.append(_li);
+      _target.prop("href", directory + "\\" + _target.attr("href"));
+      exLinks(_target);
+     }else{
+      _target.prop("href", directory + "\\" + _target.attr("href") + locale);
+      inLinks(_target, false);
+     }
+    }
+
+    testLink(_target.attr("href"));
+
+    i++;
+    window.setTimeout(function(){
+     links(i);
+    }, 100);
    }
-   //TOFIX section links will fail this (adds \en.md when it shouldn't)
-  }
+  })(0);
  };
+
+ function testLink(target){
+  // ignore *.ppy.sh links (they are too common)
+  if( !/ppy\.sh/ig.test(target) ){
+   $.ajax({
+    "type": "HEAD",
+    "url": target,
+    "error":function(){
+     let _li = $('<li/>').append(target.replace(/\//ig, "\\").replace(/\\\\/ig, "\\"));
+     $links_listDead.append(_li);
+    }
+   });
+  }
+ }
 
  function exLinks(target){
   target.on("click", function(e){
@@ -280,8 +296,7 @@
  });
 
  window.ondragover = function(e) { e.preventDefault(); return false; };
- window.ondrop = function(e) { e.preventDefault(); return false; };
- $input[0].ondrop = function(e){
+ window.ondrop = function(e) {
   e.preventDefault();
 
   let file = e.dataTransfer.files[0];
@@ -338,6 +353,86 @@
  $edit_button.on("click", function(){
   if( thisfile !== undefined ){
    gui.Shell.openItem(thisfile);
+  }
+ });
+
+ $links_listInternal.on("click", "li", function(e){
+  if( thisfile !== undefined ){
+   let _target = $(e.target);
+   let _link = _target.text();
+   if( /^(\.(\/|\\))/ig.test(_link) ){
+    // TOFIX verify link check from root works
+    _link = directory + "\\" + _link.substring(2, _link.length);
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+   else if( /^(http)/ig.test(_link) ){
+    // TOFIX verify link check from root works
+    gui.Shell.openExternal(_link);
+   }
+   else if( /\\|\//g.test(_link) ){
+    // TOFIX verify link check from root works
+    _link = working;
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+   else{
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+  }
+ });
+ $links_listDead.on("click", "li", function(e){
+  if( thisfile !== undefined ){
+   let _target = $(e.target);
+   let _link = _target.text();
+   if( /^(http)/ig.test(_link) ){
+    gui.Shell.openExternal(_link);
+   }
+   else if( /^(\.(\/|\\))/ig.test(_link) ){
+    // TOFIX verify link check from root works
+    _link = directory + "\\" + _link.substring(2, _link.length);
+    console.log('directory', _link);
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+   else if( /^(\\|\/)/g.test(_link) ){
+    _link = working;
+    console.log('working', _link);
+    // TOFIX verify link check from root works
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+   else{
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+  }
+ });
+ $images_listBroken.on("click", "li", function(e){
+  if( thisfile !== undefined ){
+   let _target = $(e.target);
+   let _link = _target.text();
+   if( /^(\.(\/|\\))/ig.test(_link) ){
+    // TOFIX verify link check from root works
+    _link = directory + "\\" + _link.substring(2, _link.length);
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    gui.Shell.openItem(_link);
+   }
+   else if( /^(http)/ig.test(_link) ){
+    // TOFIX verify link check from root works
+    gui.Shell.openExternal(_link);
+   }
+   else if( /^(\\|\/)/g.test(_link) ){
+    _link = working + _link;
+    // TOFIX verify link check from root works
+    gui.Shell.openItem(_link);
+   }
+   else{
+    _link = _link.substring(0, _link.lastIndexOf("\\"));
+    //_link = directory + _link;
+    gui.Shell.openItem(_link);
+   }
   }
  });
 })();
