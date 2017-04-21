@@ -4,7 +4,7 @@ Another Markdown Previewer (tailored for osu!wiki)
 
 ## Usage
 
-1. Fork the [osu-wiki](github.com/ppy/osu-wiki) repo (and clone)
+1. Fork the [osu-wiki](https://github.com/ppy/osu-wiki) repo (and clone)
 2. Download the lastest mdp-osu [release](https://github.com/MegaApplePi/mdp-osu/releases)
 3. Extract everything from the `.zip`
 4. Open `mdp-osu.exe`
