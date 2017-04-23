@@ -6,3 +6,7 @@ css/scss\.bat
 output/
 
 web2exe\.json
+
+node_modules/
+
+dist/

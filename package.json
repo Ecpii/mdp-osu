@@ -1,71 +1,64 @@
 {
-    "app_name": "mdp-osu",
-    "author": "MegaApple_Pi",
-    "bugs": {
-        "url": "https://github.com/MegaApplePi/mdp-osu/issues"
-    },
-    "build": {
-        "nsis": {
-            "diffUpdaters": true
-        },
-        "nwFlavor": "normal",
-        "nwVersion": "0.21.3",
-        "strippedProperties": [
-            "build"
-        ],
-        "targets": [
-            "zip"
-        ],
-        "win": {
-            "icon": "",
-            "versionStrings": {
-                "ProductName": "mdp-osu"
-            }
-        }
-    },
-    "dependencies": {
-        "nwjs-builder-phoenix": "^1.9.3"
-    },
-    "description": "Markdown Previewer for osu!wiki",
-    "devDependencies": {
-        "nw-builder": "^3.2.0"
-    },
-    "homepage": "https://github.com/MegaApplePi/mdp-osu#readme",
-    "license": "MIT",
-    "main": "index.html",
-    "name": "mdp-osu",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
-    },
-    "version": "0.4.0",
-    "webexe_settings": {
-        "blacklist": ".*\ncss/.*\n*_.json\ndocs",
-        "custom_script": "",
-        "download_dir": "",
-        "export_dir": "output",
-        "force_download": false,
-        "nw_compression_level": 0,
-        "nw_version": "0.22.0",
-        "output_pattern": "",
-        "sdk_build": false,
-        "uncompressed_folder": false,
-        "whitelist": "",
-        "windows-x32": true,
-        "windows-x64": false
-    },
-    "webkit": {},
-    "window": {
-        "exe_icon": "icon.png",
-        "frame": true,
-        "height": 600,
-        "icon": "icon.png",
-        "id": "mdp-osu",
-        "min_height": 450,
-        "min_width": 1100,
-        "position": "center",
-        "resizable": true,
-        "title": "mdp-osu",
-        "width": 1100
-    }
+ "app_name": "mdp-osu",
+ "author": "MegaApple_Pi",
+ "bugs": {
+  "url": "https://github.com/MegaApplePi/mdp-osu/issues"
+ },
+ "build": {
+  "excludes":[
+   "docs/*",
+   "output/*",
+   "web2exe.json",
+   "README.md",
+   "icon.ico"
+  ],
+  "nsis": {
+   "diffUpdaters": true
+  },
+  "nwFlavor": "normal",
+  "nwVersion": "0.22.0",
+  "targets": [
+   "zip"
+  ],
+  "win": {
+   "versionStrings": {
+    "ProductName": "mdp-osu",
+    "CompanyName": "MegaApple_Pi"
+   }
+  }
+ },
+ "dependencies": {
+  "nwjs-builder-phoenix": "^1.9.3"
+ },
+ "description": "Markdown Previewer for osu!wiki",
+ "devDependencies": {
+  "nw-builder": "^3.2.0",
+  "nwjs-builder-phoenix": "^1.10.1"
+ },
+ "homepage": "https://github.com/MegaApplePi/mdp-osu#readme",
+ "license": "MIT",
+ "main": "index.html",
+ "name": "mdp-osu",
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
+ },
+ "scripts": {
+  "dist": "build --win --x86 --mirror https://dl.nwjs.io/ .",
+  "start": "run --x86 --mirror https://dl.nwjs.io/ ."
+ },
+ "version": "1.0.0",
+ "webkit": {},
+ "window": {
+  "frame": true,
+  "height": 600,
+  "icon": "icon.png",
+  "id": "mdp-osu",
+  "min_height": 450,
+  "min_width": 363,
+  "position": "center",
+  "resizable": true,
+  "title": "mdp-osu",
+  "width": 1100
+ }
 }
