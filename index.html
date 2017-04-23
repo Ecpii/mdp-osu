@@ -16,15 +16,15 @@
    <!--<icon button="history">history</icon>-->
    <!--<icon button="error_outline">error_outline</icon>-->
    <container>
-    <icon button="refresh">refresh</icon>
-    <icon button="autorenew">autorenew</icon>
-    <icon button="broken_image">broken_image</icon>
-    <icon button="file_upload">file_upload</icon>
+    <icon title="Reload" button="refresh">refresh</icon>
+    <icon title="Auto-Reload Every 5 Seconds" button="autorenew">autorenew</icon>
+    <icon title="Purge Images on Reload" button="broken_image">broken_image</icon>
+    <icon title="Upload" button="file_upload">file_upload</icon>
    </container>
    <path></path>
    <container>
-    <icon button="vertical_align_top">vertical_align_top</icon>
-    <icon button="edit">edit</icon>
+    <icon title="Go to Top" button="vertical_align_top">vertical_align_top</icon>
+    <icon title="Edit using Default Program" button="edit">edit</icon>
    </container>
   </menu>
   <repo>
@@ -33,7 +33,7 @@
      <input type="file" accept=".md"/>
      <info>
       <icon>file_upload</icon>
-      <text>Drag-and-Drop or<br/>Click Here to Upload Your Markdown</text>
+      <text>Drag-and-Drop or<br/>Click Here to<br/>Upload Your Markdown</text>
      </info>
     </upload>
     <article style="display: none;"></article>
@@ -41,18 +41,77 @@
   </repo>
   <errors>
    <h1>Potential Errors</h1>
-   <h2>Links</h2>
-   <h3>Internal File Links (these do not work)</h3>
-   <ul id="_linkInternal"></ul>
-   <h3>Dead (404'd)</h3>
-   <ul id="_linkDead"></ul>
-   <h2>Images</h2>
-   <h3>Broken</h3>
-   <ul id="_imageBroken"></ul>
-   <h3>.png (use .jpg; ignore if transparency)</h3>
-   <ul id="_imagePng"></ul>
-   <h3>Too Wide (max width: 720px)</h3>
-   <ul id="_imageWide"></ul>
+   <tabs>
+    <tab item="markdown" enabled><icon>arrow_downward</icon><count>0</count><br/><small>Markdown</small></tab>
+    <tab item="links"><icon>link</icon><count>0</count><br/><small>Links</small></tab>
+    <tab item="images"><icon>image</icon><count>0</count><br/><small>Images</small></tab>
+   </tabs>
+   <content id="_markdown">
+    <h3 ul="_mdHeadings">
+     <icon>expand_more</icon>
+     Headings
+     <count>0</count>
+    </h3>
+    <ul id="_mdHeadings"></ul>
+    <h3 ul="_mdTables">
+     <icon>expand_more</icon>
+     Tables
+     <count>0</count>
+    </h3>
+    <ul id="_mdTables"></ul>
+    <!--<h3 ul="_mdHtml">
+     <icon>expand_more</icon>
+     HTML (not allowed)
+     <count>0</count>
+    </h3>
+    <ul id="_mdHtml"></ul>-->
+   </content>
+   <content id="_links" style="display: none;">
+    <h3 ul="_linksHttp">
+     <icon>expand_more</icon>
+     http
+     <count>0</count>
+    </h3>
+    <ul id="_linksHttp"></ul>
+    <h3 ul="_linksInternal">
+     <icon>expand_more</icon>
+     Internal File Links
+     <count>0</count>
+    </h3>
+    <ul id="_linksInternal"></ul>
+    <h3 ul="_linksDead404">
+     <icon>expand_more</icon>
+     404
+     <count>0</count>
+    </h3>
+    <ul id="_linksDead404"></ul>
+    <h3 ul="_linksDead503">
+     <icon>expand_more</icon>
+     503
+     <count>0</count>
+    </h3>
+    <ul id="_linksDead503"></ul>
+   </content>
+   <content id="_images" style="display: none;">
+    <h3 ul="_imagesBroken">
+     <icon>expand_more</icon>
+     Broken
+     <count>0</count>
+    </h3>
+    <ul id="_imagesBroken"></ul>
+    <h3 ul="_imagesPng">
+     <icon>expand_more</icon>
+     .png
+     <count>0</count>
+    </h3>
+    <ul id="_imagesPng"></ul>
+    <h3 ul="_imagesWide">
+     <icon>expand_more</icon>
+     Too Wide
+     <count>0</count>
+    </h3>
+    <ul id="_imagesWide"></ul>
+   </content>
   </errors>
   <script src="js/index.js"></script>
  </body>
