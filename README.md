@@ -8,25 +8,26 @@ Usage:
 
 1. Fork the [osu-wiki](https://github.com/ppy/osu-wiki) repo (and clone)
 2. Download the lastest mdp-osu [release](https://github.com/MegaApplePi/mdp-osu/releases)
-3. Extract everything from the `.zip`
+3. Extract
 4. Open `mdp-osu.exe`
 5. Upload your markdown
 6. check layout to ensure it is correct
 7. check the "Potential Errors" box
    - this is quite buggy but will do for most mistakes
    - some of these "errors" can ignored (such as the `.png` errors when the image obviously has transparency)
+   - see [#Potential Errors Explaination](#potential-errors-explaination) for more details
 
 Notes:
 
 - If you want to open a link, you will need to middle click the link.
-  - This is to prevent mpd-osu page from changing (if this happens, you must close and reopen the app).
+  - This is to prevent mpd-osu page from changing (if this happens somehow, you must close and reopen the app).
 
 ## Features
 
 - almostly all osu! styles of the new [osu!wiki](https://new.ppy.sh/wiki/)
   - almostly all ~~stolen~~ taken from osu!wiki for pretesting purposes
 - Images from root directory (should work)
-- potential errors box (right side)
+- potential errors box for some [ASG](https://new.ppy.sh/wiki/Article_Style_Guide) stuff (right side)
 
 ## Menu Buttons Explaination
 
@@ -47,7 +48,7 @@ Notes:
 - *Markdown*
   - **Headings**: multiple level 1 headings and any level 6 headings checks
     - if an error is listed here: adjust the headings
-  - **Tables**: lists inside tables checks
+  - **Tables**: lists and images inside tables checks
     - if an error is listed here: reconsider your table/list use
 - *Links*
   - **http**: listed links are using `http`
@@ -57,6 +58,11 @@ Notes:
     - if an error is listed here: remove it (and delete the media file if applicable)
   - **404**: these links do not exist
     - if an error is listed here: fix it or remove it
+  - **405**: the page cannot be obtained because the HEAD request was blocked
+    - if an error is listed here:
+      - you *could* ignore these
+      - otherwise, you will need to test the link with your web broswer and decide on what to do from there
+        - you could also middle click the link to manually see if it works
   - **503**: these links did not respond to our HEAD request
     - if an error is listed here:
       - ignore if it is an `osu.ppy.sh` link (`osu.ppy.sh` appears to reject most HEAD requests since some articles contains a lot of them)
@@ -75,11 +81,11 @@ Notes:
 
 ## Known Bugs
 
-- [ ] links using `<` + _url_ + `>` may display a number after the link (this is a [Showdown](https://github.com/showdownjs/showdown) bug)
+- [ ] links using `<` + _url_ + `>` may display a number after the link (this appears to be a [Showdown](https://github.com/showdownjs/showdown) bug)
 
 ## External Sources
 
-- [nw.js](https://github.com/nwjs/nw.js) - Web Application Container
-- [Showdown](https://github.com/showdownjs/showdown) - the JS for `*markdown*` to `<html/>`
+- [Electron](http://electron.atom.io/) - Web Application Container
+- [Showdown](https://github.com/showdownjs/showdown) - the JS for `*markdown_` to `<html/>`
 - [jQuery](https://github.com/jquery/jquery) - event handling and reparsing
 - [Material Design icons](https://github.com/google/material-design-icons/) - icons

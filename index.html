@@ -8,6 +8,13 @@
   <link href="css/icon.css" rel="stylesheet"/>
   <link href="css/index.css" rel="stylesheet"/>
 
+  <script>
+   window.nodeRequire = require;
+   delete window.require;
+   delete window.exports;
+   delete window.module;
+  </script>
+
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/showdown.js"></script>
  </head>
@@ -60,11 +67,11 @@
     </h3>
     <ul id="_mdTables"></ul>
     <!--<h3 ul="_mdHtml">
-     <icon>expand_more</icon>
-     HTML (not allowed)
-     <count>0</count>
-    </h3>
-    <ul id="_mdHtml"></ul>-->
+<icon>expand_more</icon>
+HTML (not allowed)
+<count>0</count>
+</h3>
+<ul id="_mdHtml"></ul>-->
    </content>
    <content id="_links" style="display: none;">
     <h3 ul="_linksHttp">
@@ -85,6 +92,12 @@
      <count>0</count>
     </h3>
     <ul id="_linksDead404"></ul>
+    <h3 ul="_linksDead405">
+     <icon>expand_more</icon>
+     405
+     <count>0</count>
+    </h3>
+    <ul id="_linksDead405"></ul>
     <h3 ul="_linksDead503">
      <icon>expand_more</icon>
      503

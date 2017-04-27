@@ -1,64 +1,26 @@
 {
- "app_name": "mdp-osu",
- "author": "MegaApple_Pi",
- "bugs": {
-  "url": "https://github.com/MegaApplePi/mdp-osu/issues"
- },
- "build": {
-  "excludes":[
-   "docs/*",
-   "output/*",
-   "web2exe.json",
-   "README.md",
-   "icon.ico"
-  ],
-  "nsis": {
-   "diffUpdaters": true
-  },
-  "nwFlavor": "normal",
-  "nwVersion": "0.22.0",
-  "targets": [
-   "zip"
-  ],
-  "win": {
-   "versionStrings": {
-    "ProductName": "mdp-osu",
-    "CompanyName": "MegaApple_Pi"
-   }
-  }
- },
- "dependencies": {
-  "nwjs-builder-phoenix": "^1.9.3"
- },
- "description": "Markdown Previewer for osu!wiki",
- "devDependencies": {
-  "nw-builder": "^3.2.0",
-  "nwjs-builder-phoenix": "^1.10.1"
- },
- "homepage": "https://github.com/MegaApplePi/mdp-osu#readme",
- "license": "MIT",
- "main": "index.html",
  "name": "mdp-osu",
+ "version": "2.0.0",
+ "description": "Markdown Previewer for osu!wiki",
+ "main": "main.js",
  "repository": {
   "type": "git",
   "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
  },
- "scripts": {
-  "dist": "build --win --x86 --mirror https://dl.nwjs.io/ .",
-  "start": "run --x86 --mirror https://dl.nwjs.io/ ."
+ "author": "MegaApple_Pi",
+ "license": "MIT",
+ "bugs": {
+  "url": "https://github.com/MegaApplePi/mdp-osu/issues"
  },
- "version": "1.0.0",
- "webkit": {},
- "window": {
-  "frame": true,
-  "height": 600,
-  "icon": "icon.png",
-  "id": "mdp-osu",
-  "min_height": 450,
-  "min_width": 363,
-  "position": "center",
-  "resizable": true,
-  "title": "mdp-osu",
-  "width": 1100
- }
+ "homepage": "https://github.com/MegaApplePi/mdp-osu#readme",
+ "devDependencies": {
+  "electron": "^1.6.5",
+  "electron-packager": "^8.6.0"
+ },
+ "scripts": {
+  "start": "electron . --enable-logging",
+  "dev": "NODE_ENV='development' npm run start",
+  "build": "electron-packager . mdp-osu --platform=win32 --arch=ia32 --out=build --asar=true --prune=true --overwrite --win32metadata.CompanyName=\"MegaApple_Pi\" --win32metadata.FileDescription=\"Markdown Previewer for osu!wiki\" --win32metadata.OriginalFilename=\"mpd-osu.exe\" --win32metadata.ProductName=\"mpd-osu\" --win32metadata.InternalName=\"mpd-osu\" --icon=icons/ico/1024.ico"
+ },
+ "dependencies": {}
 }
