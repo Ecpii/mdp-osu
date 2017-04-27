@@ -1,9 +1,13 @@
 /* jshint undef: true, unused: true */
-/* globals require, showdown, $, window, FileReader, XMLHttpRequest, Image */
+/* globals nodeRequire, showdown, $, window, FileReader, XMLHttpRequest, Image */
 (function(){
  'use strict';
 
- const nw_gui = require('nw.gui');
+ //const path = require('path');
+ //const shell = require('shell');
+
+ const {shell} = nodeRequire('electron');
+
  const $refresh = $('icon[button="refresh"]');
  const $autorenew = $('icon[button="autorenew"]');
  const $broken_image = $('icon[button="broken_image"]');
@@ -36,6 +40,8 @@
  const $error_linksHttp_count = $('[ul="_linksHttp"] > count');
  const $error_linksDead404 = $('#_linksDead404');
  const $error_linksDead404_count = $('[ul="_linksDead404"] > count');
+ const $error_linksDead405 = $('#_linksDead405');
+ const $error_linksDead405_count = $('[ul="_linksDead405"] > count');
  const $error_linksDead503 = $('#_linksDead503');
  const $error_linksDead503_count = $('[ul="_linksDead503"] > count');
  const $error_imagesBroken = $('#_imagesBroken');
@@ -78,6 +84,11 @@
      let _li = $('<li/>').append(href);
      $error_linksDead404.append(_li);
      $error_linksDead404_count.empty().append(numberMax($error_linksDead404.children("li").length));
+     $tab_links_count.empty().append(numberMax($error_linksInternal.children("li").length + $error_linksHttp.children("li").length + $error_linksDead404.children("li").length + $error_linksDead503.children("li").length));
+    }else if( e.status === 405 ){
+     let _li = $('<li/>').append(href);
+     $error_linksDead405.append(_li);
+     $error_linksDead405_count.empty().append(numberMax($error_linksDead405.children("li").length));
      $tab_links_count.empty().append(numberMax($error_linksInternal.children("li").length + $error_linksHttp.children("li").length + $error_linksDead404.children("li").length + $error_linksDead503.children("li").length));
     }else if( e.status === 503 ){
      let _li = $('<li/>').append(href);
@@ -126,19 +137,58 @@
 
  function headingsCheck(){
   let $h1 = $('article h1');
+  let $h2 = $('article h2');
+  let $h3 = $('article h3');
+  let $h4 = $('article h4');
+  let $h5 = $('article h5');
+  let $h6 = $('article h6');
   if( $h1.length < 1 ){
    let _li = $('<li/>').append("Article needs a lv 1 header!");
    $error_mdHeadings.append(_li);
   }
-  if( $h1.length > 1 ){
+  else if( $h1.length > 1 ){
    for( let i = 1; i < $h1.length; i++ ){
     let _i1 = $("<i/>").append($($h1[0]).text());
     let _i2 = $("<i/>").append($($h1[i]).text());
-    let _li = $('<li/>').append(_i2).append(" (random lv 1 header) exists when ").append(_i1).append(" (the title lv 1 header) exists");
+    let _li = $('<li/>').append(_i2).append(" (random lv 1 header) exists when ").append(_i1).append(" (the title lv 1 header) exists.");
     $error_mdHeadings.append(_li);
    }
   }
-  let $h6 = $('article h6');
+  if( $h1.children().length > 0 ){
+   for( let i = 0; i < $h1.children().length; i++ ){
+    let _i = $("<i/>").append($($h1[i]).text());
+    let _li = $('<li/>').append(_i).append(" (lv 1 header) contains style.");
+    $error_mdHeadings.append(_li);
+   }
+  }
+  if( $h2.children().length > 0 ){
+   for( let i = 0; i < $h2.children().length; i++ ){
+    let _i = $("<i/>").append($($h2[i]).text());
+    let _li = $('<li/>').append(_i).append(" (lv 2 header) contains style.");
+    $error_mdHeadings.append(_li);
+   }
+  }
+  if( $h3.children().length > 0 ){
+   for( let i = 0; i < $h3.children().length; i++ ){
+    let _i = $("<i/>").append($($h3[i]).text());
+    let _li = $('<li/>').append(_i).append(" (lv 3 header) contains style.");
+    $error_mdHeadings.append(_li);
+   }
+  }
+  if( $h4.children().length > 0 ){
+   for( let i = 0; i < $h4.children().length; i++ ){
+    let _i = $("<i/>").append($($h4[i]).text());
+    let _li = $('<li/>').append(_i).append(" (lv 4 header) contains style.");
+    $error_mdHeadings.append(_li);
+   }
+  }
+  if( $h5.children().length > 0 ){
+   for( let i = 0; i < $h5.children().length; i++ ){
+    let _i = $("<i/>").append($($h5[i]).text());
+    let _li = $('<li/>').append(_i).append(" (lv 5 header) contains style.");
+    $error_mdHeadings.append(_li);
+   }
+  }
   if( $h6.length > 0 ){
    for( let i = 0; i < $h6.length; i++ ){
     let _i = $("<i/>").append($($h6[i]).text());
@@ -151,14 +201,21 @@
   let $table = $('table');
   for( let i = 0; i < $table.length; i++ ){
    let $li = $($table[i]).find("li");
+   let $img = $($table[i]).find("img");
    if( $li.length > 0 ){
     let _li = $('<li/>').append(ordinal(i + 1) + " table contains a list!");
     $error_mdTables.append(_li);
+   }
+   if( $img.length > 0 ){
+    let _img = $('<li/>').append(ordinal(i + 1) + " table contains an image!");
+    $error_mdTables.append(_img);
    }
   }
  }
  function htmlCheck(){
   //TODO check for non-markdown html tags
+  //IDEA manually read the file to see if tags are present?
+  //IDEA use .children() to see if invaild tags are used? // it may miss those who use <strike/> and <em/> tags
  }
  function linksCheck(){
   let $a = $('article a');
@@ -264,12 +321,14 @@
   $error_linksHttp.empty();
   $error_linksInternal.empty();
   $error_linksDead404.empty();
+  $error_linksDead405.empty();
   $error_linksDead503.empty();
   $error_imagesBroken.empty();
   $error_imagesPng.empty();
   $error_imagesWide.empty();
 
   $error_linksDead404_count.empty().append("0");
+  $error_linksDead405_count.empty().append("0");
   $error_linksDead503_count.empty().append("0");
 
   headingsCheck();
@@ -288,7 +347,7 @@
   $error_imagesWide_count.empty().append(numberMax($error_imagesWide.children("li").length));
 
   $tab_markdown_count.empty().append(numberMax($error_mdHeadings.children("li").length + $error_mdTables.children("li").length + $error_mdHtml.children("li").length));
-  $tab_links_count.empty().append(numberMax($error_linksInternal.children("li").length + $error_linksHttp.children("li").length));
+  $tab_links_count.empty().append(numberMax($error_linksHttp.children("li").length) + $error_linksInternal.children("li").length + $error_linksDead404.children("li").length + $error_linksDead405.children("li").length + $error_linksDead503.children("li").length);
   $tab_images_count.empty().append(numberMax($error_imagesBroken.children("li").length + $error_imagesPng.children("li").length + $error_imagesWide.children("li").length));
  }
 
@@ -307,11 +366,13 @@
  function request(file_path, refresh = false){
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function(){
-   if( this.readyState === 4 && this.status === 0 ){
+   if( this.readyState === 4 && this.status === 200 ){
     if( refresh ){
      history.push(file_path);
      historyIndex++;
     }
+    //TOFIX history is a reserved keyword
+    console.log(history);
     paths.directory = file_path.substring(0, Number(file_path.lastIndexOf("\\")) + 1);
     paths.locale = file_path.substring(Number(file_path.lastIndexOf("\\")) + 1, file_path.length);
     paths.path = "~" + file_path.substring(file_path.indexOf("\\osu-wiki\\"), file_path.length);
@@ -397,7 +458,7 @@
   });
   $path.on('click', function(){
    if( paths.working ){
-    nw_gui.Shell.showItemInFolder(paths.working);
+    shell.showItemInFolder(paths.working);
    }
   });
   $vertical_align_top.on('click', function(){
@@ -405,7 +466,7 @@
   });
   $edit.on('click', function(){
    if( paths.working ){
-    nw_gui.Shell.openItem(paths.working);
+    shell.openItem(paths.working);
    }
   });
   $tabs.on('click', function(e){
