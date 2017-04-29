@@ -109,7 +109,6 @@ body {
       body > repo > container > article {
         background: #333;
         padding: 45px;
-        border: 1px solid #ddd;
         border-radius: 0;
         font-family: Noto Sans,sans-serif;
         line-height: 1.35;

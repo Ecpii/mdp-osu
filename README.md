@@ -76,7 +76,7 @@ Notes:
       - ignore if transparency/alpha channel is used
       - otherwise, convert to `.jpg`
   - **Too Wide**: image is wider than article width
-    - article width is 720px, any images wider than this are too big
+    - article width is ~~720px~~ 680px, any images wider than this are too big
     - if an error is listed here: downscale the image
 
 ## Known Bugs

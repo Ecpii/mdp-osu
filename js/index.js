@@ -115,7 +115,7 @@
    "success":function(){
     image.src = src + (isBrokenImageEnabled ? randomImageNumber : "" );
     image.onload = function(){
-     if( image.width > 720 ){
+     if( image.width > 680 ){
       let _li = $('<li/>').append(src);
       $error_imagesWide.append(_li);
       $error_imagesWide_count.empty().append(numberMax($error_imagesWide.children("li").length));
