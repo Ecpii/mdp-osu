@@ -1,6 +1,6 @@
 # mdp-osu
 
-[![Maintenance Not Intended](unmaintained.svg)](http://unmaintained.tech/)
+[![Maintenance Not Intended](unmaintained.png)](http://unmaintained.tech/)
 
 Another Markdown Previewer (tailored for osu!wiki)
 
