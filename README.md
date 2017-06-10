@@ -9,7 +9,7 @@ Another Markdown Previewer (tailored for osu!wiki)
 Usage:
 
 1. Fork the [osu-wiki](https://github.com/ppy/osu-wiki) repo (and clone)
-2. Download the lastest mdp-osu [release](https://github.com/MegaApplePi/mdp-osu/releases)
+2. Download the lastest `mdp-osu` [release](https://github.com/MegaApplePi/mdp-osu/releases)
 3. Extract
 4. Open `mdp-osu.exe`
 5. Upload your markdown

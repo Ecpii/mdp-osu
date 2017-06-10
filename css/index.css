@@ -22,7 +22,7 @@ body {
   padding: 0; }
   body > menu {
     align-items: center;
-    background: #696969;
+    background: #3F51B5;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -32,6 +32,7 @@ body {
     padding: 0;
     position: fixed;
     top: 0;
+    user-select: none;
     white-space: nowrap;
     width: calc(100% - 363px);
     z-index: 1; }
@@ -41,22 +42,24 @@ body {
       user-select: none;
       transition: color 50ms; }
       body > menu > container > icon:hover {
-        color: #d9d9d9; }
+        color: #EC407A; }
       body > menu > container > icon:active {
-        color: #ff6d8d; }
+        color: #E91E63; }
       body > menu > container > icon[enabled] {
-        color: #ff2052; }
+        color: #D81B60; }
         body > menu > container > icon[enabled]:hover {
-          color: #d3002f; }
+          color: #C2185B; }
         body > menu > container > icon[enabled]:active {
-          color: #b3b3b3; }
+          color: #EC407A; }
     body > menu > path {
-      background: #8f8f8f;
+      background: #5C6BC0;
       cursor: pointer;
       flex-grow: 1;
       font-size: 16px;
       height: 16px;
+      overflow: hidden;
       padding: 4px 0;
+      text-overflow: ellipsis;
       user-select: none; }
   body > repo {
     display: inline-block;
@@ -212,18 +215,13 @@ body {
             background-color: transparent;
             border-radius: 0; }
         body > repo > container > article code {
-          padding: 2px 4px;
-          font-size: 90%;
-          color: #c7254e;
-          background-color: #f9f2f4;
           border-radius: 4px;
-          padding: 0;
-          font-size: inherit;
-          color: inherit;
-          background: none;
-          border-radius: 0; }
+          background-color: #222;
+          border: 1px solid #111;
+          color: #6cf;
+          padding: 1px 4px; }
   body > errors {
-    background: #696969;
+    background: #3F51B5;
     box-sizing: border-box;
     color: #fff;
     display: block;
@@ -235,11 +233,13 @@ body {
     overflow: auto;
     padding: 4px; }
     body > errors h1 {
-      clear: left;
-      display: flex;
       align-items: center;
+      clear: left;
+      cursor: default;
+      display: flex;
       font-size: 24px;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      user-select: none; }
     body > errors h2 {
       clear: left;
       display: flex;
@@ -256,7 +256,7 @@ body {
       margin-bottom: 0;
       user-select: none; }
       body > errors h3 > count {
-        background: #ff2052;
+        background: #D81B60;
         border-radius: 4px;
         font-size: 14px;
         padding: 0 2px;
@@ -276,25 +276,25 @@ body {
         user-select: none;
         text-align: center; }
         body > errors > tabs > tab:hover {
-          color: #d9d9d9;
-          border-bottom-color: #d9d9d9; }
+          color: #EC407A;
+          border-bottom-color: #EC407A; }
         body > errors > tabs > tab:active {
-          color: #ff6d8d;
-          border-bottom-color: #ff6d8d; }
+          color: #E91E63;
+          border-bottom-color: #E91E63; }
         body > errors > tabs > tab[enabled] {
-          color: #ff2052;
-          border-bottom-color: #ff2052; }
+          color: #D81B60;
+          border-bottom-color: #D81B60; }
           body > errors > tabs > tab[enabled]:hover {
-            color: #d3002f;
-            border-bottom-color: #d3002f; }
+            color: #C2185B;
+            border-bottom-color: #C2185B; }
           body > errors > tabs > tab[enabled]:active {
-            color: #b3b3b3;
-            border-bottom-color: #b3b3b3; }
+            color: #EC407A;
+            border-bottom-color: #EC407A; }
         body > errors > tabs > tab * {
           pointer-events: none;
           user-select: none; }
         body > errors > tabs > tab > count {
-          background: #ff2052;
+          background: #D81B60;
           border-radius: 4px;
           color: #fff;
           font-size: 14px;
@@ -302,10 +302,12 @@ body {
           padding: 0 2px;
           position: relative;
           top: -12px; }
+        body > errors > tabs > tab > small {
+          font-weight: bold; }
     body > errors ul {
       clear: left;
       height: auto;
-      list-style: square;
+      list-style: none;
       margin-bottom: 0;
       margin-top: 0;
       overflow-y: hidden;
@@ -317,8 +319,15 @@ body {
         clear: left;
         float: left;
         padding-bottom: 4px;
+        position: relative;
         margin-bottom: 2px;
         margin-top: 2px;
         word-break: break-word; }
+        body > errors ul li > icon {
+          cursor: pointer;
+          font-size: 1em;
+          left: -16px;
+          position: absolute;
+          user-select: none; }
 
 /*# sourceMappingURL=index.css.map */
