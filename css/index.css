@@ -111,13 +111,12 @@ body {
             user-select: none; }
       body > repo > container > article {
         background: #333;
-        padding: 45px;
         border-radius: 0;
         font-family: Noto Sans,sans-serif;
         line-height: 1.35;
         color: #444;
         color: inherit;
-        padding: 10px 20px 0;
+        padding: 10px 20px;
         font-size: 14px;
         word-wrap: break-word;
         color: #fff; }
@@ -175,9 +174,19 @@ body {
             color: #fd5;
             text-decoration: underline; }
         body > repo > container > article img {
+          border: 0;
           max-width: 100%;
-          vertical-align: middle;
-          border: 0; }
+          vertical-align: middle; }
+        body > repo > container > article p.figure {
+          margin: 1.5em 0;
+          text-align: center; }
+          body > repo > container > article p.figure img {
+            display: block;
+            margin: 0 auto; }
+            body > repo > container > article p.figure img + em {
+              margin-top: 5px;
+              font-style: normal;
+              display: inline-block; }
         body > repo > container > article table {
           font-family: Exo\ 2,Arial Grande,Tahoma,Helvetica,Arial,Microsoft YaHei,SimHei,Arial Unicode MS,sans-serif;
           margin-bottom: 20px;
