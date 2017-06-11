@@ -4,6 +4,7 @@
   'use strict';
 
   const {shell} = nodeRequire('electron');
+  const yaml = nodeRequire('js-yaml');
   //const {clipboard} = nodeRequire('electron');
 
   const $refresh = $('icon[button="refresh"]');
@@ -322,14 +323,14 @@
         // NOTE because Windows (keeps acting like an ass and) uses "\" (the same character for escaping in JS),
         // I cannot rearrange the path properly (change all "/" to "\") since JS keeps escaping before I can operate
         // because of this, I will leave the path alone here (but will handle it somewhere else)
-        let _href = paths.root + href + "/" + paths.locale;
-        $($a[i]).attr("href", _href);
+        let _href = paths.root + href + '/' + paths.locale;
+        $($a[i]).attr('href', _href);
         linkHeadRequest(_href);
       }
       else if( /^(\.\/|\.\\|[a-zA-Z0-9_])/ig.test(href) )
       { // is it folder link?
-        let _href = paths.directory + href + "/" + paths.locale;
-        $($a[i]).attr("href", _href);
+        let _href = paths.directory + href + '/' + paths.locale;
+        $($a[i]).attr('href', _href);
         linkHeadRequest(_href);
       }else{
         //console.log("all tests failed", href);
@@ -340,8 +341,16 @@
     let $img = $('article img');
     for( let i = 0; i < $img.length; i++ )
     {
-      let src = $($img[i]).attr("src");
-      if( src.split('.').pop() === "png" )
+      if( $img[i].parentElement.tagName === 'P' && $img[i].parentElement.children.length === 1 && $img[i].hasAttribute('title') ){
+        let $em = $('<em/>').append($img[i].getAttribute('title'));
+        $($img[i].parentElement)
+          .addClass('figure')
+          .append($em)
+        ;
+      }
+
+      let src = $($img[i]).attr('src');
+      if( src.split('.').pop() === 'png' )
       {
         let _close = $("<icon/>").append("close");
         let _li = $('<li/>').append(_close).append(src/*.substring(src.lastIndexOf("/wiki/"), src.lastIndexOf("?t"))*/);
