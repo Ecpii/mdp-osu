@@ -4,7 +4,7 @@
   'use strict';
 
   const {shell} = nodeRequire('electron');
-  const yaml = nodeRequire('js-yaml');
+  //const yaml = nodeRequire('js-yaml');
   //const {clipboard} = nodeRequire('electron');
 
   const $refresh = $('icon[button="refresh"]');

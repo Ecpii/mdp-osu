@@ -1,6 +1,6 @@
 {
   "name": "mdp-osu",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Markdown Previewer for osu!wiki",
   "main": "main.js",
   "repository": {

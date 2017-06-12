@@ -7,7 +7,6 @@ const url = require('url');
 let win;
 function createWindow(){
   win = new BrowserWindow({
-    "icon": __dirname + "icons/32.png",
     "height": 600,
     // potential electron bug, minWidth doesn't match DOM's width (8px of extra window space on all sides?)
     "minWidth": 363 + 16,
