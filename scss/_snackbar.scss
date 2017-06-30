@@ -1,0 +1,35 @@
+> snackbar{
+  align-items: center;
+  background: $snackbar--background;
+  border-radius: 2px;
+  bottom: 24px;
+  left: 24px;
+  color: $snackbar--color;
+  display: inline-flex;
+  padding: 24px;
+  position: absolute;
+  cursor: default;
+  transform: translateY(0);
+  transition: 1s transform;
+  user-select: none;
+  @include card(1);
+  &[sleep]{
+    transform: translateY(#{calc(100% + 24px)});
+  }
+  > text{
+    > download{
+      color: $snackbar-text-download--color;
+      cursor: pointer;
+      padding-left: 8px;
+      padding-right: 4px;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  > icon{
+    cursor: pointer;
+    font-size: 24px;
+  }
+}

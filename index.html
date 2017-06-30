@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
   <head>
-    <meta charset="utf-8"/>
-    <title>Markdown Previewer for osu!wiki</title>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"/>
-    <link href="css/icon.css" rel="stylesheet"/>
+    <title>osu!wiki Markdown Previewer</title>
+    <link href="css/materialdesignicons.css" rel="stylesheet"/>
     <link href="css/index.css" rel="stylesheet"/>
 
     <script>
@@ -14,127 +11,201 @@
       delete window.exports;
       delete window.module;
     </script>
-
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/showdown.js"></script>
   </head>
   <body>
     <menu>
-      <!--<icon button="history">history</icon>-->
-      <!--<icon button="error_outline">error_outline</icon>-->
-      <container>
-        <icon title="Reload" button="refresh">refresh</icon>
-        <icon title="Auto-Reload Every 5 Seconds" button="autorenew">autorenew</icon>
-        <icon title="Purge Images on Reload" button="broken_image">broken_image</icon>
-        <icon title="Upload" button="file_upload">file_upload</icon>
+      <container left>
+        <icon reload title="Reload"></icon>
+        <icon autorenew title="Auto-reload"></icon>
+        <icon upload title="Upload"></icon>
       </container>
-      <path></path>
-      <container>
-        <icon title="Go to Top" button="vertical_align_top">vertical_align_top</icon>
-        <icon title="Edit using Default Program" button="edit">edit</icon>
+      <path title="Open file location">
+        <icon file-tree></icon>
+        <text></text>
+      </path>
+      <container right>
+        <icon chevron-double-up title="Go to top"></icon>
+        <icon open-in-new title="Edit"></icon>
+        <icon alert-outline title="Errors"></icon>
       </container>
+      <input type="file" accept=".md"/>
+      <canvas></canvas>
     </menu>
-    <repo>
-      <container>
-        <upload>
-          <input type="file" accept=".md"/>
-          <info>
-            <icon>file_upload</icon>
-            <text>Drag-and-Drop or<br/>Click Here to<br/>Upload Your Markdown</text>
-          </info>
-        </upload>
-        <article style="display: none;"></article>
-      </container>
-    </repo>
-    <errors>
-      <h1>Potential Errors</h1>
+    <osu-wiki>
+      <heading>
+        <article-title>
+          <h2></h2>
+          <h1></h1>
+        </article-title>
+      </heading>
+      <markdown></markdown>
+    </osu-wiki>
+    <errors sleep>
       <tabs>
         <tab item="markdown" enabled>
-          <icon>arrow_downward</icon>
+          <icon markdown></icon>
+          <text>Markdown</text>
           <count>0</count>
-          <br/>
-          <small>Markdown</small>
-        </tab>
-        <tab item="links">
-          <icon>link</icon>
-          <count>0</count>
-          <br/>
-          <small>Links</small>
         </tab>
         <tab item="images">
-          <icon>image</icon>
+          <icon image></icon>
+          <text>Images</text>
           <count>0</count>
-          <br/>
-          <small>Images</small>
+        </tab>
+        <tab item="links">
+          <icon link-variant></icon>
+          <text>Links</text>
+          <count>0</count>
+        </tab>
+        <tab item="english">
+          <icon spellcheck></icon>
+          <text>English</text>
+          <count>0</count>
         </tab>
       </tabs>
-      <content id="_markdown">
-        <h3 ul="_mdHeadings">
-          <icon>expand_more</icon>
-          Headings
-          <count>0</count>
-        </h3>
-        <ul id="_mdHeadings"></ul>
-        <h3 ul="_mdTables">
-          <icon>expand_more</icon>
-          Tables
-          <count>0</count>
-        </h3>
-        <ul id="_mdTables"></ul>
-      </content>
-      <content id="_links" style="display: none;">
-        <h3 ul="_linksHttp">
-          <icon>expand_more</icon>
-          http
-          <count>0</count>
-        </h3>
-        <ul id="_linksHttp"></ul>
-        <h3 ul="_linksInternal">
-          <icon>expand_more</icon>
-          Internal File Links
-          <count>0</count>
-        </h3>
-        <ul id="_linksInternal"></ul>
-        <h3 ul="_linksDead404">
-          <icon>expand_more</icon>
-          404
-          <count>0</count>
-        </h3>
-        <ul id="_linksDead404"></ul>
-        <h3 ul="_linksDead405">
-          <icon>expand_less</icon>
-          405
-          <count>0</count>
-        </h3>
-        <ul id="_linksDead405" collapsed></ul>
-        <h3 ul="_linksDead503">
-          <icon>expand_less</icon>
-          503
-          <count>0</count>
-        </h3>
-        <ul id="_linksDead503" collapsed></ul>
-      </content>
-      <content id="_images" style="display: none;">
-        <h3 ul="_imagesBroken">
-          <icon>expand_more</icon>
-          Broken
-          <count>0</count>
-        </h3>
-        <ul id="_imagesBroken"></ul>
-        <h3 ul="_imagesPng">
-          <icon>expand_more</icon>
-          .png
-          <count>0</count>
-        </h3>
-        <ul id="_imagesPng"></ul>
-        <h3 ul="_imagesWide">
-          <icon>expand_more</icon>
-          Too Wide
-          <count>0</count>
-        </h3>
-        <ul id="_imagesWide"></ul>
-      </content>
+      <lists>
+        <list item="markdown">
+          <group item="headings">
+            <heading>
+              <icon menu-up></icon>
+              <text>Headings</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="tables">
+            <heading>
+              <icon menu-up></icon>
+              <text>Tables</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="html">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTML</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+        </list>
+        <list item="images" sleep>
+          <group item="wide">
+            <heading>
+              <icon menu-up></icon>
+              <text>Wide</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="png">
+            <heading>
+              <icon menu-up></icon>
+              <text>PNG</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+        </list>
+        <list item="links" sleep>
+          <group item="internal">
+            <heading>
+              <icon menu-up></icon>
+              <text>Internal</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="httpfailed">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP Failed</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="http403">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP 403</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="http404">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP 404</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="http500">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP 500</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="http503">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP 503</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="http504">
+            <heading>
+              <icon menu-up></icon>
+              <text>HTTP 504</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+        </list>
+        <list item="english" sleep>
+          <group item="first-person">
+            <heading>
+              <icon menu-up></icon>
+              <text>First Person</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="contractions">
+            <heading>
+              <icon menu-up></icon>
+              <text>Contractions</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="game-modes">
+            <heading>
+              <icon menu-up></icon>
+              <text>Game Modes</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="mediawiki">
+            <heading>
+              <icon menu-up></icon>
+              <text>MediaWiki</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+        </list>
+      </lists>
     </errors>
+    <snackbar sleep>
+      <text></text>
+      <icon close></icon>
+    </snackbar>
     <script src="js/index.js"></script>
   </body>
 </html>

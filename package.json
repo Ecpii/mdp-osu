@@ -1,27 +1,33 @@
 {
   "name": "mdp-osu",
-  "version": "2.2.1",
-  "description": "Markdown Previewer for osu!wiki",
+  "version": "3.0.0",
+  "description": "osu!wiki Markdown Previewer",
   "main": "main.js",
+  "dependencies": {
+    "electron": "^1.6.5",
+    "electron-packager": "^8.6.0",
+    "js-yaml": "^3.8.4",
+    "showdown": "^1.7.1",
+    "sizzle": "^2.3.3"
+  },
+  "devDependencies": {},
+  "js-flags": "--harmony",
+  "scripts": {
+    "start": "electron . --js-flags=\"--harmony\" --enable-logging",
+    "dev": "NODE_ENV='development' npm run start",
+    "build": "electron-packager . mdp-osu --platform=win32 --arch=ia32 --out=build --asar=true --prune=true --overwrite --win32metadata.CompanyName=\"MegaApple_Pi\" --win32metadata.FileDescription=\"mpd-osu\" --win32metadata.OriginalFilename=\"mpd-osu.exe\" --win32metadata.ProductName=\"mpd-osu\" --win32metadata.InternalName=\"mpd-osu\" --icon=icon/ico/icon.ico"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MegaApplePi/mdp-osu.git"
   },
-  "author": "MegaApple_Pi",
+  "keywords": [
+    "osu-wiki"
+  ],
+  "author": "MegaApplePi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MegaApplePi/mdp-osu/issues"
   },
-  "homepage": "https://github.com/MegaApplePi/mdp-osu#readme",
-  "devDependencies": {
-    "electron": "^1.6.5",
-    "electron-packager": "^8.6.0",
-    "js-yaml": "^3.8.4"
-  },
-  "scripts": {
-    "start": "electron . --enable-logging",
-    "dev": "NODE_ENV='development' npm run start",
-    "build": "electron-packager . mdp-osu --platform=win32 --arch=ia32 --out=build --asar=true --prune=true --overwrite --win32metadata.CompanyName=\"MegaApple_Pi\" --win32metadata.FileDescription=\"mpd-osu\" --win32metadata.OriginalFilename=\"mpd-osu.exe\" --win32metadata.ProductName=\"mpd-osu\" --win32metadata.InternalName=\"mpd-osu\" --icon=icons/ico/icon.ico"
-  },
-  "dependencies": {}
+  "homepage": "https://github.com/MegaApplePi/mdp-osu#readme"
 }
