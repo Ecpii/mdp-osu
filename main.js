@@ -7,12 +7,12 @@ const url = require('url');
 let win;
 function createWindow(){
   win = new BrowserWindow({
-    "height": 600,
-    // potential electron bug, minWidth doesn't match DOM's width (8px of extra window space on all sides?)
-    "minWidth": 363 + 16,
-    "width": 1100 + 16,
-    "maxWidth": 1100 + 16,
-    "maximizable": false
+    'height': 600,
+    // potential electron bug, width doesn't match DOM's width (8px of extra window space on all sides?)
+    'minWidth': 720 + 16,
+    'width': 720 + 16,
+    //"maximizable": false
+    'icon': __dirname + 'icon/ico/icon.ico'
   });
   win.setMenu(null);
 

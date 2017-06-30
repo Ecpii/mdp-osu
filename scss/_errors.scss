@@ -1,0 +1,124 @@
+> errors{
+  align-items: flex-start;
+  background: $errors--background;
+  box-sizing: border-box;
+  color: $errors--color;
+  display: flex;
+  flex-direction: column;
+  height: #{calc(100% - 32px)};
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 4px;
+  position: absolute;
+  right: 0;
+  top: 32px;
+  transform: translateX(0);
+  transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  min-width: 540px;
+  width: 75%;
+  word-break: break-word;
+  z-index: 1;
+  > tabs{
+    align-items: center;
+    display: flex;
+    min-height: 66px;
+    max-height: 66px;
+    height: 66px;
+    justify-content: space-around;
+    width: 100%;
+    > tab{
+      align-content: center;
+      border-bottom: 2px;
+      border-bottom-color: $errors-tabs-tab-borderBottomColor;
+      border-bottom-style: dashed;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      font-weight: initial;
+      justify-content: center;
+      user-select: none;
+      width: 20%;
+      &[enabled]{
+        border-bottom-color: $errors-tabs-tab-borderBottomColor__enabled;
+        border-bottom-style: solid;
+        font-weight: bold;
+      }
+      > icon{
+        font-size: 24px;
+        pointer-events: none;
+      }
+      > text{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+      }
+      > count{
+        align-self: center;
+        font-size: 0.75em;
+        pointer-events: none;
+        &:before{
+          content: "(";
+        }
+        &:after{
+          content: ")";
+        }
+      }
+    }
+  }
+  &[sleep]{
+    transform: translateX(100%);
+  }
+  > lists{
+    display: flex;
+    > list{
+      display: flex;
+      flex-direction: column;
+      &[sleep]{
+        display: none;
+      }
+      > group{
+        &[collapsed]{
+          > ul{
+            display: none;
+          }
+        }
+        > ul{
+          list-style: square;
+          > li{
+            > code{
+              background: #ddd;
+              color: #000;
+              font-weight: bold;
+              margin: 0 1px;
+              padding: 0 1px;
+            }
+          }
+        }
+        > heading{
+          cursor: pointer;
+          font-size: 18px;
+          user-select: none;
+          > icon{
+            pointer-events: none;
+          }
+          > text{
+            pointer-events: none;
+          }
+          > count{
+            align-self: center;
+            font-size: 0.75em;
+            pointer-events: none;
+            &:before{
+              content: "(";
+            }
+            &:after{
+              content: ")";
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import 'card';
+@import 'font';
+@import 'colours';
+
+body{
+  ::-webkit-scrollbar{
+    width: 16px;
+    &-track{
+      border: #4a4a4a solid 1px;
+      background: #242424;
+    }
+    &-thumb{
+      border: #333 solid 1px;
+      background: #4a4a4a;
+    }
+  }
+  background: $body--background;
+  display: flex;
+  font-family: "Ubuntu", sans-serif;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+
+  @import 'menu';
+  @import 'osu-wiki';
+  @import 'errors';
+  @import 'snackbar';
+}

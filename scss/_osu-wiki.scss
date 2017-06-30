@@ -1,0 +1,226 @@
+$Noto: "Noto Sans", sans-serif;
+$Exo: "Exo 2", "Arial Grande", Tahoma, Helvetica, Arial, "Microsoft YaHei", SimHei, "Arial Unicode MS", sans-serif;
+> osu-wiki{
+  ::selection{
+    color: #fff;
+    background-color: #f6a;
+  }
+  height: #{calc(100% - 32px)};
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  max-width: 720px;
+  top: 32px;
+  width: 100%;
+  > heading{
+    background-image: url('https://osu.ppy.sh/images/headers/wiki.jpg');
+    display: block;
+    height: 125px;
+    max-width: calc(720px - 80px);
+    pointer-events: none;
+    position: absolute;
+    user-select: none;
+    width: 100%;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 0;
+
+    background-position: 50%;
+    article-title{
+      bottom: 0;
+      font-family: $Exo;
+      position: absolute;
+      h1{
+        text-shadow: 0 1px 3px rgba(0,0,0,.75);
+        font-size: 32px;
+        margin: -5px -5px 5px;
+        padding: 5px;
+        color: #fff;
+        font-style: italic;
+        margin-bottom: 0;
+        padding-bottom: 15px;
+        border-bottom: 5px solid #fc2;
+        font-weight: 400;
+
+        &:empty{
+          display: none;
+        }
+      }
+      h2{
+        font-size: 16px;
+        text-shadow: 0 1px 3px rgba(0,0,0,.75);
+        margin: -5px -5px 5px;
+        padding: 5px;
+        color: #fff;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+  }
+  > markdown{
+    min-height: #{calc(100% - 125px - 10px)};
+    max-width: #{calc(720px - 40px)};
+    position: absolute;
+    top: 125px;
+    width: 100%;
+
+    background: #333;
+    color: #fff;
+    font-family: $Noto;
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 10px 20px 0;
+    word-wrap: break-word;
+
+    h1, h2, h3, h4, h5, h6{
+      font-family: $Exo;
+      font-weight: 700;
+      font-style: normal;
+      color: #f9c;
+      line-height: 1.1;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    h1{
+      font-size: 30px;
+      margin: 0 0 20px;
+    }
+    h2{
+      font-size: 26px;
+      margin: 50px -20px 10px;
+      color: #fff;
+    }
+    h3{
+      font-size: 20px;
+      margin: 30px -20px 10px;
+    }
+    h4, h5, h6{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    h4{
+      font-size: 18px;
+      margin: 30px -10px 10px;
+      font-style: italic;
+    }
+    h5{
+      font-size: 16px;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 20px;
+    }
+    h6{
+      font-size: 14px;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 20px;
+    }
+    p{
+      margin: 0px 0px 10px;
+      margin-bottom: 1.5em;
+      line-height: 1.5;
+    }
+    a{
+      color: #fc2;
+      text-decoration: none;
+      transition: color 80ms linear;
+      &:hover{
+        color: #fd5;
+        text-decoration: underline;
+      }
+    }
+    code{
+      background: none;
+      border-radius: 4px;
+      background-color: #222;
+      border: 1px solid #111;
+      color: #6cf;
+      padding: 1px 4px;
+      font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    }
+    pre{
+      background-color: #222;
+      border: none;
+      border-radius: 0;
+      display: block;
+      padding: 9.5px;
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.25;
+      word-break: break-all;
+      word-wrap: break-word;
+      color: #333;
+      overflow: auto;
+      code{
+        border: none;
+        padding: 0;
+        border-radius: 4px;
+        background-color: #222;
+        color: #6cf;
+        font-size: inherit;
+        white-space: pre-wrap;
+      }
+    }
+    ol, ul{
+      padding-left: 20px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      li{
+        margin: 5px 0;
+        ol, ul{
+          margin-bottom: 0;
+          li{
+            color: #ccc;
+          }
+        }
+      }
+    }
+    table{
+      font-family: $Exo;
+      margin-bottom: 20px;
+      background-color: transparent;
+      border-collapse: collapse;
+      border-spacing: 0;
+      thead{
+        tr{
+          th{
+            border-top: none;
+            border-bottom: 2px solid #fc2;
+            font-weight: 700;
+            padding: 5px;
+            text-align: left;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            border-top: 1px solid rgba(255,204,34,.5);
+            padding: 5px;
+          }
+        }
+      }
+    }
+    img{
+      vertical-align: middle;
+      max-width: 100%;
+      border: 0;
+    }
+    p.figure{
+      margin: 1.5em 0;
+      text-align: center;
+      img{
+        display: block;
+        margin: 0 auto;
+        + em{
+          margin-top: 5px;
+          font-style: normal;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
