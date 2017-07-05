@@ -22,8 +22,6 @@ function createWindow(){
     "slashes": true
   }));
 
-  //win.webContents.openDevTools();
-
   win.on("closed", () => {
     win = null;
   });

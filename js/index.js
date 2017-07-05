@@ -17,6 +17,12 @@
       },
       'enumerable': false
     });
+
+    document.addEventListener('keydown', function(e){
+      if( e.key === "F12" ){
+        nodeRequire('electron').remote.getCurrentWindow().toggleDevTools();
+      }
+    });
   })();
 
   /* -- node -- */
@@ -27,7 +33,6 @@
   const markdown = new showdown.Converter({
     'tables': true,
     'disableForced4SpacesIndentedSublists': true,
-    'simpleLineBreaks': true,
     'openLinksInNewWindow': true
   });
   const yaml = nodeRequire('js-yaml');
@@ -906,7 +911,7 @@
       _body.$snackbar.setAttribute('sleep', '');
     }
     if( files.length > 1 ){
-      error("More than one file uploaded! Assuming one file.");
+      error("More than one file uploaded! Assuming first file.");
     }else if( files.length === 0 ){
       error("No files uploaded!");
       return;
@@ -916,6 +921,9 @@
       error("File is not <code>.md</code> extension!");
       return;
     }
+
+    _body._menu._path.$text.textContent = "";
+
     while( _body._snackbar.$text.firstChild ){
       _body._snackbar.$text.removeChild(_body._snackbar.$text.firstChild);
     }
@@ -946,7 +954,12 @@
       }
     }
 
-    _body._menu._path.$text.insertAdjacentText('beforeEnd', path.display);
+    _body._menu._path.$text.textContent = path.display;
+    if( _body._menu._path.$text.offsetWidth > _body._menu.$path.offsetWidth - _body._menu._path["$icon[file-tree]"].offsetWidth - parseInt(window.getComputedStyle(_body._menu._path.$text, null).getPropertyValue('padding-left')) ){
+      _body._menu._path.$text.classList.add('scroll');
+    }else{
+      _body._menu._path.$text.classList.remove('scroll');
+    }
 
     FR.readAsText(file);
   }

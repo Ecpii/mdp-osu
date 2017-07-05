@@ -18,6 +18,13 @@
   src: url("../font/MaterialDesign-Webfont/materialdesignicons-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
+@keyframes scroll {
+  10%, 90% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(-100%); }
+  50.001% {
+    transform: translateX(100%); } }
 body {
   background: #555555;
   display: flex;
@@ -79,11 +86,21 @@ body {
       height: 16px;
       overflow: hidden;
       padding: 4px 0; }
+      body > menu > path:hover {
+        animation-play-state: paused; }
+      body > menu > path > icon {
+        background: #aaa;
+        position: relative;
+        z-index: 1; }
       body > menu > path > text {
         font-size: 18px;
         overflow: hidden;
         padding-left: 4px;
         text-overflow: ellipsis; }
+        body > menu > path > text.scroll {
+          animation: scroll 15s linear infinite;
+          overflow: initial;
+          animation-play-state: inherit; }
     body > menu > input {
       display: none;
       position: absolute;
@@ -254,6 +271,14 @@ body {
         body > osu-wiki > markdown table tbody tr td {
           border-top: 1px solid rgba(255, 204, 34, 0.5);
           padding: 5px; }
+      body > osu-wiki > markdown blockquote {
+        padding: 10px 20px;
+        margin: 0 0 20px;
+        font-size: 20px;
+        border-left: 5px solid #eee;
+        font-size: inherit; }
+        body > osu-wiki > markdown blockquote p:last-child, body > osu-wiki > markdown blockquote ul:last-child, body > osu-wiki > markdown blockquote ol:last-child {
+          margin-bottom: 0; }
       body > osu-wiki > markdown img {
         vertical-align: middle;
         max-width: 100%;

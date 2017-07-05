@@ -50,11 +50,24 @@
     height: 16px;
     overflow: hidden;
     padding: 4px 0;
+    &:hover{
+      animation-play-state: paused;
+    }
+    > icon{
+      background: $menu-path-icon--background;
+      position: relative;
+      z-index: 1;
+    }
     > text{
       font-size: 18px;
       overflow: hidden;
       padding-left: 4px;
       text-overflow: ellipsis;
+      &.scroll{
+        animation: scroll 15s linear infinite;
+        overflow: initial;
+        animation-play-state: inherit;
+      }
     }
   }
   > input{
