@@ -19,8 +19,17 @@
     });
 
     document.addEventListener('keydown', function(e){
+      if( e.key === "Tab" ){
+        e.preventDefault();
+        return false;
+      }
+      if( e.key === "F5" ){
+        nodeRequire('electron').remote.getCurrentWindow().reload();
+        return false;
+      }
       if( e.key === "F12" ){
         nodeRequire('electron').remote.getCurrentWindow().toggleDevTools();
+        return false;
       }
     });
   })();
@@ -581,6 +590,7 @@
     fix.a();
     inspect(lines);
     imageTransCheck();
+    _body._menu["_container[right]"]["$icon[chevron-double-up]"].click();
   });
 
   /* -- event listeners -- */
