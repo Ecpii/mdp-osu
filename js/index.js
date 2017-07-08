@@ -420,7 +420,7 @@
           });
           xhr.addEventListener('error', function(){
             let status = this.status;
-            _body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Failed to load: <code>" + href + "</code> (" + status + ")</li>");
+            _body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
           });
           /* jshint ignore:end */
           xhr.open('HEAD', href);
@@ -443,7 +443,7 @@
           if( redirect && redirect[key] ){
             new_href = path.root + "/wiki/" + redirect[key];
           }else{
-            _body._errors._lists["_list[links]"]["_group[internal]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Invalid internal link (<code>" + key_original + "</code>)</li>");
+            _body._errors._lists["_list[links]"]["_group[internal]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + key_original + "</code></li>");
           }
         }
         _a[i].setAttribute('href', new_href);
