@@ -13,11 +13,194 @@
   right: 0;
   top: 32px;
   transform: translateX(0);
-  transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 1s transform $easeOutSine;
   min-width: 540px;
   width: 75%;
   word-break: break-word;
   z-index: 1;
+  &[sleep]{
+    transform: translateX(100%);
+  }
+  &[theme="red"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__red-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__red-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="pink"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__pink-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__pink-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="purple"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__purple-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__purple-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="deepPurple"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__deepPurple-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__deepPurple-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="indigo"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__indigo-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__indigo-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="blue"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__blue-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__blue-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="lightBlue"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__lightBlue-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__lightBlue-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="cyan"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__cyan-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__cyan-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="teal"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__teal-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__teal-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="green"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__green-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__green-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="lightGreen"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__lightGreen-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__lightGreen-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="lime"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__lime-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__lime-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="yellow"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__yellow-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__yellow-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="amber"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__amber-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__amber-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="orange"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__orange-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__orange-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="deepOrange"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__deepOrange-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__deepOrange-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="brown"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__brown-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__brown-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
+  &[theme="blueGrey"]{
+    > tabs{
+      > tab{
+        border-bottom-color: $errors_theme__blueGrey-tabs-tab-borderBottomColor;
+        &[enabled]{
+          border-bottom-color: $errors_theme__blueGrey-tabs-tab-borderBottomColor__enabled;
+        }
+      }
+    }
+  }
   > tabs{
     align-items: center;
     display: flex;
@@ -29,7 +212,6 @@
     > tab{
       align-content: center;
       border-bottom: 2px;
-      border-bottom-color: $errors-tabs-tab-borderBottomColor;
       border-bottom-style: dashed;
       cursor: pointer;
       display: flex;
@@ -40,7 +222,6 @@
       user-select: none;
       width: 20%;
       &[enabled]{
-        border-bottom-color: $errors-tabs-tab-borderBottomColor__enabled;
         border-bottom-style: solid;
         font-weight: bold;
       }
@@ -67,9 +248,6 @@
       }
     }
   }
-  &[sleep]{
-    transform: translateX(100%);
-  }
   > lists{
     display: flex;
     > list{
@@ -86,13 +264,15 @@
         }
         > ul{
           list-style: square;
+          margin-top: 0;
           > li{
-            > code{
-              background: #ddd;
-              color: #000;
-              font-weight: bold;
-              margin: 0 1px;
-              padding: 0 1px;
+            font-size: 16px;
+            margin: 8px 0;
+            &:first-child{
+              margin-top: 0;
+            }
+            &:last-child{
+              margin-bottom: 0;
             }
           }
         }

@@ -117,11 +117,11 @@
           '$text': $('body > errors > tabs > tab[item="links"] > text')[0],
           '$count': $('body > errors > tabs > tab[item="links"] > count')[0]
         },
-        '$tab[english]': $('body > errors > tabs > tab[item="english"]')[0],
-        '_tab[english]':{
-          '$icon': $('body > errors > tabs > tab[item="english"] > icon')[0],
-          '$text': $('body > errors > tabs > tab[item="english"] > text')[0],
-          '$count': $('body > errors > tabs > tab[item="english"] > count')[0]
+        '$tab[asg]': $('body > errors > tabs > tab[item="asg"]')[0],
+        '_tab[asg]':{
+          '$icon': $('body > errors > tabs > tab[item="asg"] > icon')[0],
+          '$text': $('body > errors > tabs > tab[item="asg"] > text')[0],
+          '$count': $('body > errors > tabs > tab[item="asg"] > count')[0]
         }
       },
       '$lists': $('body > errors > lists')[0],
@@ -158,16 +158,7 @@
         },
         '$list[images]': $('body > errors > lists > list[item="images"]')[0],
         '_list[images]':{
-          '$group[wide]': $('body > errors > lists > list[item="images"] > group[item="wide"]')[0],
           '$group[png]': $('body > errors > lists > list[item="images"] > group[item="png"]')[0],
-          '_group[wide]':{
-            '$heading': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading')[0],
-            '_heading':{
-              '$icon': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading > count')[0]
-            },
-            '$ul': $('body > errors > lists > list[item="images"] > group[item="wide"] > ul')[0]
-          },
           '_group[png]':{
             '$heading': $('body > errors > lists > list[item="images"] > group[item="png"] > heading')[0],
             '_heading':{
@@ -176,16 +167,28 @@
             },
             '$ul': $('body > errors > lists > list[item="images"] > group[item="png"] > ul')[0]
           },
+          '$group[errored]': $('body > errors > lists > list[item="images"] > group[item="errored"]')[0],
+          '_group[errored]':{
+            '$heading': $('body > errors > lists > list[item="images"] > group[item="errored"] > heading')[0],
+            '_heading':{
+              '$icon': $('body > errors > lists > list[item="images"] > group[item="errored"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="images"] > group[item="errored"] > heading > count')[0]
+            },
+            '$ul': $('body > errors > lists > list[item="images"] > group[item="errored"] > ul')[0]
+          },
+          '$group[wide]': $('body > errors > lists > list[item="images"] > group[item="wide"]')[0],
+          '_group[wide]':{
+            '$heading': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading')[0],
+            '_heading':{
+              '$icon': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="images"] > group[item="wide"] > heading > count')[0]
+            },
+            '$ul': $('body > errors > lists > list[item="images"] > group[item="wide"] > ul')[0]
+          }
         },
         '$list[links]': $('body > errors > lists > list[item="links"]')[0],
         '_list[links]':{
           '$group[internal]': $('body > errors > lists > list[item="links"] > group[item="internal"]')[0],
-          '$group[httpfailed]': $('body > errors > lists > list[item="links"] > group[item="httpfailed"]')[0],
-          '$group[http403]': $('body > errors > lists > list[item="links"] > group[item="http403"]')[0],
-          '$group[http404]': $('body > errors > lists > list[item="links"] > group[item="http404"]')[0],
-          '$group[http500]': $('body > errors > lists > list[item="links"] > group[item="http500"]')[0],
-          '$group[http503]': $('body > errors > lists > list[item="links"] > group[item="http503"]')[0],
-          '$group[http504]': $('body > errors > lists > list[item="links"] > group[item="http504"]')[0],
           '_group[internal]':{
             '$heading': $('body > errors > lists > list[item="links"] > group[item="internal"] > heading')[0],
             '_heading':{
@@ -194,6 +197,7 @@
             },
             '$ul': $('body > errors > lists > list[item="links"] > group[item="internal"] > ul')[0]
           },
+          '$group[httpfailed]': $('body > errors > lists > list[item="links"] > group[item="httpfailed"]')[0],
           '_group[httpfailed]':{
             '$heading': $('body > errors > lists > list[item="links"] > group[item="httpfailed"] > heading')[0],
             '_heading':{
@@ -202,14 +206,7 @@
             },
             '$ul': $('body > errors > lists > list[item="links"] > group[item="httpfailed"] > ul')[0]
           },
-          '_group[http403]':{
-            '$heading': $('body > errors > lists > list[item="links"] > group[item="http403"] > heading')[0],
-            '_heading':{
-              '$icon': $('body > errors > lists > list[item="links"] > group[item="http403"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="links"] > group[item="http403"] > heading > count')[0]
-            },
-            '$ul': $('body > errors > lists > list[item="links"] > group[item="http403"] > ul')[0]
-          },
+          '$group[http404]': $('body > errors > lists > list[item="links"] > group[item="http404"]')[0],
           '_group[http404]':{
             '$heading': $('body > errors > lists > list[item="links"] > group[item="http404"] > heading')[0],
             '_heading':{
@@ -218,68 +215,53 @@
             },
             '$ul': $('body > errors > lists > list[item="links"] > group[item="http404"] > ul')[0]
           },
-          '_group[http500]':{
-            '$heading': $('body > errors > lists > list[item="links"] > group[item="http500"] > heading')[0],
+          '$group[httpmisc]': $('body > errors > lists > list[item="links"] > group[item="httpmisc"]')[0],
+          '_group[httpmisc]':{
+            '$heading': $('body > errors > lists > list[item="links"] > group[item="httpmisc"] > heading')[0],
             '_heading':{
-              '$icon': $('body > errors > lists > list[item="links"] > group[item="http500"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="links"] > group[item="http500"] > heading > count')[0]
+              '$icon': $('body > errors > lists > list[item="links"] > group[item="httpmisc"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="links"] > group[item="httpmisc"] > heading > count')[0]
             },
-            '$ul': $('body > errors > lists > list[item="links"] > group[item="http500"] > ul')[0]
-          },
-          '_group[http503]':{
-            '$heading': $('body > errors > lists > list[item="links"] > group[item="http503"] > heading')[0],
-            '_heading':{
-              '$icon': $('body > errors > lists > list[item="links"] > group[item="http503"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="links"] > group[item="http503"] > heading > count')[0]
-            },
-            '$ul': $('body > errors > lists > list[item="links"] > group[item="http503"] > ul')[0]
-          },
-          '_group[http504]':{
-            '$heading': $('body > errors > lists > list[item="links"] > group[item="http504"] > heading')[0],
-            '_heading':{
-              '$icon': $('body > errors > lists > list[item="links"] > group[item="http504"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="links"] > group[item="http504"] > heading > count')[0]
-            },
-            '$ul': $('body > errors > lists > list[item="links"] > group[item="http504"] > ul')[0]
+            '$ul': $('body > errors > lists > list[item="links"] > group[item="httpmisc"] > ul')[0]
           },
         },
-        '$list[english]': $('body > errors > lists > list[item="english"]')[0],
-        '_list[english]':{
-          '$group[first-person]': $('body > errors > lists > list[item="english"] > group[item="first-person"]')[0],
+        '$list[asg]': $('body > errors > lists > list[item="asg"]')[0],
+        '_list[asg]':{
+          '$group[first-person]': $('body > errors > lists > list[item="asg"] > group[item="first-person"]')[0],
           '_group[first-person]':{
-            '$heading': $('body > errors > lists > list[item="english"] > group[item="first-person"] > heading')[0],
+            '$heading': $('body > errors > lists > list[item="asg"] > group[item="first-person"] > heading')[0],
             '_heading':{
-              '$icon': $('body > errors > lists > list[item="english"] > group[item="first-person"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="english"] > group[item="first-person"] > heading > count')[0]
+              '$icon': $('body > errors > lists > list[item="asg"] > group[item="first-person"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="asg"] > group[item="first-person"] > heading > count')[0]
             },
-            '$ul': $('body > errors > lists > list[item="english"] > group[item="first-person"] > ul')[0]
+            '$ul': $('body > errors > lists > list[item="asg"] > group[item="first-person"] > ul')[0]
           },
-          '$group[contractions]': $('body > errors > lists > list[item="english"] > group[item="contractions"]')[0],
+          '$group[contractions]': $('body > errors > lists > list[item="asg"] > group[item="contractions"]')[0],
           '_group[contractions]':{
-            '$heading': $('body > errors > lists > list[item="english"] > group[item="contractions"] > heading')[0],
+            '$heading': $('body > errors > lists > list[item="asg"] > group[item="contractions"] > heading')[0],
             '_heading':{
-              '$icon': $('body > errors > lists > list[item="english"] > group[item="contractions"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="english"] > group[item="contractions"] > heading > count')[0]
+              '$icon': $('body > errors > lists > list[item="asg"] > group[item="contractions"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="asg"] > group[item="contractions"] > heading > count')[0]
             },
-            '$ul': $('body > errors > lists > list[item="english"] > group[item="contractions"] > ul')[0]
+            '$ul': $('body > errors > lists > list[item="asg"] > group[item="contractions"] > ul')[0]
           },
-          '$group[game-modes]': $('body > errors > lists > list[item="english"] > group[item="game-modes"]')[0],
+          '$group[game-modes]': $('body > errors > lists > list[item="asg"] > group[item="game-modes"]')[0],
           '_group[game-modes]':{
-            '$heading': $('body > errors > lists > list[item="english"] > group[item="game-modes"] > heading')[0],
+            '$heading': $('body > errors > lists > list[item="asg"] > group[item="game-modes"] > heading')[0],
             '_heading':{
-              '$icon': $('body > errors > lists > list[item="english"] > group[item="game-modes"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="english"] > group[item="game-modes"] > heading > count')[0]
+              '$icon': $('body > errors > lists > list[item="asg"] > group[item="game-modes"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="asg"] > group[item="game-modes"] > heading > count')[0]
             },
-            '$ul': $('body > errors > lists > list[item="english"] > group[item="game-modes"] > ul')[0]
+            '$ul': $('body > errors > lists > list[item="asg"] > group[item="game-modes"] > ul')[0]
           },
-          '$group[mediawiki]': $('body > errors > lists > list[item="english"] > group[item="mediawiki"]')[0],
+          '$group[mediawiki]': $('body > errors > lists > list[item="asg"] > group[item="mediawiki"]')[0],
           '_group[mediawiki]':{
-            '$heading': $('body > errors > lists > list[item="english"] > group[item="mediawiki"] > heading')[0],
+            '$heading': $('body > errors > lists > list[item="asg"] > group[item="mediawiki"] > heading')[0],
             '_heading':{
-              '$icon': $('body > errors > lists > list[item="english"] > group[item="mediawiki"] > heading > icon')[0],
-              '$count': $('body > errors > lists > list[item="english"] > group[item="mediawiki"] > heading > count')[0]
+              '$icon': $('body > errors > lists > list[item="asg"] > group[item="mediawiki"] > heading > icon')[0],
+              '$count': $('body > errors > lists > list[item="asg"] > group[item="mediawiki"] > heading > count')[0]
             },
-            '$ul': $('body > errors > lists > list[item="english"] > group[item="mediawiki"] > ul')[0]
+            '$ul': $('body > errors > lists > list[item="asg"] > group[item="mediawiki"] > ul')[0]
           }
         }
       }
@@ -338,15 +320,20 @@
         }else if( /^https?\:/.test(href) )
         {
           let xhr = new XMLHttpRequest();
+          /* jshint ignore:start */
           xhr.addEventListener('load', function(){
             let status = this.status;
-            if( [403, 404, 500, 503, 504].includes(status) ){
-              _body._errors._lists["_list[links]"]["_group[http" + status + "]"].$ul.insertAdjacentHTML('beforeEnd', "<li>(<code>" + href + "</code>)</li>");
+            if( status === 404 ){
+              _body._errors._lists["_list[links]"]["_group[http" + status + "]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code></li>");
+            }else if( status !== 200 ){
+              _body._errors._lists["_list[links]"]["_group[httpmisc]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
             }
           });
           xhr.addEventListener('error', function(){
-            _body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Failed to load: <code>" + href + "</code></li>");
+            let status = this.status;
+            _body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Failed to load: <code>" + href + "</code> (" + status + ")</li>");
           });
+          /* jshint ignore:end */
           xhr.open('HEAD', href);
           xhr.send();
           continue;
@@ -416,7 +403,7 @@
         for( let j = 0; j < matches.length; j++ ){
           let tag = matches[j].replace(/^<\/?/, "").replace(/\/?>$/, "");
           if( htmlTags.includes(tag.toLowerCase()) ){
-            _body._errors._lists["_list[markdown]"]["_group[html]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Use of HTML tags (tag: <code>" + matches[j].replace(/^</, "&lt;").replace(/>$/, "&gt;") + "</code>; at line: " + line_number + ")</li>");
+            _body._errors._lists["_list[markdown]"]["_group[html]"].$ul.insertAdjacentHTML('beforeEnd', "<li>HTML tag: <code>" + matches[j].replace(/^</, "&lt;").replace(/>$/, "&gt;") + "</code> (line: " + line_number + ")</li>");
           }
         }
       }
@@ -424,7 +411,7 @@
         let matches = lines[i].match(/\bi\b/ig);
         if( matches ){
           for( let j = 0; j < matches.length; j++ ){
-            _body._errors._lists["_list[english]"]["_group[first-person]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Use of first person (<code>" + matches[j] + "</code>; at line: " + line_number + ")</li>");
+            _body._errors._lists["_list[asg]"]["_group[first-person]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
           }
         }
       }
@@ -432,7 +419,7 @@
         let matches = lines[i].match(/(\w)+(n't|'ve|'d|'ll|'m|'re)|it's/ig);
         if( matches ){
           for( let j = 0; j < matches.length; j++ ){
-            _body._errors._lists["_list[english]"]["_group[contractions]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Use of contractions (<code>" + matches[j] + "</code>; at line: " + line_number + ")</li>");
+            _body._errors._lists["_list[asg]"]["_group[contractions]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
           }
         }
       }
@@ -441,7 +428,7 @@
         let matches = lines[i].match(/\b(?<!osu!)(Standard|Taiko|Catch\sthe\sBeat|ctb|Mania)\b/ig);
         if( matches ){
           for( let j = 0; j < matches.length; j++ ){
-            _body._errors._lists["_list[english]"]["_group[game-modes]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Use of old game mode names (<code>" + matches[j] + "</code>; at line: " + line_number + ")</li>");
+            _body._errors._lists["_list[asg]"]["_group[game-modes]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
           }
         }
       }
@@ -450,7 +437,7 @@
         let matches = lines[i].match(/fig\:|\"wikilink\"/ig);
         if( matches ){
           for( let j = 0; j < matches.length; j++ ){
-            _body._errors._lists["_list[english]"]["_group[mediawiki]"].$ul.insertAdjacentHTML('beforeEnd', "<li>MediaWiki keywords found (<code>" + matches[j] + "</code>; at line: " + line_number + ")</li>");
+            _body._errors._lists["_list[asg]"]["_group[mediawiki]"].$ul.insertAdjacentHTML('beforeEnd', "<li>MediaWiki keyword: <code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
           }
         }
       }
@@ -609,9 +596,9 @@
         _body._errors._tabs["$tab[links]"].setAttribute('enabled', '');
         _body._errors._lists["$list[links]"].removeAttribute('sleep');
       },
-      'english':function(){
-        _body._errors._tabs["$tab[english]"].setAttribute('enabled', '');
-        _body._errors._lists["$list[english]"].removeAttribute('sleep');
+      'asg':function(){
+        _body._errors._tabs["$tab[asg]"].setAttribute('enabled', '');
+        _body._errors._lists["$list[asg]"].removeAttribute('sleep');
       }
     });
     _body._errors.$tabs.addEventListener('click', function(e){
@@ -620,11 +607,11 @@
           _body._errors._tabs["$tab[markdown]"].removeAttribute('enabled');
           _body._errors._tabs["$tab[images]"].removeAttribute('enabled');
           _body._errors._tabs["$tab[links]"].removeAttribute('enabled');
-          _body._errors._tabs["$tab[english]"].removeAttribute('enabled');
+          _body._errors._tabs["$tab[asg]"].removeAttribute('enabled');
           _body._errors._lists["$list[markdown]"].setAttribute('sleep', '');
           _body._errors._lists["$list[images]"].setAttribute('sleep', '');
           _body._errors._lists["$list[links]"].setAttribute('sleep', '');
-          _body._errors._lists["$list[english]"].setAttribute('sleep', '');
+          _body._errors._lists["$list[asg]"].setAttribute('sleep', '');
           tabs[e.target.getAttribute('item')]();
         }
       }
@@ -664,17 +651,6 @@
           _body._errors._lists["_list[markdown]"]["$group[html]"].setAttribute('collapsed', '');
         }
       },
-      'wide':function(e){
-        if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[images]"]["$group[wide]"].removeAttribute('collapsed', '');
-        }else{
-          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[images]"]["$group[wide]"].setAttribute('collapsed', '');
-        }
-      },
       'png':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
           _body._errors._lists["_list[images]"]["_group[png]"]._heading.$icon.removeAttribute('menu-down', '');
@@ -684,6 +660,28 @@
           _body._errors._lists["_list[images]"]["_group[png]"]._heading.$icon.setAttribute('menu-down', '');
           _body._errors._lists["_list[images]"]["_group[png]"]._heading.$icon.removeAttribute('menu-up', '');
           _body._errors._lists["_list[images]"]["$group[png]"].setAttribute('collapsed', '');
+        }
+      },
+      'errored':function(e){
+        if( e.target.parentElement.hasAttribute('collapsed') ){
+          _body._errors._lists["_list[images]"]["_group[errored]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[images]"]["_group[errored]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[images]"]["$group[errored]"].removeAttribute('collapsed', '');
+        }else{
+          _body._errors._lists["_list[images]"]["_group[errored]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[images]"]["_group[errored]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[images]"]["$group[errored]"].setAttribute('collapsed', '');
+        }
+      },
+      'wide':function(e){
+        if( e.target.parentElement.hasAttribute('collapsed') ){
+          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[images]"]["$group[wide]"].removeAttribute('collapsed', '');
+        }else{
+          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[images]"]["_group[wide]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[images]"]["$group[wide]"].setAttribute('collapsed', '');
         }
       },
       'internal':function(e){
@@ -708,17 +706,6 @@
           _body._errors._lists["_list[links]"]["$group[httpfailed]"].setAttribute('collapsed', '');
         }
       },
-      'http403':function(e){
-        if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[links]"]["_group[http403]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http403]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http403]"].removeAttribute('collapsed', '');
-        }else{
-          _body._errors._lists["_list[links]"]["_group[http403]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http403]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http403]"].setAttribute('collapsed', '');
-        }
-      },
       'http404':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
           _body._errors._lists["_list[links]"]["_group[http404]"]._heading.$icon.removeAttribute('menu-down', '');
@@ -730,81 +717,59 @@
           _body._errors._lists["_list[links]"]["$group[http404]"].setAttribute('collapsed', '');
         }
       },
-      'http500':function(e){
+      'httpmisc':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[links]"]["_group[http500]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http500]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http500]"].removeAttribute('collapsed', '');
+          _body._errors._lists["_list[links]"]["_group[httpmisc]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[links]"]["_group[httpmisc]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[links]"]["$group[httpmisc]"].removeAttribute('collapsed', '');
         }else{
-          _body._errors._lists["_list[links]"]["_group[http500]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http500]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http500]"].setAttribute('collapsed', '');
-        }
-      },
-      'http503':function(e){
-        if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[links]"]["_group[http503]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http503]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http503]"].removeAttribute('collapsed', '');
-        }else{
-          _body._errors._lists["_list[links]"]["_group[http503]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http503]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http503]"].setAttribute('collapsed', '');
-        }
-      },
-      'http504':function(e){
-        if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[links]"]["_group[http504]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http504]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http504]"].removeAttribute('collapsed', '');
-        }else{
-          _body._errors._lists["_list[links]"]["_group[http504]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[links]"]["_group[http504]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[links]"]["$group[http504]"].setAttribute('collapsed', '');
+          _body._errors._lists["_list[links]"]["_group[httpmisc]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[links]"]["_group[httpmisc]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[links]"]["$group[httpmisc]"].setAttribute('collapsed', '');
         }
       },
       'first-person':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[english]"]["_group[first-person]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[first-person]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[first-person]"].removeAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[first-person]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[first-person]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[first-person]"].removeAttribute('collapsed', '');
         }else{
-          _body._errors._lists["_list[english]"]["_group[first-person]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[first-person]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[first-person]"].setAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[first-person]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[first-person]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[first-person]"].setAttribute('collapsed', '');
         }
       },
       'contractions':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[english]"]["_group[contractions]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[contractions]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[contractions]"].removeAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[contractions]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[contractions]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[contractions]"].removeAttribute('collapsed', '');
         }else{
-          _body._errors._lists["_list[english]"]["_group[contractions]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[contractions]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[contractions]"].setAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[contractions]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[contractions]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[contractions]"].setAttribute('collapsed', '');
         }
       },
       'game-modes':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[english]"]["_group[game-modes]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[game-modes]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[game-modes]"].removeAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[game-modes]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[game-modes]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[game-modes]"].removeAttribute('collapsed', '');
         }else{
-          _body._errors._lists["_list[english]"]["_group[game-modes]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[game-modes]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[game-modes]"].setAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[game-modes]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[game-modes]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[game-modes]"].setAttribute('collapsed', '');
         }
       },
       'mediawiki':function(e){
         if( e.target.parentElement.hasAttribute('collapsed') ){
-          _body._errors._lists["_list[english]"]["_group[mediawiki]"]._heading.$icon.removeAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[mediawiki]"]._heading.$icon.setAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[mediawiki]"].removeAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[mediawiki]"]._heading.$icon.removeAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[mediawiki]"]._heading.$icon.setAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[mediawiki]"].removeAttribute('collapsed', '');
         }else{
-          _body._errors._lists["_list[english]"]["_group[mediawiki]"]._heading.$icon.setAttribute('menu-down', '');
-          _body._errors._lists["_list[english]"]["_group[mediawiki]"]._heading.$icon.removeAttribute('menu-up', '');
-          _body._errors._lists["_list[english]"]["$group[mediawiki]"].setAttribute('collapsed', '');
+          _body._errors._lists["_list[asg]"]["_group[mediawiki]"]._heading.$icon.setAttribute('menu-down', '');
+          _body._errors._lists["_list[asg]"]["_group[mediawiki]"]._heading.$icon.removeAttribute('menu-up', '');
+          _body._errors._lists["_list[asg]"]["$group[mediawiki]"].setAttribute('collapsed', '');
         }
       }
     });
@@ -845,15 +810,16 @@
     'headings': 0,
     'tables': 0,
     'html': 0,
-    'wide': 0,
+
+    'error': 0,
     'png': 0,
+    'wide': 0,
+
     'internal': 0,
     'httpfailed': 0,
-    'http403': 0,
     'http404': 0,
-    'http500': 0,
-    'http503': 0,
-    'http504': 0,
+    'httpmisc': 0,
+
     'first-person': 0,
     'contractions': 0,
     'game-modes': 0,
@@ -868,14 +834,13 @@
       if( tabName === 'markdown' ){
         _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts.headings + errorCounts.tables + errorCounts.html;
       }else if( tabName === 'images' ){
-        _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts.wide + errorCounts.png;
+        _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts.error + errorCounts.png + errorCounts.wide;
       }else if( tabName === 'links' ){
-        _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts.internal + errorCounts.httpfailed + errorCounts.http403 + errorCounts.http404 + errorCounts.http500 + errorCounts.http503 + errorCounts.http504;
-      }else if( tabName === 'english' ){
+        _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts.internal + errorCounts.httpfailed + errorCounts.http404 + errorCounts.httpmisc;
+      }else if( tabName === 'asg' ){
         _body._errors._tabs["_tab[" + tabName + "]"].$count.textContent = errorCounts['first-person'] + errorCounts.contractions + errorCounts['game-modes'] + errorCounts.mediawiki;
       }
       f.target.parentElement.getElementsByTagName('count')[0].textContent = errorCounts[headingName];
-
     });
   });
 
@@ -886,15 +851,12 @@
   observer.observe(_body._errors._lists["_list[images]"]["_group[png]"].$ul, { 'childList': true });
   observer.observe(_body._errors._lists["_list[links]"]["_group[internal]"].$ul, { 'childList': true });
   observer.observe(_body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[links]"]["_group[http403]"].$ul, { 'childList': true });
   observer.observe(_body._errors._lists["_list[links]"]["_group[http404]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[links]"]["_group[http500]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[links]"]["_group[http503]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[links]"]["_group[http504]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[english]"]["_group[first-person]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[english]"]["_group[contractions]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[english]"]["_group[game-modes]"].$ul, { 'childList': true });
-  observer.observe(_body._errors._lists["_list[english]"]["_group[mediawiki]"].$ul, { 'childList': true });
+  observer.observe(_body._errors._lists["_list[links]"]["_group[httpmisc]"].$ul, { 'childList': true });
+  observer.observe(_body._errors._lists["_list[asg]"]["_group[first-person]"].$ul, { 'childList': true });
+  observer.observe(_body._errors._lists["_list[asg]"]["_group[contractions]"].$ul, { 'childList': true });
+  observer.observe(_body._errors._lists["_list[asg]"]["_group[game-modes]"].$ul, { 'childList': true });
+  observer.observe(_body._errors._lists["_list[asg]"]["_group[mediawiki]"].$ul, { 'childList': true });
 
   /* -- functions -- */
   function error(message){

@@ -28,7 +28,7 @@
         <icon open-in-new title="Edit"></icon>
         <icon alert-outline title="Errors"></icon>
       </container>
-      <input type="file" accept=".md"/>
+      <input type="file" accept=".md" tabindex="-1"/>
       <canvas></canvas>
     </menu>
     <osu-wiki>
@@ -57,9 +57,9 @@
           <text>Links</text>
           <count>0</count>
         </tab>
-        <tab item="english">
+        <tab item="asg">
           <icon spellcheck></icon>
-          <text>English</text>
+          <text>ASG</text>
           <count>0</count>
         </tab>
       </tabs>
@@ -91,18 +91,26 @@
           </group>
         </list>
         <list item="images" sleep>
-          <group item="wide">
+          <group item="png">
             <heading>
               <icon menu-up></icon>
-              <text>Wide</text>
+              <text>PNG with no transparency</text>
               <count>0</count>
             </heading>
             <ul></ul>
           </group>
-          <group item="png">
+          <group item="errored">
             <heading>
               <icon menu-up></icon>
-              <text>PNG</text>
+              <text>Errored</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="wide">
+            <heading>
+              <icon menu-up></icon>
+              <text>Wider than 680px</text>
               <count>0</count>
             </heading>
             <ul></ul>
@@ -112,7 +120,7 @@
           <group item="internal">
             <heading>
               <icon menu-up></icon>
-              <text>Internal</text>
+              <text>Internal linking errors</text>
               <count>0</count>
             </heading>
             <ul></ul>
@@ -125,14 +133,6 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="http403">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 403</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
           <group item="http404">
             <heading>
               <icon menu-up></icon>
@@ -141,32 +141,16 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="http500">
+          <group item="httpmisc">
             <heading>
               <icon menu-up></icon>
-              <text>HTTP 500</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
-          <group item="http503">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 503</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
-          <group item="http504">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 504</text>
+              <text>HTTP Miscellaneous</text>
               <count>0</count>
             </heading>
             <ul></ul>
           </group>
         </list>
-        <list item="english" sleep>
+        <list item="asg" sleep>
           <group item="first-person">
             <heading>
               <icon menu-up></icon>
@@ -186,7 +170,7 @@
           <group item="game-modes">
             <heading>
               <icon menu-up></icon>
-              <text>Game Modes</text>
+              <text>Old Game Mode Names</text>
               <count>0</count>
             </heading>
             <ul></ul>
