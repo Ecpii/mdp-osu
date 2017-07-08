@@ -1,4 +1,4 @@
-/* globals document, window, Image, FileReader, MutationObserver, XMLHttpRequest */
+/* globals document, window, console, Image, FileReader, MutationObserver, XMLHttpRequest */
 /* globals nodeRequire */
 (function(){
   'use strict';
@@ -18,18 +18,34 @@
       'enumerable': false
     });
 
+    let map ={};
     document.addEventListener('keydown', function(e){
-      if( e.key === "Tab" ){
+      let {key} = e;
+      map[key] = true;
+      if( map.Control && map.r )
+      {
+        _body._menu["_container[left]"]["$icon[reload]"].click();
+      }
+      else if( key === "Tab" )
+      {
         e.preventDefault();
         return false;
       }
-      if( e.key === "F5" ){
+      else if( key === "F5" )
+      {
         nodeRequire('electron').remote.getCurrentWindow().reload();
         return false;
       }
-      if( e.key === "F12" ){
+      else if( key === "F12" )
+      {
         nodeRequire('electron').remote.getCurrentWindow().toggleDevTools();
         return false;
+      }
+    });
+    document.addEventListener('keyup', function(e){
+      let {key} = e;
+      if( map[key] ){
+        delete map[key];
       }
     });
   })();
@@ -287,12 +303,13 @@
           '_dropdown':{
             '$selected': $('body > settings > group[item="theme"] > bodying > dropdown > selected')[0],
             '_selected':{
-              '$text': $('body > settings > group[item="theme"] > bodying > dropdown > selected > text')[0]
+              '$text': $('body > settings > group[item="theme"] > bodying > dropdown > selected > text')[0],
+              '$icon': $('body > settings > group[item="theme"] > bodying > dropdown > selected > icon')[0]
             },
             '$options': $('body > settings > group[item="theme"] > bodying > dropdown > options')[0],
           },
         },
-      },
+      }
     },
     '$snackbar': $('body > snackbar')[0],
     '_snackbar':{
@@ -330,11 +347,12 @@
   /* -- path -- */
   const path = Object.seal({
     'fragments': [],
-    'display': null,// ~\osu-wiki\wiki\...\en.md
-    'locale': null,// en.md
-    'root': null,// C:\\...\osu-wiki\
-    'folder': null,// C:\\...\osu-wiki\wiki\...\
-    'file': null// C:\\...\osu-wiki\wiki\...\en.md
+    'display': null,
+    'directory': null,
+    'locale': null,
+    'root': null,
+    'folder': null,
+    'file': null
   });
 
   /* -- fix -- */
@@ -590,7 +608,6 @@
     fix.a();
     inspect(lines);
     imageTransCheck();
-    _body._menu["_container[right]"]["$icon[chevron-double-up]"].click();
   });
 
   /* -- event listeners -- */
@@ -602,7 +619,7 @@
         {
           let files = _body._menu.$input.files;
           if( files.length > 0 ){
-            parseFile(files);
+            parseFile(files, true);
           }
         }
         else if( e.target.hasAttribute('autorenew') )
@@ -962,8 +979,7 @@
 
     _body.$snackbar.removeAttribute('sleep');
   }
-
-  function parseFile(files){
+  function parseFile(files, reload = false){
     if( !_body.$snackbar.hasAttribute('sleep') ){
       _body.$snackbar.setAttribute('sleep', '');
     }
@@ -995,8 +1011,9 @@
     path.root = path.file.substring(0, path.file.lastIndexOf("/wiki/"));
 
     try{
-      redirect = yaml.safeLoad(fs.readFileSync(path.root + '/wiki/redirect.yaml', 'utf8'));
+      redirect = yaml.safeLoad(fs.readFileSync(path.root + 'wiki/redirect.yaml', 'utf8'));
     }catch(e){
+      console.error(e);
       error("An error occured while reading the <code>redirect.yaml</code> file.");
     }
 
@@ -1018,6 +1035,9 @@
       _body._menu._path.$text.classList.remove('scroll');
     }
 
+    if( !reload ){
+      _body._menu["_container[right]"]["$icon[chevron-double-up]"].click();
+    }
     FR.readAsText(file);
   }
 })();
