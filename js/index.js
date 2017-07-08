@@ -430,12 +430,12 @@
         else if( /^(?:\.?\.\/|[a-zA-Z0-9_])/.test(href) )
         {
           //console.log('fold', href);
-          new_href = path.folder + href + "/" + path.locale;
+          new_href = path.folder + href + "/" + path.file;
         }
         else if( /^(?:\/)/.test(href) )
         {
           //console.log('root', href);
-          new_href = path.root + href + "/" + path.locale;
+          new_href = path.root + href + "/" + path.file;
         }
         if( !fs.existsSync(new_href) ){
           let key_original = href;
@@ -642,8 +642,8 @@
       }
     });
     _body._menu.$path.addEventListener('click', function(){
-      if( path.file ){
-        shell.showItemInFolder(path.file);
+      if( path.directory ){
+        shell.showItemInFolder(path.directory);
       }
     });
     _body._menu["$container[right]"].addEventListener('click', function(e){
@@ -654,8 +654,8 @@
         }
         else if( e.target.hasAttribute('open-in-new') )
         {
-          if( path.file ){
-            shell.openItem(path.file);
+          if( path.directory ){
+            shell.openItem(path.directory);
           }
         }
         else if( e.target.hasAttribute('alert-outline') )
@@ -1021,12 +1021,17 @@
     _body["_osu-wiki"]._heading["_article-title"].$h1.textContent = "";
     _body["_osu-wiki"]._heading["_article-title"].$h2.textContent = "";
 
-    path.fragments = file.path.split("\\");//TODO use path.fragments and get rid of the other keys
-    path.file = file.path.split("\\").join("/");
-    path.display = "~" + path.file.substring(path.file.indexOf("/osu-wiki/"), path.file.length);
-    path.folder = path.file.substring(0, Number(path.file.lastIndexOf("/")) + 1);
-    path.locale = path.file.substring(Number(path.file.lastIndexOf("/")) + 1, path.file.length);
-    path.root = path.file.substring(0, path.file.lastIndexOf("/wiki/"));
+    path.fragments = file.path.split("\\");
+    path.directory = path.fragments.join("/");
+    if( path.fragments[path.fragments.indexOf("wiki") - 1] ){
+      path.display = "~/" + path.fragments.slice(path.fragments.indexOf(path.fragments[path.fragments.indexOf("wiki") - 1]), path.fragments.length).join('/');
+    }else{
+      path.display = path.fragments.join("/");
+    }
+    path.folder = path.fragments.slice(0, path.fragments.length - 1).join('/') + "/";
+    path.file = path.fragments[path.fragments.length - 1].split(".").shift();
+    path.locale = path.fragments[path.fragments.length - 1];
+    path.root = path.fragments.slice(0, path.fragments.indexOf(path.fragments[path.fragments.indexOf("wiki")])).join('/') + "/";
 
     try{
       redirect = yaml.safeLoad(fs.readFileSync(path.root + 'wiki/redirect.yaml', 'utf8'));
