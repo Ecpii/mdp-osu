@@ -1,6 +1,8 @@
 @import 'card';
 @import 'font';
 @import 'colours';
+@import 'easings';
+@import 'keyframes';
 
 body{
   ::-webkit-scrollbar{
@@ -25,5 +27,6 @@ body{
   @import 'menu';
   @import 'osu-wiki';
   @import 'errors';
+  @import 'settings';
   @import 'snackbar';
 }

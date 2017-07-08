@@ -17,6 +17,7 @@
       <container left>
         <icon reload title="Reload"></icon>
         <icon autorenew title="Auto-reload"></icon>
+        <!--<icon image-broken title="Purge images"></icon>-->
         <icon upload title="Upload"></icon>
       </container>
       <path title="Open file location">
@@ -27,8 +28,9 @@
         <icon chevron-double-up title="Go to top"></icon>
         <icon open-in-new title="Edit"></icon>
         <icon alert-outline title="Errors"></icon>
+        <icon settings title="mdp-osu settings"></icon>
       </container>
-      <input type="file" accept=".md"/>
+      <input type="file" accept=".md" tabindex="-1"/>
       <canvas></canvas>
     </menu>
     <osu-wiki>
@@ -57,9 +59,9 @@
           <text>Links</text>
           <count>0</count>
         </tab>
-        <tab item="english">
+        <tab item="asg">
           <icon spellcheck></icon>
-          <text>English</text>
+          <text>ASG</text>
           <count>0</count>
         </tab>
       </tabs>
@@ -73,7 +75,7 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="tables">
+          <group item="tables" style="display: none;">
             <heading>
               <icon menu-up></icon>
               <text>Tables</text>
@@ -91,18 +93,26 @@
           </group>
         </list>
         <list item="images" sleep>
-          <group item="wide">
+          <group item="png">
             <heading>
               <icon menu-up></icon>
-              <text>Wide</text>
+              <text>PNG with no transparency</text>
               <count>0</count>
             </heading>
             <ul></ul>
           </group>
-          <group item="png">
+          <group item="errored">
             <heading>
               <icon menu-up></icon>
-              <text>PNG</text>
+              <text>Errored</text>
+              <count>0</count>
+            </heading>
+            <ul></ul>
+          </group>
+          <group item="wide">
+            <heading>
+              <icon menu-up></icon>
+              <text>Wider than 680px</text>
               <count>0</count>
             </heading>
             <ul></ul>
@@ -112,7 +122,7 @@
           <group item="internal">
             <heading>
               <icon menu-up></icon>
-              <text>Internal</text>
+              <text>Internal linking errors</text>
               <count>0</count>
             </heading>
             <ul></ul>
@@ -125,14 +135,6 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="http403">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 403</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
           <group item="http404">
             <heading>
               <icon menu-up></icon>
@@ -141,32 +143,16 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="http500">
+          <group item="httpmisc">
             <heading>
               <icon menu-up></icon>
-              <text>HTTP 500</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
-          <group item="http503">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 503</text>
-              <count>0</count>
-            </heading>
-            <ul></ul>
-          </group>
-          <group item="http504">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 504</text>
+              <text>HTTP Miscellaneous</text>
               <count>0</count>
             </heading>
             <ul></ul>
           </group>
         </list>
-        <list item="english" sleep>
+        <list item="asg" sleep>
           <group item="first-person">
             <heading>
               <icon menu-up></icon>
@@ -186,7 +172,7 @@
           <group item="game-modes">
             <heading>
               <icon menu-up></icon>
-              <text>Game Modes</text>
+              <text>Old Game Mode Names</text>
               <count>0</count>
             </heading>
             <ul></ul>
@@ -202,6 +188,43 @@
         </list>
       </lists>
     </errors>
+    <settings sleep>
+      <group item="theme">
+        <heading>
+          <icon brush></icon>
+          <text>Theme</text>
+        </heading>
+        <bodying>
+          <text>Current Colour:</text>
+          <dropdown sleep>
+            <selected>
+              <text>Red</text>
+              <icon menu-down></icon>
+            </selected>
+            <options>
+              <item value="red" selected>Red</item>
+              <item value="pink">Pink</item>
+              <item value="purple">Purple</item>
+              <item value="deepPurple">Deep Purple</item>
+              <item value="indigo">Indigo</item>
+              <item value="blue">Blue</item>
+              <item value="lightBlue">Light Blue</item>
+              <item value="cyan">Cyan</item>
+              <item value="teal">Teal</item>
+              <item value="green">Green</item>
+              <item value="lightGreen">Light Green</item>
+              <item value="lime">Lime</item>
+              <item value="yellow">Yellow</item>
+              <item value="amber">Amber</item>
+              <item value="orange">Orange</item>
+              <item value="deepOrange">Deep Orange</item>
+              <item value="brown">Brown</item>
+              <item value="blueGrey">Blue Grey</item>
+            </options>
+          </dropdown>
+        </bodying>
+      </group>
+    </settings>
     <snackbar sleep>
       <text></text>
       <icon close></icon>

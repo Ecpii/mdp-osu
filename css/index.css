@@ -18,8 +18,15 @@
   src: url("../font/MaterialDesign-Webfont/materialdesignicons-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
+@keyframes scroll {
+  10%, 90% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(-100%); }
+  50.001% {
+    transform: translateX(100%); } }
 body {
-  background: #555555;
+  background: #111;
   display: flex;
   font-family: "Ubuntu", sans-serif;
   justify-content: center;
@@ -36,7 +43,7 @@ body {
       background: #4a4a4a; }
   body > menu {
     align-items: center;
-    background: #999;
+    background: #333;
     color: #fff;
     display: flex;
     font-size: 24px;
@@ -51,27 +58,232 @@ body {
     white-space: nowrap;
     width: 100%;
     z-index: 1; }
+    body > menu[theme="red"] > container > icon {
+      color: #fff; }
+      body > menu[theme="red"] > container > icon:hover {
+        color: #ff7961; }
+      body > menu[theme="red"] > container > icon:active {
+        color: #ba000d; }
+      body > menu[theme="red"] > container > icon[enabled] {
+        color: #f44336; }
+        body > menu[theme="red"] > container > icon[enabled]:hover {
+          color: #ba000d; }
+        body > menu[theme="red"] > container > icon[enabled]:active {
+          color: #ff7961; }
+    body > menu[theme="pink"] > container > icon {
+      color: #fff; }
+      body > menu[theme="pink"] > container > icon:hover {
+        color: #ff6090; }
+      body > menu[theme="pink"] > container > icon:active {
+        color: #b0003a; }
+      body > menu[theme="pink"] > container > icon[enabled] {
+        color: #e91e63; }
+        body > menu[theme="pink"] > container > icon[enabled]:hover {
+          color: #b0003a; }
+        body > menu[theme="pink"] > container > icon[enabled]:active {
+          color: #ff6090; }
+    body > menu[theme="purple"] > container > icon {
+      color: #fff; }
+      body > menu[theme="purple"] > container > icon:hover {
+        color: #d05ce3; }
+      body > menu[theme="purple"] > container > icon:active {
+        color: #6a0080; }
+      body > menu[theme="purple"] > container > icon[enabled] {
+        color: #9c27b0; }
+        body > menu[theme="purple"] > container > icon[enabled]:hover {
+          color: #6a0080; }
+        body > menu[theme="purple"] > container > icon[enabled]:active {
+          color: #d05ce3; }
+    body > menu[theme="deepPurple"] > container > icon {
+      color: #fff; }
+      body > menu[theme="deepPurple"] > container > icon:hover {
+        color: #9a67ea; }
+      body > menu[theme="deepPurple"] > container > icon:active {
+        color: #320b86; }
+      body > menu[theme="deepPurple"] > container > icon[enabled] {
+        color: #673ab7; }
+        body > menu[theme="deepPurple"] > container > icon[enabled]:hover {
+          color: #320b86; }
+        body > menu[theme="deepPurple"] > container > icon[enabled]:active {
+          color: #9a67ea; }
+    body > menu[theme="indigo"] > container > icon {
+      color: #fff; }
+      body > menu[theme="indigo"] > container > icon:hover {
+        color: #757de8; }
+      body > menu[theme="indigo"] > container > icon:active {
+        color: #002984; }
+      body > menu[theme="indigo"] > container > icon[enabled] {
+        color: #3f51b5; }
+        body > menu[theme="indigo"] > container > icon[enabled]:hover {
+          color: #002984; }
+        body > menu[theme="indigo"] > container > icon[enabled]:active {
+          color: #757de8; }
+    body > menu[theme="blue"] > container > icon {
+      color: #fff; }
+      body > menu[theme="blue"] > container > icon:hover {
+        color: #6ec6ff; }
+      body > menu[theme="blue"] > container > icon:active {
+        color: #0069c0; }
+      body > menu[theme="blue"] > container > icon[enabled] {
+        color: #2196f3; }
+        body > menu[theme="blue"] > container > icon[enabled]:hover {
+          color: #0069c0; }
+        body > menu[theme="blue"] > container > icon[enabled]:active {
+          color: #6ec6ff; }
+    body > menu[theme="lightBlue"] > container > icon {
+      color: #fff; }
+      body > menu[theme="lightBlue"] > container > icon:hover {
+        color: #67daff; }
+      body > menu[theme="lightBlue"] > container > icon:active {
+        color: #007ac1; }
+      body > menu[theme="lightBlue"] > container > icon[enabled] {
+        color: #03a9f4; }
+        body > menu[theme="lightBlue"] > container > icon[enabled]:hover {
+          color: #007ac1; }
+        body > menu[theme="lightBlue"] > container > icon[enabled]:active {
+          color: #67daff; }
+    body > menu[theme="cyan"] > container > icon {
+      color: #fff; }
+      body > menu[theme="cyan"] > container > icon:hover {
+        color: #62efff; }
+      body > menu[theme="cyan"] > container > icon:active {
+        color: #008ba3; }
+      body > menu[theme="cyan"] > container > icon[enabled] {
+        color: #00bcd4; }
+        body > menu[theme="cyan"] > container > icon[enabled]:hover {
+          color: #008ba3; }
+        body > menu[theme="cyan"] > container > icon[enabled]:active {
+          color: #62efff; }
+    body > menu[theme="teal"] > container > icon {
+      color: #fff; }
+      body > menu[theme="teal"] > container > icon:hover {
+        color: #52c7b8; }
+      body > menu[theme="teal"] > container > icon:active {
+        color: #00675b; }
+      body > menu[theme="teal"] > container > icon[enabled] {
+        color: #009688; }
+        body > menu[theme="teal"] > container > icon[enabled]:hover {
+          color: #00675b; }
+        body > menu[theme="teal"] > container > icon[enabled]:active {
+          color: #52c7b8; }
+    body > menu[theme="green"] > container > icon {
+      color: #fff; }
+      body > menu[theme="green"] > container > icon:hover {
+        color: #80e27e; }
+      body > menu[theme="green"] > container > icon:active {
+        color: #087f23; }
+      body > menu[theme="green"] > container > icon[enabled] {
+        color: #4caf50; }
+        body > menu[theme="green"] > container > icon[enabled]:hover {
+          color: #087f23; }
+        body > menu[theme="green"] > container > icon[enabled]:active {
+          color: #80e27e; }
+    body > menu[theme="lightGreen"] > container > icon {
+      color: #fff; }
+      body > menu[theme="lightGreen"] > container > icon:hover {
+        color: #bef67a; }
+      body > menu[theme="lightGreen"] > container > icon:active {
+        color: #5a9216; }
+      body > menu[theme="lightGreen"] > container > icon[enabled] {
+        color: #8bc34a; }
+        body > menu[theme="lightGreen"] > container > icon[enabled]:hover {
+          color: #5a9216; }
+        body > menu[theme="lightGreen"] > container > icon[enabled]:active {
+          color: #bef67a; }
+    body > menu[theme="lime"] > container > icon {
+      color: #fff; }
+      body > menu[theme="lime"] > container > icon:hover {
+        color: #ffff6e; }
+      body > menu[theme="lime"] > container > icon:active {
+        color: #99aa00; }
+      body > menu[theme="lime"] > container > icon[enabled] {
+        color: #cddc39; }
+        body > menu[theme="lime"] > container > icon[enabled]:hover {
+          color: #99aa00; }
+        body > menu[theme="lime"] > container > icon[enabled]:active {
+          color: #ffff6e; }
+    body > menu[theme="yellow"] > container > icon {
+      color: #fff; }
+      body > menu[theme="yellow"] > container > icon:hover {
+        color: #ffff72; }
+      body > menu[theme="yellow"] > container > icon:active {
+        color: #c8b900; }
+      body > menu[theme="yellow"] > container > icon[enabled] {
+        color: #ffeb3b; }
+        body > menu[theme="yellow"] > container > icon[enabled]:hover {
+          color: #c8b900; }
+        body > menu[theme="yellow"] > container > icon[enabled]:active {
+          color: #ffff72; }
+    body > menu[theme="amber"] > container > icon {
+      color: #fff; }
+      body > menu[theme="amber"] > container > icon:hover {
+        color: #fff350; }
+      body > menu[theme="amber"] > container > icon:active {
+        color: #c79100; }
+      body > menu[theme="amber"] > container > icon[enabled] {
+        color: #ffc107; }
+        body > menu[theme="amber"] > container > icon[enabled]:hover {
+          color: #c79100; }
+        body > menu[theme="amber"] > container > icon[enabled]:active {
+          color: #fff350; }
+    body > menu[theme="orange"] > container > icon {
+      color: #fff; }
+      body > menu[theme="orange"] > container > icon:hover {
+        color: #ffc947; }
+      body > menu[theme="orange"] > container > icon:active {
+        color: #c66900; }
+      body > menu[theme="orange"] > container > icon[enabled] {
+        color: #ff9800; }
+        body > menu[theme="orange"] > container > icon[enabled]:hover {
+          color: #c66900; }
+        body > menu[theme="orange"] > container > icon[enabled]:active {
+          color: #ffc947; }
+    body > menu[theme="deepOrange"] > container > icon {
+      color: #fff; }
+      body > menu[theme="deepOrange"] > container > icon:hover {
+        color: #ff8a50; }
+      body > menu[theme="deepOrange"] > container > icon:active {
+        color: #c41c00; }
+      body > menu[theme="deepOrange"] > container > icon[enabled] {
+        color: #ff5722; }
+        body > menu[theme="deepOrange"] > container > icon[enabled]:hover {
+          color: #c41c00; }
+        body > menu[theme="deepOrange"] > container > icon[enabled]:active {
+          color: #ff8a50; }
+    body > menu[theme="brown"] > container > icon {
+      color: #fff; }
+      body > menu[theme="brown"] > container > icon:hover {
+        color: #a98274; }
+      body > menu[theme="brown"] > container > icon:active {
+        color: #4b2c20; }
+      body > menu[theme="brown"] > container > icon[enabled] {
+        color: #795548; }
+        body > menu[theme="brown"] > container > icon[enabled]:hover {
+          color: #4b2c20; }
+        body > menu[theme="brown"] > container > icon[enabled]:active {
+          color: #a98274; }
+    body > menu[theme="blueGrey"] > container > icon {
+      color: #fff; }
+      body > menu[theme="blueGrey"] > container > icon:hover {
+        color: #8eacbb; }
+      body > menu[theme="blueGrey"] > container > icon:active {
+        color: #34515e; }
+      body > menu[theme="blueGrey"] > container > icon[enabled] {
+        color: #607d8b; }
+        body > menu[theme="blueGrey"] > container > icon[enabled]:hover {
+          color: #34515e; }
+        body > menu[theme="blueGrey"] > container > icon[enabled]:active {
+          color: #8eacbb; }
     body > menu > container {
       display: inline-flex; }
       body > menu > container > icon {
-        color: #fff;
         cursor: pointer;
         margin: 0 4px;
         user-select: none;
         transition: color 50ms; }
-        body > menu > container > icon:hover {
-          color: #007fff; }
-        body > menu > container > icon:active {
-          color: #0072e6; }
-        body > menu > container > icon[enabled] {
-          color: #0066cc; }
-          body > menu > container > icon[enabled]:hover {
-            color: #0059b3; }
-          body > menu > container > icon[enabled]:active {
-            color: #007fff; }
     body > menu > path {
       align-items: center;
-      background: #aaa;
+      background: #444;
       cursor: pointer;
       display: inline-flex;
       font-size: 20px;
@@ -79,11 +291,21 @@ body {
       height: 16px;
       overflow: hidden;
       padding: 4px 0; }
+      body > menu > path:hover {
+        animation-play-state: paused; }
+      body > menu > path > icon {
+        background: #444;
+        position: relative;
+        z-index: 1; }
       body > menu > path > text {
         font-size: 18px;
         overflow: hidden;
         padding-left: 4px;
         text-overflow: ellipsis; }
+        body > menu > path > text.scroll {
+          animation: scroll 15s linear infinite;
+          overflow: initial;
+          animation-play-state: inherit; }
     body > menu > input {
       display: none;
       position: absolute;
@@ -103,6 +325,7 @@ body {
       color: #fff;
       background-color: #f6a; }
     body > osu-wiki > heading {
+      background-color: #222;
       background-image: url("https://osu.ppy.sh/images/headers/wiki.jpg");
       display: block;
       height: 125px;
@@ -254,6 +477,14 @@ body {
         body > osu-wiki > markdown table tbody tr td {
           border-top: 1px solid rgba(255, 204, 34, 0.5);
           padding: 5px; }
+      body > osu-wiki > markdown blockquote {
+        padding: 10px 20px;
+        margin: 0 0 20px;
+        font-size: 20px;
+        border-left: 5px solid #eee;
+        font-size: inherit; }
+        body > osu-wiki > markdown blockquote p:last-child, body > osu-wiki > markdown blockquote ul:last-child, body > osu-wiki > markdown blockquote ol:last-child {
+          margin-bottom: 0; }
       body > osu-wiki > markdown img {
         vertical-align: middle;
         max-width: 100%;
@@ -276,6 +507,7 @@ body {
     display: flex;
     flex-direction: column;
     height: calc(100% - 32px);
+    opacity: 1;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 4px;
@@ -283,11 +515,86 @@ body {
     right: 0;
     top: 32px;
     transform: translateX(0);
-    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1), 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
     min-width: 540px;
     width: 75%;
     word-break: break-word;
     z-index: 1; }
+    body > errors[sleep] {
+      transform: translateX(100%);
+      opacity: 0; }
+    body > errors[theme="red"] > tabs > tab {
+      border-bottom-color: #ff7961; }
+      body > errors[theme="red"] > tabs > tab[enabled] {
+        border-bottom-color: #f44336; }
+    body > errors[theme="pink"] > tabs > tab {
+      border-bottom-color: #ff6090; }
+      body > errors[theme="pink"] > tabs > tab[enabled] {
+        border-bottom-color: #e91e63; }
+    body > errors[theme="purple"] > tabs > tab {
+      border-bottom-color: #d05ce3; }
+      body > errors[theme="purple"] > tabs > tab[enabled] {
+        border-bottom-color: #9c27b0; }
+    body > errors[theme="deepPurple"] > tabs > tab {
+      border-bottom-color: #9a67ea; }
+      body > errors[theme="deepPurple"] > tabs > tab[enabled] {
+        border-bottom-color: #673ab7; }
+    body > errors[theme="indigo"] > tabs > tab {
+      border-bottom-color: #757de8; }
+      body > errors[theme="indigo"] > tabs > tab[enabled] {
+        border-bottom-color: #3f51b5; }
+    body > errors[theme="blue"] > tabs > tab {
+      border-bottom-color: #6ec6ff; }
+      body > errors[theme="blue"] > tabs > tab[enabled] {
+        border-bottom-color: #2196f3; }
+    body > errors[theme="lightBlue"] > tabs > tab {
+      border-bottom-color: #67daff; }
+      body > errors[theme="lightBlue"] > tabs > tab[enabled] {
+        border-bottom-color: #03a9f4; }
+    body > errors[theme="cyan"] > tabs > tab {
+      border-bottom-color: #62efff; }
+      body > errors[theme="cyan"] > tabs > tab[enabled] {
+        border-bottom-color: #00bcd4; }
+    body > errors[theme="teal"] > tabs > tab {
+      border-bottom-color: #52c7b8; }
+      body > errors[theme="teal"] > tabs > tab[enabled] {
+        border-bottom-color: #009688; }
+    body > errors[theme="green"] > tabs > tab {
+      border-bottom-color: #80e27e; }
+      body > errors[theme="green"] > tabs > tab[enabled] {
+        border-bottom-color: #4caf50; }
+    body > errors[theme="lightGreen"] > tabs > tab {
+      border-bottom-color: #bef67a; }
+      body > errors[theme="lightGreen"] > tabs > tab[enabled] {
+        border-bottom-color: #8bc34a; }
+    body > errors[theme="lime"] > tabs > tab {
+      border-bottom-color: #ffff6e; }
+      body > errors[theme="lime"] > tabs > tab[enabled] {
+        border-bottom-color: #cddc39; }
+    body > errors[theme="yellow"] > tabs > tab {
+      border-bottom-color: #ffff72; }
+      body > errors[theme="yellow"] > tabs > tab[enabled] {
+        border-bottom-color: #ffeb3b; }
+    body > errors[theme="amber"] > tabs > tab {
+      border-bottom-color: #fff350; }
+      body > errors[theme="amber"] > tabs > tab[enabled] {
+        border-bottom-color: #ffc107; }
+    body > errors[theme="orange"] > tabs > tab {
+      border-bottom-color: #ffc947; }
+      body > errors[theme="orange"] > tabs > tab[enabled] {
+        border-bottom-color: #ff9800; }
+    body > errors[theme="deepOrange"] > tabs > tab {
+      border-bottom-color: #ff8a50; }
+      body > errors[theme="deepOrange"] > tabs > tab[enabled] {
+        border-bottom-color: #ff5722; }
+    body > errors[theme="brown"] > tabs > tab {
+      border-bottom-color: #a98274; }
+      body > errors[theme="brown"] > tabs > tab[enabled] {
+        border-bottom-color: #795548; }
+    body > errors[theme="blueGrey"] > tabs > tab {
+      border-bottom-color: #8eacbb; }
+      body > errors[theme="blueGrey"] > tabs > tab[enabled] {
+        border-bottom-color: #607d8b; }
     body > errors > tabs {
       align-items: center;
       display: flex;
@@ -299,7 +606,6 @@ body {
       body > errors > tabs > tab {
         align-content: center;
         border-bottom: 2px;
-        border-bottom-color: #fff;
         border-bottom-style: dashed;
         cursor: pointer;
         display: flex;
@@ -310,7 +616,6 @@ body {
         user-select: none;
         width: 20%; }
         body > errors > tabs > tab[enabled] {
-          border-bottom-color: #007fff;
           border-bottom-style: solid;
           font-weight: bold; }
         body > errors > tabs > tab > icon {
@@ -329,8 +634,6 @@ body {
             content: "("; }
           body > errors > tabs > tab > count:after {
             content: ")"; }
-    body > errors[sleep] {
-      transform: translateX(100%); }
     body > errors > lists {
       display: flex; }
       body > errors > lists > list {
@@ -341,13 +644,15 @@ body {
         body > errors > lists > list > group[collapsed] > ul {
           display: none; }
         body > errors > lists > list > group > ul {
-          list-style: square; }
-          body > errors > lists > list > group > ul > li > code {
-            background: #ddd;
-            color: #000;
-            font-weight: bold;
-            margin: 0 1px;
-            padding: 0 1px; }
+          list-style: square;
+          margin-top: 0; }
+          body > errors > lists > list > group > ul > li {
+            font-size: 16px;
+            margin: 8px 0; }
+            body > errors > lists > list > group > ul > li:first-child {
+              margin-top: 0; }
+            body > errors > lists > list > group > ul > li:last-child {
+              margin-bottom: 0; }
         body > errors > lists > list > group > heading {
           cursor: pointer;
           font-size: 18px;
@@ -364,6 +669,280 @@ body {
               content: "("; }
             body > errors > lists > list > group > heading > count:after {
               content: ")"; }
+  body > settings {
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 32px);
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    top: 32px;
+    transform: translateX(0);
+    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1), 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
+    min-width: 540px;
+    width: 75%;
+    word-break: break-word;
+    z-index: 2; }
+    body > settings[sleep] {
+      transform: translateX(100%);
+      opacity: 0; }
+    body > settings > group {
+      margin: 8px 0; }
+      body > settings > group:first-child {
+        margin-top: 0; }
+      body > settings > group:last-child {
+        margin-bottom: 0; }
+      body > settings > group > heading {
+        cursor: default;
+        display: block;
+        font-size: 18px;
+        user-select: none; }
+        body > settings > group > heading > icon {
+          user-select: none; }
+        body > settings > group > heading > text {
+          cursor: default;
+          user-select: none; }
+      body > settings > group > bodying > text {
+        cursor: default;
+        user-select: none; }
+      body > settings > group > bodying > input {
+        font-family: "Ubuntu"; }
+    body > settings dropdown {
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      display: inline-flex;
+      flex-direction: column;
+      position: relative;
+      user-select: none;
+      width: 150px; }
+      body > settings dropdown[sleep] > options {
+        display: none; }
+      body > settings dropdown[theme="red"] > options > item[selected] {
+        background: #f44336; }
+      body > settings dropdown[theme="pink"] > options > item[selected] {
+        background: #e91e63; }
+      body > settings dropdown[theme="purple"] > options > item[selected] {
+        background: #9c27b0; }
+      body > settings dropdown[theme="deepPurple"] > options > item[selected] {
+        background: #673ab7; }
+      body > settings dropdown[theme="indigo"] > options > item[selected] {
+        background: #3f51b5; }
+      body > settings dropdown[theme="blue"] > options > item[selected] {
+        background: #2196f3; }
+      body > settings dropdown[theme="lightBlue"] > options > item[selected] {
+        background: #03a9f4; }
+      body > settings dropdown[theme="cyan"] > options > item[selected] {
+        background: #00bcd4; }
+      body > settings dropdown[theme="teal"] > options > item[selected] {
+        background: #009688; }
+      body > settings dropdown[theme="green"] > options > item[selected] {
+        background: #4caf50; }
+      body > settings dropdown[theme="lightGreen"] > options > item[selected] {
+        background: #8bc34a; }
+      body > settings dropdown[theme="lime"] > options > item[selected] {
+        background: #cddc39; }
+      body > settings dropdown[theme="yellow"] > options > item[selected] {
+        background: #ffeb3b; }
+      body > settings dropdown[theme="amber"] > options > item[selected] {
+        background: #ffc107; }
+      body > settings dropdown[theme="orange"] > options > item[selected] {
+        background: #ff9800; }
+      body > settings dropdown[theme="deepOrange"] > options > item[selected] {
+        background: #ff5722; }
+      body > settings dropdown[theme="brown"] > options > item[selected] {
+        background: #795548; }
+      body > settings dropdown[theme="blueGrey"] > options > item[selected] {
+        background: #607d8b; }
+      body > settings dropdown > selected {
+        display: flex;
+        justify-content: space-between;
+        width: inherit; }
+        body > settings dropdown > selected > text {
+          pointer-events: none; }
+        body > settings dropdown > selected > icon {
+          pointer-events: none; }
+      body > settings dropdown > options {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 18px;
+        white-space: nowrap;
+        width: inherit; }
+        body > settings dropdown > options > item:hover {
+          background: #ccc; }
+        body > settings dropdown > options > item[selected] {
+          color: #fff; }
+        body > settings dropdown > options > item[value="red"]:before {
+          background: #f44336;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="pink"]:before {
+          background: #e91e63;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="purple"]:before {
+          background: #9c27b0;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="deepPurple"]:before {
+          background: #673ab7;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="indigo"]:before {
+          background: #3f51b5;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="blue"]:before {
+          background: #2196f3;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lightBlue"]:before {
+          background: #03a9f4;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="cyan"]:before {
+          background: #00bcd4;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="teal"]:before {
+          background: #009688;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="green"]:before {
+          background: #4caf50;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lightGreen"]:before {
+          background: #8bc34a;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lime"]:before {
+          background: #cddc39;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="yellow"]:before {
+          background: #ffeb3b;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="amber"]:before {
+          background: #ffc107;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="orange"]:before {
+          background: #ff9800;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="deepOrange"]:before {
+          background: #ff5722;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="brown"]:before {
+          background: #795548;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="blueGrey"]:before {
+          background: #607d8b;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
   body > snackbar {
     align-items: center;
     background: #323232;
@@ -381,8 +960,43 @@ body {
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
     body > snackbar[sleep] {
       transform: translateY(calc(100% + 24px)); }
+    body > snackbar[theme="red"] > text > download {
+      color: #f44336; }
+    body > snackbar[theme="pink"] > text > download {
+      color: #e91e63; }
+    body > snackbar[theme="purple"] > text > download {
+      color: #9c27b0; }
+    body > snackbar[theme="deepPurple"] > text > download {
+      color: #673ab7; }
+    body > snackbar[theme="indigo"] > text > download {
+      color: #3f51b5; }
+    body > snackbar[theme="blue"] > text > download {
+      color: #2196f3; }
+    body > snackbar[theme="lightBlue"] > text > download {
+      color: #03a9f4; }
+    body > snackbar[theme="cyan"] > text > download {
+      color: #00bcd4; }
+    body > snackbar[theme="teal"] > text > download {
+      color: #009688; }
+    body > snackbar[theme="green"] > text > download {
+      color: #4caf50; }
+    body > snackbar[theme="lightGreen"] > text > download {
+      color: #8bc34a; }
+    body > snackbar[theme="lime"] > text > download {
+      color: #cddc39; }
+    body > snackbar[theme="yellow"] > text > download {
+      color: #ffeb3b; }
+    body > snackbar[theme="amber"] > text > download {
+      color: #ffc107; }
+    body > snackbar[theme="orange"] > text > download {
+      color: #ff9800; }
+    body > snackbar[theme="deepOrange"] > text > download {
+      color: #ff5722; }
+    body > snackbar[theme="brown"] > text > download {
+      color: #795548; }
+    body > snackbar[theme="blueGrey"] > text > download {
+      color: #607d8b; }
     body > snackbar > text > download {
-      color: #007fff;
       cursor: pointer;
       padding-left: 8px;
       padding-right: 4px;

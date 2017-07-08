@@ -15,29 +15,409 @@
   white-space: nowrap;
   width: 100%;
   z-index: 1;
+  &[theme="red"]{
+    > container{
+      > icon{
+        color: $menu_theme__red-container-icon--color;
+        &:hover{
+          color: $menu_theme__red-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__red-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__red-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__red-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__red-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="pink"]{
+    > container{
+      > icon{
+        color: $menu_theme__pink-container-icon--color;
+        &:hover{
+          color: $menu_theme__pink-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__pink-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__pink-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__pink-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__pink-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="purple"]{
+    > container{
+      > icon{
+        color: $menu_theme__purple-container-icon--color;
+        &:hover{
+          color: $menu_theme__purple-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__purple-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__purple-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__purple-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__purple-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="deepPurple"]{
+    > container{
+      > icon{
+        color: $menu_theme__deepPurple-container-icon--color;
+        &:hover{
+          color: $menu_theme__deepPurple-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__deepPurple-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__deepPurple-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__deepPurple-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__deepPurple-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="indigo"]{
+    > container{
+      > icon{
+        color: $menu_theme__indigo-container-icon--color;
+        &:hover{
+          color: $menu_theme__indigo-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__indigo-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__indigo-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__indigo-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__indigo-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="blue"]{
+    > container{
+      > icon{
+        color: $menu_theme__blue-container-icon--color;
+        &:hover{
+          color: $menu_theme__blue-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__blue-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__blue-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__blue-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__blue-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="lightBlue"]{
+    > container{
+      > icon{
+        color: $menu_theme__lightBlue-container-icon--color;
+        &:hover{
+          color: $menu_theme__lightBlue-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__lightBlue-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__lightBlue-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__lightBlue-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__lightBlue-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="cyan"]{
+    > container{
+      > icon{
+        color: $menu_theme__cyan-container-icon--color;
+        &:hover{
+          color: $menu_theme__cyan-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__cyan-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__cyan-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__cyan-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__cyan-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="teal"]{
+    > container{
+      > icon{
+        color: $menu_theme__teal-container-icon--color;
+        &:hover{
+          color: $menu_theme__teal-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__teal-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__teal-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__teal-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__teal-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="green"]{
+    > container{
+      > icon{
+        color: $menu_theme__green-container-icon--color;
+        &:hover{
+          color: $menu_theme__green-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__green-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__green-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__green-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__green-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="lightGreen"]{
+    > container{
+      > icon{
+        color: $menu_theme__lightGreen-container-icon--color;
+        &:hover{
+          color: $menu_theme__lightGreen-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__lightGreen-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__lightGreen-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__lightGreen-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__lightGreen-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="lime"]{
+    > container{
+      > icon{
+        color: $menu_theme__lime-container-icon--color;
+        &:hover{
+          color: $menu_theme__lime-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__lime-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__lime-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__lime-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__lime-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="yellow"]{
+    > container{
+      > icon{
+        color: $menu_theme__yellow-container-icon--color;
+        &:hover{
+          color: $menu_theme__yellow-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__yellow-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__yellow-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__yellow-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__yellow-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="amber"]{
+    > container{
+      > icon{
+        color: $menu_theme__amber-container-icon--color;
+        &:hover{
+          color: $menu_theme__amber-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__amber-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__amber-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__amber-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__amber-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="orange"]{
+    > container{
+      > icon{
+        color: $menu_theme__orange-container-icon--color;
+        &:hover{
+          color: $menu_theme__orange-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__orange-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__orange-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__orange-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__orange-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="deepOrange"]{
+    > container{
+      > icon{
+        color: $menu_theme__deepOrange-container-icon--color;
+        &:hover{
+          color: $menu_theme__deepOrange-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__deepOrange-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__deepOrange-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__deepOrange-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__deepOrange-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="brown"]{
+    > container{
+      > icon{
+        color: $menu_theme__brown-container-icon--color;
+        &:hover{
+          color: $menu_theme__brown-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__brown-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__brown-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__brown-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__brown-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
+  &[theme="blueGrey"]{
+    > container{
+      > icon{
+        color: $menu_theme__blueGrey-container-icon--color;
+        &:hover{
+          color: $menu_theme__blueGrey-container-icon_hover--color;
+        }
+        &:active{
+          color: $menu_theme__blueGrey-container-icon_active--color;
+        }
+        &[enabled]{
+          color: $menu_theme__blueGrey-container-icon__enabled--color;
+          &:hover{
+            color: $menu_theme__blueGrey-container-icon__enabled_hover--color;
+          }
+          &:active{
+            color: $menu_theme__blueGrey-container-icon__enabled_active--color;
+          }
+        }
+      }
+    }
+  }
   > container{
     display: inline-flex;
     > icon{
-      color: $menu-container-icon--color;
       cursor: pointer;
       margin: 0 4px;
       user-select: none;
       transition: color 50ms;
-      &:hover{
-        color: $menu-container-icon_hover--color;
-      }
-      &:active{
-        color: $menu-container-icon_active--color;
-      }
-      &[enabled]{
-        color: $menu-container-icon__enabled--color;
-        &:hover{
-          color: $menu-container-icon__enabled_hover--color;
-        }
-        &:active{
-          color: $menu-container-icon__enabled_active--color;
-        }
-      }
     }
   }
   > path{
@@ -50,11 +430,24 @@
     height: 16px;
     overflow: hidden;
     padding: 4px 0;
+    &:hover{
+      animation-play-state: paused;
+    }
+    > icon{
+      background: $menu-path-icon--background;
+      position: relative;
+      z-index: 1;
+    }
     > text{
       font-size: 18px;
       overflow: hidden;
       padding-left: 4px;
       text-overflow: ellipsis;
+      &.scroll{
+        animation: scroll 15s linear infinite;
+        overflow: initial;
+        animation-play-state: inherit;
+      }
     }
   }
   > input{
