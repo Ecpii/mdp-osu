@@ -288,7 +288,8 @@
     'img':function(){
       let _img = $('osu-wiki > markdown img');
       for( let i = 0; i < _img.length; i++ ){
-        let src = _img[i].getAttribute('src');
+        let src_original = _img[i].getAttribute('src');
+        let src = src_original;
         if( /^(https?|mailto)\:/.test(src) ){
           continue;
         }
@@ -301,11 +302,27 @@
           src = path.root + src;
         }
         _img[i].setAttribute('src', src);
+        /* jshint ignore:start */
+        _img[i].addEventListener('error', function(e){
+          _body._errors._lists["_list[images]"]["_group[errored]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + src_original + "</code></li>");
+        });
+        /* jshint ignore:end */
 
+        let parentChildren = _img[i].parentElement.children;
+        let hasOnlyImg = true;
+        for( let j = 0; j < parentChildren.length; j++ ){
+          if(parentChildren[j].tagName !== "IMG"){
+            hasOnlyImg = false;
+            break;
+          }
+        }
+        //console.log(.every(function(element, index, array){ return element.tagName === "IMG"; }));
         if( _img[i].hasAttribute('title') && _img[i].parentElement.tagName === 'P' && _img[i].parentElement.children.length === 1 ){
           _img[i].parentElement.setAttribute('class', 'figure');
           let em = '<em>' + _img[i].getAttribute('title') + '</em>';
           _img[i].parentElement.insertAdjacentHTML('beforeEnd', em);
+        }else if( _img[i].parentElement.tagName === 'P' && hasOnlyImg ){
+          _img[i].parentElement.setAttribute('class', 'figure');
         }
       }
       return;
@@ -447,10 +464,8 @@
     }
     return;
   }
-
   function imageTransCheck(){
     let _img = $('osu-wiki > markdown img');
-    let image = new Image();
     let ctx = _body._menu.$canvas;
     if( ctx.getContext ){
       ctx = ctx.getContext('2d');
@@ -458,17 +473,18 @@
         if( imageNumber < _img.length ){
           let src = _img[imageNumber].getAttribute('src');
           if( !/^(https?|mailto)\:/i.test(src) ){
+            let image = new Image();
             let name = src.substring(src.lastIndexOf("/"), src.length).replace("/", "");
-            if( /png/i.test(src.split(".").pop()) ){
-              image.onload = function(){
+            image.addEventListener('load', function(){
+              if( this.width > 680 ){
+                _body._errors._lists["_list[images]"]["_group[wide]"].$ul.insertAdjacentHTML('afterBegin', "<li><code>" + name + "</code> (" + this.width + "px)</li>");
+              }
+              if( /png/i.test(src.split(".").pop()) ){
                 ctx.clearRect(0, 0, ctx.width, ctx.height);
                 _body._menu.$canvas.width = this.width;
                 _body._menu.$canvas.height = this.height;
                 ctx.drawImage(image, 0, 0);
 
-                if( this.width > 680 ){
-                  _body._errors._lists["_list[images]"]["_group[wide]"].$ul.insertAdjacentHTML('afterBegin', "<li>File: <code>" + name + "</code>'s width (" + this.width + "px) is wider than max article width (680px)!</li>");
-                }
                 let imageData = ctx.getImageData(0, 0, _body._menu.$canvas.width, _body._menu.$canvas.height).data;
 
                 let isTransparent = false;
@@ -480,12 +496,12 @@
                 }
 
                 if( !isTransparent ){
-                  _body._errors._lists["_list[images]"]["_group[png]"].$ul.insertAdjacentHTML('afterBegin', "<li>File: <code>" + name + "</code> has no transparency!</li>");
+                  _body._errors._lists["_list[images]"]["_group[png]"].$ul.insertAdjacentHTML('afterBegin', "<li><code>" + name + "</code></li>");
                 }
-                check(imageNumber + 1);
-              };
-              image.src = src;
-            }
+              }
+              check(imageNumber + 1);
+            });
+            image.src = src;
           }
         }
       })(0);
