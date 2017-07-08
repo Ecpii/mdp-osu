@@ -507,6 +507,7 @@ body {
     display: flex;
     flex-direction: column;
     height: calc(100% - 32px);
+    opacity: 1;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 4px;
@@ -514,13 +515,14 @@ body {
     right: 0;
     top: 32px;
     transform: translateX(0);
-    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1), 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
     min-width: 540px;
     width: 75%;
     word-break: break-word;
     z-index: 1; }
     body > errors[sleep] {
-      transform: translateX(100%); }
+      transform: translateX(100%);
+      opacity: 0; }
     body > errors[theme="red"] > tabs > tab {
       border-bottom-color: #ff7961; }
       body > errors[theme="red"] > tabs > tab[enabled] {
@@ -675,6 +677,7 @@ body {
     display: flex;
     flex-direction: column;
     height: calc(100% - 32px);
+    opacity: 1;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 4px;
@@ -682,13 +685,14 @@ body {
     right: 0;
     top: 32px;
     transform: translateX(0);
-    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: 1s transform cubic-bezier(0.39, 0.575, 0.565, 1), 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
     min-width: 540px;
     width: 75%;
     word-break: break-word;
     z-index: 2; }
     body > settings[sleep] {
-      transform: translateX(100%); }
+      transform: translateX(100%);
+      opacity: 0; }
     body > settings > group {
       margin: 8px 0; }
       body > settings > group:first-child {
@@ -696,28 +700,29 @@ body {
       body > settings > group:last-child {
         margin-bottom: 0; }
       body > settings > group > heading {
+        cursor: default;
         display: block;
         font-size: 18px;
         user-select: none; }
         body > settings > group > heading > icon {
-          pointer-events: none; }
+          user-select: none; }
         body > settings > group > heading > text {
-          pointer-events: none; }
-        body > settings > group > heading > count {
-          align-self: center;
-          font-size: 0.75em;
-          pointer-events: none; }
-          body > settings > group > heading > count:before {
-            content: "("; }
-          body > settings > group > heading > count:after {
-            content: ")"; }
+          cursor: default;
+          user-select: none; }
+      body > settings > group > bodying > text {
+        cursor: default;
+        user-select: none; }
+      body > settings > group > bodying > input {
+        font-family: "Ubuntu"; }
     body > settings dropdown {
       background: #fff;
       color: #000;
       cursor: pointer;
       display: inline-flex;
       flex-direction: column;
-      user-select: none; }
+      position: relative;
+      user-select: none;
+      width: 150px; }
       body > settings dropdown[sleep] > options {
         display: none; }
       body > settings dropdown[theme="red"] > options > item[selected] {
@@ -757,9 +762,9 @@ body {
       body > settings dropdown[theme="blueGrey"] > options > item[selected] {
         background: #607d8b; }
       body > settings dropdown > selected {
-        border: 1px solid #000;
         display: flex;
-        justify-content: space-around; }
+        justify-content: space-between;
+        width: inherit; }
         body > settings dropdown > selected > text {
           pointer-events: none; }
         body > settings dropdown > selected > icon {
@@ -769,11 +774,175 @@ body {
         display: flex;
         flex-direction: column;
         position: absolute;
-        white-space: nowrap; }
+        top: 18px;
+        white-space: nowrap;
+        width: inherit; }
         body > settings dropdown > options > item:hover {
           background: #ccc; }
         body > settings dropdown > options > item[selected] {
           color: #fff; }
+        body > settings dropdown > options > item[value="red"]:before {
+          background: #f44336;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="pink"]:before {
+          background: #e91e63;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="purple"]:before {
+          background: #9c27b0;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="deepPurple"]:before {
+          background: #673ab7;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="indigo"]:before {
+          background: #3f51b5;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="blue"]:before {
+          background: #2196f3;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lightBlue"]:before {
+          background: #03a9f4;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="cyan"]:before {
+          background: #00bcd4;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="teal"]:before {
+          background: #009688;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="green"]:before {
+          background: #4caf50;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lightGreen"]:before {
+          background: #8bc34a;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="lime"]:before {
+          background: #cddc39;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="yellow"]:before {
+          background: #ffeb3b;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="amber"]:before {
+          background: #ffc107;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="orange"]:before {
+          background: #ff9800;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="deepOrange"]:before {
+          background: #ff5722;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="brown"]:before {
+          background: #795548;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
+        body > settings dropdown > options > item[value="blueGrey"]:before {
+          background: #607d8b;
+          border: 1px solid #000;
+          content: " ";
+          display: inline-block;
+          height: 10px;
+          margin: 0 2px;
+          position: relative;
+          width: 10px; }
   body > snackbar {
     align-items: center;
     background: #323232;
