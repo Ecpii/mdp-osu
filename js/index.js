@@ -367,11 +367,11 @@
         }
         if( /^(?:\.?\.\/|[a-zA-Z0-9_])/.test(src) )
         {
-          src = path.folder + src;
+          src = path.folder + src + "?t=" + Date.now();
         }
         else if( /^(?:\/)/.test(src) )
         {
-          src = path.root + src;
+          src = path.root + src + "?t=" + Date.now();
         }
         _img[i].setAttribute('src', src);
         /* jshint ignore:start */
