@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   height: #{calc(100% - 32px)};
+  opacity: 1;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 4px;
@@ -13,13 +14,14 @@
   right: 0;
   top: 32px;
   transform: translateX(0);
-  transition: 1s transform $easeOutSine;
+  transition: 1s transform $easeOutSine, 1s opacity $easeOutSine;
   min-width: 540px;
   width: 75%;
   word-break: break-word;
   z-index: 1;
   &[sleep]{
     transform: translateX(100%);
+    opacity: 0;
   }
   &[theme="red"]{
     > tabs{

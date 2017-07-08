@@ -320,11 +320,11 @@
     localStorage.setItem('theme', colour);
   }
   (function(){
-    let theme = localStorage.getItem('theme');
-    if( theme === null || theme === undefined ){
-      theme = "deepPurple";
+    let ls_theme = localStorage.getItem('theme');
+    if( ls_theme === null || ls_theme === undefined ){
+      ls_theme = "deepPurple";
     }
-    setTheme(theme);
+    setTheme(ls_theme);
   })();
 
   /* -- path -- */

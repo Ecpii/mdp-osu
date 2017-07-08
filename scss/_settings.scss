@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   height: #{calc(100% - 32px)};
+  opacity: 1;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 4px;
@@ -13,13 +14,14 @@
   right: 0;
   top: 32px;
   transform: translateX(0);
-  transition: 1s transform $easeOutSine;
+  transition: 1s transform $easeOutSine, 1s opacity $easeOutSine;
   min-width: 540px;
   width: 75%;
   word-break: break-word;
   z-index: 2;
   &[sleep]{
     transform: translateX(100%);
+    opacity: 0;
   }
   > group{
     margin: 8px 0;
@@ -30,25 +32,25 @@
       margin-bottom: 0;
     }
     > heading{
+      cursor: default;
       display: block;
       font-size: 18px;
       user-select: none;
       > icon{
-        pointer-events: none;
+        user-select: none;
       }
       > text{
-        pointer-events: none;
+        cursor: default;
+        user-select: none;
       }
-      > count{
-        align-self: center;
-        font-size: 0.75em;
-        pointer-events: none;
-        &:before{
-          content: "(";
-        }
-        &:after{
-          content: ")";
-        }
+    }
+    > bodying{
+      > text{
+        cursor: default;
+        user-select: none;
+      }
+      > input{
+        font-family: "Ubuntu";
       }
     }
   }
