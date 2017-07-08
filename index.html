@@ -17,7 +17,7 @@
       <container left>
         <icon reload title="Reload"></icon>
         <icon autorenew title="Auto-reload"></icon>
-        <icon image-broken title="Purge images"></icon>
+        <!--<icon image-broken title="Purge images"></icon>-->
         <icon upload title="Upload"></icon>
       </container>
       <path title="Open file location">
@@ -75,7 +75,7 @@
             </heading>
             <ul></ul>
           </group>
-          <group item="tables">
+          <group item="tables" style="display: none;">
             <heading>
               <icon menu-up></icon>
               <text>Tables</text>
@@ -222,35 +222,6 @@
               <item value="blueGrey">Blue Grey</item>
             </options>
           </dropdown>
-          <select style="display:none;">
-            <option value="red" selected>Red</option>
-            <option value="pink">Pink</option>
-            <option value="purple">Purple</option>
-            <option value="deepPurple">Deep Purple</option>
-            <option value="indigo">Indigo</option>
-            <option value="blue">Blue</option>
-            <option value="lightBlue">Light Blue</option>
-            <option value="cyan">Cyan</option>
-            <option value="teal">Teal</option>
-            <option value="green">Green</option>
-            <option value="lightGreen">Light Green</option>
-            <option value="lime">Lime</option>
-            <option value="yellow">Yellow</option>
-            <option value="amber">Amber</option>
-            <option value="orange">Orange</option>
-            <option value="deepOrange">Deep Orange</option>
-            <option value="brown">Brown</option>
-            <option value="blueGrey">Blue Grey</option>
-          </select>
-        </bodying>
-      </group>
-      <group>
-        <heading>
-          <icon source-fork></icon>
-          <text><code>osu-wiki</code> repository</text>
-        </heading>
-        <bodying>
-          Folder name: <input input="text" tabindex="-1"/>
         </bodying>
       </group>
     </settings>

@@ -676,22 +676,40 @@
           }else{
             _body.$settings.setAttribute('sleep', '');
             _body._menu["_container[right]"]["$icon[settings]"].removeAttribute('enabled');
+            _body._settings["_group[theme]"]._bodying.$dropdown.setAttribute('sleep', '');
+            _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.removeAttribute('menu-up');
+            _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.setAttribute('menu-down', '');
           }
         }
       }
     });
 
-    _body._settings["_group[theme]"]._bodying.$dropdown.addEventListener('click', function(e){
+    _body.$settings.addEventListener('click', function(e){
       let target = e.target;
       if( target.tagName === "SELECTED" )
       {
         if( _body._settings["_group[theme]"]._bodying.$dropdown.hasAttribute('sleep') ){
           _body._settings["_group[theme]"]._bodying.$dropdown.removeAttribute('sleep');
+          _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.removeAttribute('menu-down');
+          _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.setAttribute('menu-up', '');
+        }else{
+          _body._settings["_group[theme]"]._bodying.$dropdown.setAttribute('sleep', '');
+          _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.removeAttribute('menu-up');
+          _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.setAttribute('menu-down', '');
         }
       }
-      else if( target.tagName === "ITEM" ){
+      else if( target.tagName === "ITEM" )
+      {
         _body._settings["_group[theme]"]._bodying.$dropdown.setAttribute('sleep', '');
+        _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.removeAttribute('menu-up');
+        _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.setAttribute('menu-down', '');
         setTheme(target.getAttribute('value'));
+      }
+      else
+      {
+        _body._settings["_group[theme]"]._bodying.$dropdown.setAttribute('sleep', '');
+        _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.removeAttribute('menu-up');
+        _body._settings["_group[theme]"]._bodying._dropdown._selected.$icon.setAttribute('menu-down', '');
       }
     });
 
