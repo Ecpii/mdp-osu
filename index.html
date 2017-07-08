@@ -27,6 +27,7 @@
         <icon chevron-double-up title="Go to top"></icon>
         <icon open-in-new title="Edit"></icon>
         <icon alert-outline title="Errors"></icon>
+        <icon settings title="mdp-osu settings"></icon>
       </container>
       <input type="file" accept=".md" tabindex="-1"/>
       <canvas></canvas>
@@ -186,6 +187,72 @@
         </list>
       </lists>
     </errors>
+    <settings sleep>
+      <group item="theme">
+        <heading>
+          <icon brush></icon>
+          <text>Theme</text>
+        </heading>
+        <bodying>
+          <text>Current Colour:</text>
+          <dropdown sleep>
+            <selected>
+              <text>Red</text>
+              <icon menu-down></icon>
+            </selected>
+            <options>
+              <item value="red" selected>Red</item>
+              <item value="pink">Pink</item>
+              <item value="purple">Purple</item>
+              <item value="deepPurple">Deep Purple</item>
+              <item value="indigo">Indigo</item>
+              <item value="blue">Blue</item>
+              <item value="lightBlue">Light Blue</item>
+              <item value="cyan">Cyan</item>
+              <item value="teal">Teal</item>
+              <item value="green">Green</item>
+              <item value="lightGreen">Light Green</item>
+              <item value="lime">Lime</item>
+              <item value="yellow">Yellow</item>
+              <item value="amber">Amber</item>
+              <item value="orange">Orange</item>
+              <item value="deepOrange">Deep Orange</item>
+              <item value="brown">Brown</item>
+              <item value="blueGrey">Blue Grey</item>
+            </options>
+          </dropdown>
+          <select style="display:none;">
+            <option value="red" selected>Red</option>
+            <option value="pink">Pink</option>
+            <option value="purple">Purple</option>
+            <option value="deepPurple">Deep Purple</option>
+            <option value="indigo">Indigo</option>
+            <option value="blue">Blue</option>
+            <option value="lightBlue">Light Blue</option>
+            <option value="cyan">Cyan</option>
+            <option value="teal">Teal</option>
+            <option value="green">Green</option>
+            <option value="lightGreen">Light Green</option>
+            <option value="lime">Lime</option>
+            <option value="yellow">Yellow</option>
+            <option value="amber">Amber</option>
+            <option value="orange">Orange</option>
+            <option value="deepOrange">Deep Orange</option>
+            <option value="brown">Brown</option>
+            <option value="blueGrey">Blue Grey</option>
+          </select>
+        </bodying>
+      </group>
+      <group>
+        <heading>
+          <icon source-fork></icon>
+          <text><code>osu-wiki</code> repository</text>
+        </heading>
+        <bodying>
+          Folder name: <input input="text" tabindex="-1"/>
+        </bodying>
+      </group>
+    </settings>
     <snackbar sleep>
       <text></text>
       <icon close></icon>

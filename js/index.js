@@ -37,6 +37,7 @@
   });
   const yaml = nodeRequire('js-yaml');
   let redirect;
+  const localStorage = window.localStorage;
 
   /* -- check for update -- */
   void(function(){
@@ -78,7 +79,8 @@
       '_container[right]':{
         '$icon[chevron-double-up]': $('body > menu > container[right] > icon[chevron-double-up]')[0],
         '$icon[open-in-new]': $('body > menu > container[right] > icon[open-in-new]')[0],
-        '$icon[alert-outline]': $('body > menu > container[right] > icon[alert-outline]')[0]
+        '$icon[alert-outline]': $('body > menu > container[right] > icon[alert-outline]')[0],
+        '$icon[settings]': $('body > menu > container[right] > icon[settings]')[0]
       },
       '$input': $('body > menu > input')[0],
       '$canvas': $('body > menu > canvas')[0]
@@ -266,12 +268,55 @@
         }
       }
     },
+    '$settings': $('body > settings')[0],
+    '_settings':{
+      '$group[theme]': $('body > settings > group[item="theme"]')[0],
+      '_group[theme]':{
+        '$bodying': $('body > settings > group[item="theme"] > bodying')[0],
+        '_bodying':{
+          '$dropdown': $('body > settings > group[item="theme"] > bodying > dropdown')[0],
+          '_dropdown':{
+            '$selected': $('body > settings > group[item="theme"] > bodying > dropdown > selected')[0],
+            '_selected':{
+              '$text': $('body > settings > group[item="theme"] > bodying > dropdown > selected > text')[0]
+            },
+            '$options': $('body > settings > group[item="theme"] > bodying > dropdown > options')[0],
+          },
+        },
+      },
+    },
     '$snackbar': $('body > snackbar')[0],
     '_snackbar':{
       '$text': $('body > snackbar > text')[0],
       '$icon[close]': $('body > snackbar > icon[close]')[0]
     }
   });
+
+  /* -- theme -- */
+  const validThemeColours = ["red", "pink", "purple", "deepPurple", "indigo", "blue", "lightBlue", "cyan", "teal", "green", "lightGreen", "lime", "yellow", "amber", "orange", "deepOrange", "brown", "blueGrey"];
+  function setTheme(colour){
+    if( !validThemeColours.includes(colour) ){
+      colour = "deepPurple";
+    }
+    _body.$menu.setAttribute('theme', colour);
+    _body.$errors.setAttribute('theme', colour);
+    _body.$snackbar.setAttribute('theme', colour);
+    $('settings dropdown').forEach(function(e){
+      e.setAttribute('theme', colour);
+    });
+
+    $('body > settings > group[item="theme"] > bodying > dropdown > options > item[selected]')[0].removeAttribute('selected');
+    $('body > settings > group[item="theme"] > bodying > dropdown > options > item[value="' + colour + '"]')[0].setAttribute('selected', '');
+    _body._settings["_group[theme]"]._bodying._dropdown._selected.$text.textContent = $('body > settings > group[item="theme"] > bodying > dropdown > options > item[value="' + colour + '"]')[0].textContent;
+    localStorage.setItem('theme', colour);
+  }
+  (function(){
+    let theme = localStorage.getItem('theme');
+    if( theme === null || theme === undefined ){
+      theme = "deepPurple";
+    }
+    setTheme(theme);
+  })();
 
   /* -- path -- */
   const path = Object.seal({
@@ -596,6 +641,30 @@
             _body._menu["_container[right]"]["$icon[alert-outline]"].removeAttribute('enabled');
           }
         }
+        else if( e.target.hasAttribute('settings') )
+        {
+          if( _body.$settings.hasAttribute('sleep') ){
+            _body.$settings.removeAttribute('sleep');
+            _body._menu["_container[right]"]["$icon[settings]"].setAttribute('enabled', '');
+          }else{
+            _body.$settings.setAttribute('sleep', '');
+            _body._menu["_container[right]"]["$icon[settings]"].removeAttribute('enabled');
+          }
+        }
+      }
+    });
+
+    _body._settings["_group[theme]"]._bodying.$dropdown.addEventListener('click', function(e){
+      let target = e.target;
+      if( target.tagName === "SELECTED" )
+      {
+        if( _body._settings["_group[theme]"]._bodying.$dropdown.hasAttribute('sleep') ){
+          _body._settings["_group[theme]"]._bodying.$dropdown.removeAttribute('sleep');
+        }
+      }
+      else if( target.tagName === "ITEM" ){
+        _body._settings["_group[theme]"]._bodying.$dropdown.setAttribute('sleep', '');
+        setTheme(target.getAttribute('value'));
       }
     });
 
