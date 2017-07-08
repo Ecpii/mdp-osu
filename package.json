@@ -5,12 +5,13 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^1.6.5",
-    "electron-packager": "^8.6.0",
     "js-yaml": "^3.8.4",
     "showdown": "^1.7.1",
     "sizzle": "^2.3.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron-packager": "^8.6.0"
+  },
   "js-flags": "--harmony",
   "scripts": {
     "start": "electron . --js-flags=\"--harmony\" --enable-logging",
