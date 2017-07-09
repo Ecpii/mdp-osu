@@ -546,7 +546,7 @@
           let src = _img[imageNumber].getAttribute('src');
           if( !/^(https?|mailto)\:/i.test(src) ){
             let image = new Image();
-            let name = src.substring(src.lastIndexOf("/"), src.length).replace("/", "");
+            let name = src.substring(src.lastIndexOf("/"), src.length).replace(/\//, "").replace(/\?t\=\d+/, "");
             image.addEventListener('load', function(){
               if( this.width > 680 ){
                 _body._errors._lists["_list[images]"]["_group[wide]"].$ul.insertAdjacentHTML('afterBegin', "<li><code>" + name + "</code> (" + this.width + "px)</li>");

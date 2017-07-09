@@ -1,6 +1,6 @@
 {
   "name": "mdp-osu",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "osu!wiki Markdown Previewer",
   "main": "main.js",
   "dependencies": {
@@ -12,9 +12,8 @@
   "devDependencies": {
     "electron-packager": "^8.6.0"
   },
-  "js-flags": "--harmony",
   "scripts": {
-    "start": "electron . --js-flags=\"--harmony\" --enable-logging",
+    "start": "electron . --enable-logging",
     "dev": "NODE_ENV='development' npm run start",
     "build": "npm run build_win && npm run build_mac",
     "build_win": "electron-packager . mdp-osu --platform=win32 --arch=all --out=build --asar=true --prune=true --overwrite --win32metadata.CompanyName=\"MegaApple_Pi\" --win32metadata.FileDescription=\"mpd-osu\" --win32metadata.OriginalFilename=\"mpd-osu.exe\" --win32metadata.ProductName=\"mpd-osu\" --win32metadata.InternalName=\"mpd-osu\" --icon=icon/ico/icon.ico",

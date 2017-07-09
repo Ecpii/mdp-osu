@@ -4,6 +4,8 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
+app.commandLine.appendSwitch('js-flags', '--harmony');
+
 let win;
 function createWindow(){
   win = new BrowserWindow({
