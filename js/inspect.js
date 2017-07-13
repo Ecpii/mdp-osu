@@ -75,6 +75,22 @@ function inspect(lines){
         }
       }
     }
+    if( /(beat)?mappers?/ig.test(lines[i]) ){
+      let matches = lines[i].match(/(beat)?mappers?/ig);
+      if( matches ){
+        for( let j = 0; j < matches.length; j++ ){
+          _body._errors._lists["_list[asg]"]["_group[terminology]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Replace with creator(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+        }
+      }
+    }
+    if( /(beat)?maps?/ig.test(lines[i]) ){
+      let matches = lines[i].match(/(beat)?maps?/ig);
+      if( matches ){
+        for( let j = 0; j < matches.length; j++ ){
+          _body._errors._lists["_list[asg]"]["_group[terminology]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Replace with beatmap(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+        }
+      }
+    }
   }
   if( !h1exists ){
     _body._errors._lists["_list[markdown]"]["_group[headings]"].$ul.insertAdjacentHTML('afterBegin', "<li>Title (heading level 1) is missing!</li>");
