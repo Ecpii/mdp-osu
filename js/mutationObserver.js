@@ -1,3 +1,23 @@
+let errorCounts = Object.seal({
+  'headings': 0,
+  'tables': 0,
+  'html': 0,
+
+  'error': 0,
+  'png': 0,
+  'wide': 0,
+
+  'internal': 0,
+  'httpfailed': 0,
+  'http404': 0,
+  'httpmisc': 0,
+
+  'first-person': 0,
+  'contractions': 0,
+  'game-modes': 0,
+  'mediawiki': 0
+});
+
 let observer = new MutationObserver(function(e){
   e.forEach(function(f){
     let headingName = f.target.parentElement.getAttribute('item');

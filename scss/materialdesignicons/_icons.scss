@@ -1,5 +1,5 @@
 @each $key, $value in $mdi-icons {
-    icon[#{$key}]:before {
+    x-icon[data-ico="#{$key}"]:before {
         content: char($value);
     }
 }

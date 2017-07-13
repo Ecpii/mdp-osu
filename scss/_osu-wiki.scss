@@ -1,6 +1,6 @@
 $Noto: "Noto Sans", sans-serif;
 $Exo: "Exo 2", "Arial Grande", Tahoma, Helvetica, Arial, "Microsoft YaHei", SimHei, "Arial Unicode MS", sans-serif;
-> osu-wiki{
+> .osu-wiki{
   ::selection{
     color: #fff;
     background-color: #f6a;
@@ -12,7 +12,7 @@ $Exo: "Exo 2", "Arial Grande", Tahoma, Helvetica, Arial, "Microsoft YaHei", SimH
   max-width: 720px;
   top: 32px;
   width: 100%;
-  > heading{
+  > .heading{
     background-color: #222;
     background-image: url('https://osu.ppy.sh/images/headers/wiki.jpg');
     display: block;
@@ -60,7 +60,7 @@ $Exo: "Exo 2", "Arial Grande", Tahoma, Helvetica, Arial, "Microsoft YaHei", SimH
       }
     }
   }
-  > markdown{
+  > .markdown{
     min-height: #{calc(100% - 125px - 10px)};
     max-width: #{calc(720px - 40px)};
     position: absolute;

@@ -28,4 +28,3 @@ document.addEventListener('keyup', function(e){
     delete map[key];
   }
 });
-})();

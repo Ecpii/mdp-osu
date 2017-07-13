@@ -1,4 +1,4 @@
-> menu{
+> .menu{
   align-items: center;
   background: $menu--background;
   color: $menu--color;
@@ -411,16 +411,16 @@
       }
     }
   }
-  > container{
+  > .container{
     display: inline-flex;
-    > icon{
+    > x-icon{
       cursor: pointer;
       margin: 0 4px;
       user-select: none;
       transition: color 50ms;
     }
   }
-  > path{
+  > .path{
     align-items: center;
     background: $menu-path--background;
     cursor: pointer;
@@ -433,12 +433,12 @@
     &:hover{
       animation-play-state: paused;
     }
-    > icon{
+    > x-icon{
       background: $menu-path-icon--background;
       position: relative;
       z-index: 1;
     }
-    > text{
+    > .text{
       font-size: 18px;
       overflow: hidden;
       padding-left: 4px;
