@@ -1,4 +1,3 @@
-/* -- inspect -- */
 let htmlTags = Object.solidify([
   "html",
   "base", "head", "link", "meta", "style", "title",
