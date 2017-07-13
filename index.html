@@ -13,222 +13,222 @@
     </script>
   </head>
   <body>
-    <menu>
-      <container left>
-        <icon reload title="Reload"></icon>
-        <icon autorenew title="Auto-reload"></icon>
-        <!--<icon image-broken title="Purge images"></icon>-->
-        <icon upload title="Upload"></icon>
-      </container>
-      <path title="Open file location">
-        <icon file-tree></icon>
-        <text></text>
-      </path>
-      <container right>
-        <icon chevron-double-up title="Go to top"></icon>
-        <icon open-in-new title="Edit"></icon>
-        <icon alert-outline title="Errors"></icon>
-        <icon settings title="mdp-osu settings"></icon>
-      </container>
+    <div class="menu">
+      <div class="container">
+        <x-icon data-ico="reload" title="Reload"></x-icon>
+        <x-icon data-ico="autorenew" title="Auto-reload"></x-icon>
+        <!--<x-icon data-ico="image-broken" title="Purge images"></x-icon>-->
+        <x-icon data-ico="upload" title="Upload"></x-icon>
+      </div>
+      <div class="path" title="Open file location">
+        <x-icon data-ico="file-tree"></x-icon>
+        <span class="text"></span>
+      </div>
+      <div class="container">
+        <x-icon data-ico="chevron-double-up" title="Go to top"></x-icon>
+        <x-icon data-ico="open-in-new" title="Edit"></x-icon>
+        <x-icon data-ico="alert-outline" title="Errors"></x-icon>
+        <x-icon data-ico="settings" title="mdp-osu settings"></x-icon>
+      </div>
       <input type="file" accept=".md" tabindex="-1"/>
       <canvas></canvas>
-    </menu>
-    <osu-wiki>
-      <heading>
-        <article-title>
+    </div>
+    <div class="osu-wiki">
+      <div class="heading">
+        <div class="article-title">
           <h2></h2>
           <h1></h1>
-        </article-title>
-      </heading>
-      <markdown></markdown>
-    </osu-wiki>
-    <errors sleep>
-      <tabs>
-        <tab item="markdown" enabled>
-          <icon markdown></icon>
-          <text>Markdown</text>
-          <count>0</count>
-        </tab>
-        <tab item="images">
-          <icon image></icon>
-          <text>Images</text>
-          <count>0</count>
-        </tab>
-        <tab item="links">
-          <icon link-variant></icon>
-          <text>Links</text>
-          <count>0</count>
-        </tab>
-        <tab item="asg">
-          <icon spellcheck></icon>
-          <text>ASG</text>
-          <count>0</count>
-        </tab>
-      </tabs>
-      <lists>
-        <list item="markdown">
-          <group item="headings">
-            <heading>
-              <icon menu-up></icon>
-              <text>Headings</text>
-              <count>0</count>
-            </heading>
+        </div>
+      </div>
+      <div class="markdown"></div>
+    </div>
+    <div class="errors">
+      <div class="tabs">
+        <div class="tab" data-item="markdown" data-enabled>
+          <x-icon data-ico="markdown"></x-icon>
+          <span class="text">Markdown</span>
+          <span class="count">0</span>
+        </div>
+        <div class="tab" data-item="images">
+          <x-icon data-ico="image"></x-icon>
+          <span class="text">Images</span>
+          <span class="count">0</span>
+        </div>
+        <div class="tab" data-item="links">
+          <x-icon data-ico="link-variant"></x-icon>
+          <span class="text">Links</span>
+          <span class="count">0</span>
+        </div>
+        <div class="tab" data-item="asg">
+          <x-icon data-ico="spellcheck"></x-icon>
+          <span class="text">ASG</span>
+          <span class="count">0</span>
+        </div>
+      </div>
+      <div class="lists">
+        <div class="list" data-item="markdown" data-active>
+          <div class="group" data-item="headings">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Headings</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="tables" style="display: none;">
-            <heading>
-              <icon menu-up></icon>
-              <text>Tables</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="tables" style="display: none;">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Tables</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="html">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTML</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="html">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">HTML</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-        </list>
-        <list item="images" sleep>
-          <group item="png">
-            <heading>
-              <icon menu-up></icon>
-              <text>PNG with no transparency</text>
-              <count>0</count>
-            </heading>
+          </div>
+        </div>
+        <div class="list" data-item="images">
+          <div class="group" data-item="png">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">PNG with no transparency</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="errored">
-            <heading>
-              <icon menu-up></icon>
-              <text>Errored</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="errored">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Errored</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="wide">
-            <heading>
-              <icon menu-up></icon>
-              <text>Wider than 680px</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="wide">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Wider than 680px</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-        </list>
-        <list item="links" sleep>
-          <group item="internal">
-            <heading>
-              <icon menu-up></icon>
-              <text>Internal linking errors</text>
-              <count>0</count>
-            </heading>
+          </div>
+        </div>
+        <div class="list" data-item="links">
+          <div class="group" data-item="internal">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Internal linking errors</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="httpfailed">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP Failed</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="httpfailed">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">HTTP Failed</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="http404">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP 404</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="http404">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">HTTP 404</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="httpmisc">
-            <heading>
-              <icon menu-up></icon>
-              <text>HTTP Miscellaneous</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="httpmisc">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">HTTP Miscellaneous</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-        </list>
-        <list item="asg" sleep>
-          <group item="first-person">
-            <heading>
-              <icon menu-up></icon>
-              <text>First Person</text>
-              <count>0</count>
-            </heading>
+          </div>
+        </div>
+        <div class="list" data-item="asg">
+          <div class="group" data-item="first-person">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">First Person</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="contractions">
-            <heading>
-              <icon menu-up></icon>
-              <text>Contractions</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="contractions">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Contractions</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="game-modes">
-            <heading>
-              <icon menu-up></icon>
-              <text>Old Game Mode Names</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="game-modes">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">Old Game Mode Names</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-          <group item="mediawiki">
-            <heading>
-              <icon menu-up></icon>
-              <text>MediaWiki</text>
-              <count>0</count>
-            </heading>
+          </div>
+          <div class="group" data-item="mediawiki">
+            <div class="heading">
+              <x-icon data-ico="menu-up"></x-icon>
+              <span class="text">MediaWiki</span>
+              <span class="count">0</span>
+            </div>
             <ul></ul>
-          </group>
-        </list>
-      </lists>
-    </errors>
-    <settings sleep>
-      <group item="theme">
-        <heading>
-          <icon brush></icon>
-          <text>Theme</text>
-        </heading>
-        <bodying>
-          <text>Current Colour:</text>
-          <dropdown sleep>
-            <selected>
-              <text>Red</text>
-              <icon menu-down></icon>
-            </selected>
-            <options>
-              <item value="red" selected>Red</item>
-              <item value="pink">Pink</item>
-              <item value="purple">Purple</item>
-              <item value="deepPurple">Deep Purple</item>
-              <item value="indigo">Indigo</item>
-              <item value="blue">Blue</item>
-              <item value="lightBlue">Light Blue</item>
-              <item value="cyan">Cyan</item>
-              <item value="teal">Teal</item>
-              <item value="green">Green</item>
-              <item value="lightGreen">Light Green</item>
-              <item value="lime">Lime</item>
-              <item value="yellow">Yellow</item>
-              <item value="amber">Amber</item>
-              <item value="orange">Orange</item>
-              <item value="deepOrange">Deep Orange</item>
-              <item value="brown">Brown</item>
-              <item value="blueGrey">Blue Grey</item>
-            </options>
-          </dropdown>
-        </bodying>
-      </group>
-    </settings>
-    <snackbar sleep>
-      <text></text>
-      <icon close></icon>
-    </snackbar>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="settings">
+      <div class="group" data-item="theme">
+        <div class="heading">
+          <x-icon data-ico="brush"></x-icon>
+          <span class="text">Theme</span>
+        </div>
+        <div class="bodying">
+          <span class="text">Current Colour:</span>
+          <x-dropdown data-sleep>
+            <x-selected>
+              <span class="text">Red</span>
+              <x-icon data-ico="menu-down"></x-icon>
+            </x-selected>
+            <x-options>
+              <x-item value="red" selected>Red</x-item>
+              <x-item value="pink">Pink</x-item>
+              <x-item value="purple">Purple</x-item>
+              <x-item value="deepPurple">Deep Purple</x-item>
+              <x-item value="indigo">Indigo</x-item>
+              <x-item value="blue">Blue</x-item>
+              <x-item value="lightBlue">Light Blue</x-item>
+              <x-item value="cyan">Cyan</x-item>
+              <x-item value="teal">Teal</x-item>
+              <x-item value="green">Green</x-item>
+              <x-item value="lightGreen">Light Green</x-item>
+              <x-item value="lime">Lime</x-item>
+              <x-item value="yellow">Yellow</x-item>
+              <x-item value="amber">Amber</x-item>
+              <x-item value="orange">Orange</x-item>
+              <x-item value="deepOrange">Deep Orange</x-item>
+              <x-item value="brown">Brown</x-item>
+              <x-item value="blueGrey">Blue Grey</x-item>
+            </x-options>
+          </x-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="snackbar">
+      <span class="text"></span>
+      <x-icon data-ico="close"></x-icon>
+    </div>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-dropdown{
+x-dropdown{
   background: #fff;
   color: #000;
   cursor: pointer;
@@ -7,9 +7,9 @@ dropdown{
   position: relative;
   user-select: none;
   width: 150px;
-  &[sleep]{
-    > options{
-      display: none;
+  &[data-active]{
+    > x-options{
+      display: inline-flex;
     }
   }
   &[theme="red"]{
@@ -174,26 +174,26 @@ dropdown{
       }
     }
   }
-  > selected{
+  > x-selected{
     display: flex;
     justify-content: space-between;
     width: inherit;
-    > text{
+    > .text{
       pointer-events: none;
     }
-    > icon{
+    > x-icon{
       pointer-events: none;
     }
   }
-  > options{
+  > x-options{
     background: #fff;
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 18px;
     white-space: nowrap;
     width: inherit;
-    > item{
+    > x-item{
       &:hover{
         background: #ccc;
       }
