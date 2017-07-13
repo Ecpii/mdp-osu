@@ -15,8 +15,8 @@
   top: 32px;
   transform: translateX(0);
   transition: 1s transform $easeOutSine, 1s opacity $easeOutSine;
-  min-width: 540px;
-  width: 75%;
+  // min-width: 540px;
+  width: 45%;
   word-break: break-word;
   z-index: 1;
   &[sleep]{

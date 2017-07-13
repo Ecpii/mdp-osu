@@ -210,7 +210,8 @@ $snackbar_theme__deepOrange-text-download--color: $deepOrangeP;
 $snackbar_theme__brown-text-download--color: $brownP;
 $snackbar_theme__blueGrey-text-download--color: $blueGreyP;
 
-$errors--background: rgba(0, 0, 0, 0.75);
+//match theme or something later idk
+$errors--background: rgba(60, 60, 60, 0.75);
 $errors--color: #fff;
 
 $errors_theme__red-tabs-tab-borderBottomColor: $redL;
@@ -253,7 +254,8 @@ $errors_theme__blueGrey-tabs-tab-borderBottomColor__enabled: $blueGreyP;
 $errors-lists-list-group-ul-li-code--background: #2052ff;
 $errors-lists-list-group-ul-li-code--color: #fff;
 
-$settings--background: rgba(0, 0, 0, 0.75);
+// Change colour to theme or something later
+$settings--background: rgba(60, 60, 60, 0.75);
 $settings--color: #fff;
 
 $dropdown_theme__red-options-item_selected--color: $redP;
