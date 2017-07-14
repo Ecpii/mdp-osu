@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="menu">
-      <div class="container">
+      <div class="container left">
         <x-icon data-ico="reload" title="Reload"></x-icon>
         <x-icon data-ico="autorenew" title="Auto-reload"></x-icon>
         <!--<x-icon data-ico="image-broken" title="Purge images"></x-icon>-->
@@ -24,7 +24,7 @@
         <x-icon data-ico="file-tree"></x-icon>
         <span class="text"></span>
       </div>
-      <div class="container">
+      <div class="container right">
         <x-icon data-ico="chevron-double-up" title="Go to top"></x-icon>
         <x-icon data-ico="open-in-new" title="Edit"></x-icon>
         <x-icon data-ico="alert-outline" title="Errors"></x-icon>
@@ -196,30 +196,30 @@
         </div>
         <div class="bodying">
           <span class="text">Current Colour:</span>
-          <x-dropdown data-sleep>
+          <x-dropdown>
             <x-selected>
-              <span class="text">Red</span>
+              <span class="text">Deep Purple</span>
               <x-icon data-ico="menu-down"></x-icon>
             </x-selected>
             <x-options>
-              <x-item value="red" selected>Red</x-item>
-              <x-item value="pink">Pink</x-item>
-              <x-item value="purple">Purple</x-item>
-              <x-item value="deepPurple">Deep Purple</x-item>
-              <x-item value="indigo">Indigo</x-item>
-              <x-item value="blue">Blue</x-item>
-              <x-item value="lightBlue">Light Blue</x-item>
-              <x-item value="cyan">Cyan</x-item>
-              <x-item value="teal">Teal</x-item>
-              <x-item value="green">Green</x-item>
-              <x-item value="lightGreen">Light Green</x-item>
-              <x-item value="lime">Lime</x-item>
-              <x-item value="yellow">Yellow</x-item>
-              <x-item value="amber">Amber</x-item>
-              <x-item value="orange">Orange</x-item>
-              <x-item value="deepOrange">Deep Orange</x-item>
-              <x-item value="brown">Brown</x-item>
-              <x-item value="blueGrey">Blue Grey</x-item>
+              <x-item data-value="red">Red</x-item>
+              <x-item data-value="pink">Pink</x-item>
+              <x-item data-value="purple">Purple</x-item>
+              <x-item data-value="deepPurple" data-selected>Deep Purple</x-item>
+              <x-item data-value="indigo">Indigo</x-item>
+              <x-item data-value="blue">Blue</x-item>
+              <x-item data-value="lightBlue">Light Blue</x-item>
+              <x-item data-value="cyan">Cyan</x-item>
+              <x-item data-value="teal">Teal</x-item>
+              <x-item data-value="green">Green</x-item>
+              <x-item data-value="lightGreen">Light Green</x-item>
+              <x-item data-value="lime">Lime</x-item>
+              <x-item data-value="yellow">Yellow</x-item>
+              <x-item data-value="amber">Amber</x-item>
+              <x-item data-value="orange">Orange</x-item>
+              <x-item data-value="deepOrange">Deep Orange</x-item>
+              <x-item data-value="brown">Brown</x-item>
+              <x-item data-value="blueGrey">Blue Grey</x-item>
             </x-options>
           </x-dropdown>
         </div>

@@ -1,35 +1,36 @@
-/* -- functions -- */
 function error(message){
-  while( _body._snackbar.$text.firstChild ){
-    _body._snackbar.$text.removeChild(_body._snackbar.$text.firstChild);
+  let $text = $('.snackbar > .text')[0];
+  while( $text.firstChild ){
+    $text.removeChild($text.firstChild);
   }
-  _body._snackbar.$text.insertAdjacentHTML('beforeEnd', message);
+  $text.insertAdjacentHTML('beforeEnd', message);
 
-  _body.$snackbar.removeAttribute('sleep');
+  $('.snackbar')[0].setAttribute('data-active', "");
 }
+
+let redirect;
 function parseFile(files, reload = false){
-  if( !_body.$snackbar.hasAttribute('sleep') ){
-    _body.$snackbar.setAttribute('sleep', '');
+  if( $('.snackbar')[0].hasAttribute('data-active') ){
+    $('.snackbar')[0].removeAttribute('data-active');
   }
+
   if( files.length > 1 ){
     error("More than one file uploaded! Assuming first file.");
   }else if( files.length === 0 ){
     error("No files uploaded!");
-    return;
+    return false;
   }
+
   let file = files[0];
   if( file.name.split(".").pop() !== "md" ){
     error("File is not <code>.md</code> extension!");
-    return;
+    return false;
   }
 
-  _body._menu._path.$text.textContent = "";
+  $('.path > .text')[0].textContent = "";
 
-  while( _body._snackbar.$text.firstChild ){
-    _body._snackbar.$text.removeChild(_body._snackbar.$text.firstChild);
-  }
-  _body["_osu-wiki"]._heading["_article-title"].$h1.textContent = "";
-  _body["_osu-wiki"]._heading["_article-title"].$h2.textContent = "";
+  $('.osu-wiki > .heading > .article-title > h1')[0].textContent = "";
+  $('.osu-wiki > .heading > .article-title > h2')[0].textContent = "";
 
   path.fragments = file.path.split("\\");
   path.directory = path.fragments.join("/");
@@ -50,27 +51,22 @@ function parseFile(files, reload = false){
     error("An error occured while reading the <code>redirect.yaml</code> file.");
   }
 
-  let lists = _body._errors.$lists.children;
+  let lists = $('.errors .lists .list .group ul');
   for( let i = 0; i < lists.length; i++ ){
-    let list = lists[i].children;
-    for( let j = 0; j < list.length; j++ ){
-      let ul = list[j].children[1];
-      while( ul.firstChild ){
-        ul.removeChild(ul.firstChild);
-      }
+    while( lists[i].firstChild ){
+      lists[i].removeChild(lists[i].firstChild);
     }
   }
 
-  _body._menu._path.$text.textContent = path.display;
-  if( _body._menu._path.$text.offsetWidth > _body._menu.$path.offsetWidth - _body._menu._path["$icon[file-tree]"].offsetWidth - parseInt(window.getComputedStyle(_body._menu._path.$text, null).getPropertyValue('padding-left')) ){
-    _body._menu._path.$text.classList.add('scroll');
+  $('.menu > .path > .text')[0].textContent = path.display;
+  if( $('.menu > .path > .text')[0].offsetWidth > $('.menu > .path')[0].offsetWidth - $('.menu > .path > x-icon[data-ico="file-tree"]').offsetWidth - parseInt(window.getComputedStyle($('.menu > .path > .text')[0], null).getPropertyValue('padding-left')) ){
+    $('.menu > .path > .text')[0].classList.add('scroll');
   }else{
-    _body._menu._path.$text.classList.remove('scroll');
+    $('.menu > .path > .text')[0].classList.remove('scroll');
   }
 
   if( !reload ){
-    _body._menu["_container[right]"]["$icon[chevron-double-up]"].click();
+    $('.menu > .container.right > x-icon[data-ico="chevron-double-up"]')[0].click();
   }
   FR.readAsText(file);
 }
-})();

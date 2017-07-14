@@ -7,9 +7,8 @@ void(function(){
   xhr.addEventListener('load', function(){
     let response = this.response;
     if( version !== response[0].tag_name){
-      error("A new version of mdp-osu has been released! <download>Download</download>");
-      let _download = $('snackbar > text > download')[0];
-      _download.onclick = function(){
+      error("A new version of mdp-osu has been released! <span class=\"download\">Download</span>");
+      $('.snackbar > .text > .download')[0].onclick = function(){
         shell.openExternal('https://github.com/MegaApplePi/mdp-osu/releases/latest');
       };
     }

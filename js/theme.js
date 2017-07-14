@@ -3,16 +3,16 @@ function setTheme(colour){
   if( !validThemeColours.includes(colour) ){
     colour = "deepPurple";
   }
-  _body.$menu.setAttribute('theme', colour);
-  _body.$errors.setAttribute('theme', colour);
-  _body.$snackbar.setAttribute('theme', colour);
-  $('settings dropdown').forEach(function(e){
+  $('.menu')[0].setAttribute('data-theme', colour);
+  $('.errors')[0].setAttribute('data-theme', colour);
+  $('.snackbar')[0].setAttribute('data-theme', colour);
+  $('.settings x-dropdown').forEach(function(e){
     e.setAttribute('theme', colour);
   });
 
-  $('body > settings > group[item="theme"] > bodying > dropdown > options > item[selected]')[0].removeAttribute('selected');
-  $('body > settings > group[item="theme"] > bodying > dropdown > options > item[value="' + colour + '"]')[0].setAttribute('selected', '');
-  _body._settings["_group[theme]"]._bodying._dropdown._selected.$text.textContent = $('body > settings > group[item="theme"] > bodying > dropdown > options > item[value="' + colour + '"]')[0].textContent;
+  $('.settings > .group[data-item="theme"] > .bodying > x-dropdown > x-options > x-item[data-selected]')[0].removeAttribute('data-selected');
+  $('.settings > .group[data-item="theme"] > .bodying > x-dropdown > x-options > x-item[data-value="' + colour + '"]')[0].setAttribute('data-selected', '');
+  $('.settings > .group[data-item="theme"] > .bodying > x-dropdown > x-selected > .text')[0].textContent = $('.settings > .group[data-item="theme"] > .bodying > x-dropdown > x-options > x-item[data-value="' + colour + '"]')[0].textContent;
   localStorage.setItem('theme', colour);
 }
 (function(){
