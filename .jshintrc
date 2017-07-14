@@ -1,0 +1,16 @@
+{
+  "browser": true,
+  "globals":{
+    "nodeRequire": true,
+    "$": true,
+    "fs": true,
+
+    "parseFile": true,
+    "shell": true,
+    "setTheme": true,
+    "error": true,
+
+    "redirect": true,
+    "path": true
+  }
+}

@@ -1,4 +1,4 @@
-> snackbar{
+> .snackbar{
   align-items: center;
   background: $snackbar--background;
   border-radius: 2px;
@@ -9,141 +9,15 @@
   padding: 24px;
   position: absolute;
   cursor: default;
-  transform: translateY(0);
+  transform: translateY(#{calc(100% + 24px)});
   transition: 1s transform;
   user-select: none;
   @include card(1);
-  &[sleep]{
-    transform: translateY(#{calc(100% + 24px)});
+  &[data-active]{
+    transform: translateY(0);
   }
-  &[theme="red"]{
-    > text{
-      > download{
-        color: $snackbar_theme__red-text-download--color;
-      }
-    }
-  }
-  &[theme="pink"]{
-    > text{
-      > download{
-        color: $snackbar_theme__pink-text-download--color;
-      }
-    }
-  }
-  &[theme="purple"]{
-    > text{
-      > download{
-        color: $snackbar_theme__purple-text-download--color;
-      }
-    }
-  }
-  &[theme="deepPurple"]{
-    > text{
-      > download{
-        color: $snackbar_theme__deepPurple-text-download--color;
-      }
-    }
-  }
-  &[theme="indigo"]{
-    > text{
-      > download{
-        color: $snackbar_theme__indigo-text-download--color;
-      }
-    }
-  }
-  &[theme="blue"]{
-    > text{
-      > download{
-        color: $snackbar_theme__blue-text-download--color;
-      }
-    }
-  }
-  &[theme="lightBlue"]{
-    > text{
-      > download{
-        color: $snackbar_theme__lightBlue-text-download--color;
-      }
-    }
-  }
-  &[theme="cyan"]{
-    > text{
-      > download{
-        color: $snackbar_theme__cyan-text-download--color;
-      }
-    }
-  }
-  &[theme="teal"]{
-    > text{
-      > download{
-        color: $snackbar_theme__teal-text-download--color;
-      }
-    }
-  }
-  &[theme="green"]{
-    > text{
-      > download{
-        color: $snackbar_theme__green-text-download--color;
-      }
-    }
-  }
-  &[theme="lightGreen"]{
-    > text{
-      > download{
-        color: $snackbar_theme__lightGreen-text-download--color;
-      }
-    }
-  }
-  &[theme="lime"]{
-    > text{
-      > download{
-        color: $snackbar_theme__lime-text-download--color;
-      }
-    }
-  }
-  &[theme="yellow"]{
-    > text{
-      > download{
-        color: $snackbar_theme__yellow-text-download--color;
-      }
-    }
-  }
-  &[theme="amber"]{
-    > text{
-      > download{
-        color: $snackbar_theme__amber-text-download--color;
-      }
-    }
-  }
-  &[theme="orange"]{
-    > text{
-      > download{
-        color: $snackbar_theme__orange-text-download--color;
-      }
-    }
-  }
-  &[theme="deepOrange"]{
-    > text{
-      > download{
-        color: $snackbar_theme__deepOrange-text-download--color;
-      }
-    }
-  }
-  &[theme="brown"]{
-    > text{
-      > download{
-        color: $snackbar_theme__brown-text-download--color;
-      }
-    }
-  }
-  &[theme="blueGrey"]{
-    > text{
-      > download{
-        color: $snackbar_theme__blueGrey-text-download--color;
-      }
-    }
-  }
-  > text{
-    > download{
+  > .text{
+    > .download{
       cursor: pointer;
       padding-left: 8px;
       padding-right: 4px;
@@ -153,7 +27,7 @@
       }
     }
   }
-  > icon{
+  > x-icon{
     cursor: pointer;
     font-size: 24px;
   }

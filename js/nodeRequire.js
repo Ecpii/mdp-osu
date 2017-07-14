@@ -8,6 +8,3 @@ const markdown = new showdown.Converter({
   'openLinksInNewWindow': true
 });
 const yaml = nodeRequire('js-yaml');
-
-let redirect;
-const localStorage = window.localStorage;

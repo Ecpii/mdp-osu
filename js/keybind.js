@@ -4,7 +4,7 @@ document.addEventListener('keydown', function(e){
   map[key] = true;
   if( map.Control && map.r )
   {
-    _body._menu["_container[left]"]["$icon[reload]"].click();
+    $('.menu > .container.left > x-icon[data-ico="reload"]')[0].click();
   }
   else if( key === "Tab" )
   {

@@ -1,6 +1,6 @@
 const fix = Object.solidify({
   'img':function(){
-    let _img = $('osu-wiki > markdown img');
+    let _img = $('.osu-wiki > .markdown img');
     for( let i = 0; i < _img.length; i++ ){
       let src_original = _img[i].getAttribute('src');
       let src = src_original;
@@ -18,7 +18,7 @@ const fix = Object.solidify({
       _img[i].setAttribute('src', src);
       /* jshint ignore:start */
       _img[i].addEventListener('error', function(e){
-        _body._errors._lists["_list[images]"]["_group[errored]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + src_original + "</code></li>");
+        $('.errors .list[data-item="images"] .group[data-item="errored] ul').insertAdjacentHTML('beforeEnd', "<li><code>" + src_original + "</code></li>");
       });
       /* jshint ignore:end */
 
@@ -30,6 +30,7 @@ const fix = Object.solidify({
           break;
         }
       }
+      //TOFIX this misses textContent
       //console.log(.every(function(element, index, array){ return element.tagName === "IMG"; }));
       if( _img[i].hasAttribute('title') && _img[i].parentElement.tagName === 'P' && _img[i].parentElement.children.length === 1 ){
         _img[i].parentElement.setAttribute('class', 'figure');
@@ -42,7 +43,7 @@ const fix = Object.solidify({
     return;
   },
   'a':function(){
-    let _a = $('osu-wiki > markdown a');
+    let _a = $('.osu-wiki > .markdown a');
     for( let i = 0; i < _a.length; i++ ){
       let href = _a[i].getAttribute('href');
       let new_href;
@@ -55,14 +56,14 @@ const fix = Object.solidify({
         xhr.addEventListener('load', function(){
           let status = this.status;
           if( status === 404 ){
-            _body._errors._lists["_list[links]"]["_group[http" + status + "]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code></li>");
+            $('.errors > .lists > .list[data-item="links"] > .group[data-item="http404"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code></li>");
           }else if( status !== 200 ){
-            _body._errors._lists["_list[links]"]["_group[httpmisc]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
+            $('.errors > .lists > .list[data-item="links"] > .group[data-item="httpmisc"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
           }
         });
         xhr.addEventListener('error', function(){
           let status = this.status;
-          _body._errors._lists["_list[links]"]["_group[httpfailed]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
+          $('.errors > .lists > .list[data-item="links"] > .group[data-item="httpfailed"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li><code>" + href + "</code> (" + status + ")</li>");
         });
         /* jshint ignore:end */
         xhr.open('HEAD', href);
@@ -72,20 +73,20 @@ const fix = Object.solidify({
       else if( /^(?:\.?\.\/|[a-zA-Z0-9_])/.test(href) )
       {
         //console.log('fold', href);
-        new_href = path.folder + href + "/" + path.file;
+        new_href = path.folder + href + "/" + path.locale;
       }
       else if( /^(?:\/)/.test(href) )
       {
         //console.log('root', href);
-        new_href = path.root + href + "/" + path.file;
+        new_href = path.root + href + "/" + path.locale;
       }
       if( !fs.existsSync(new_href) ){
         let key_original = href;
-        let key = href.replace(/^\/wiki\//, "").replace(/#.*/, "").toLowerCase();
+        let key = href.replace(/^\/wiki\//, "").replace(/#.*/, "").replace(/\/$/, "").toLowerCase();
         if( redirect && redirect[key] ){
           new_href = path.root + "/wiki/" + redirect[key];
         }else{
-          _body._errors._lists["_list[links]"]["_group[internal]"].$ul.insertAdjacentHTML('beforeEnd', "<li><code>" + key_original + "</code></li>");
+          $('.errors > .lists > .list[data-item="links"] > .group[data-item="internal"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li><code>" + key_original + "</code></li>");
         }
       }
       _a[i].setAttribute('href', new_href);

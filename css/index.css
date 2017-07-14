@@ -18,6 +18,330 @@
   src: url("../font/MaterialDesign-Webfont/materialdesignicons-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
+.red--background.prim {
+  background: #f44336; }
+
+.red--color.prim {
+  color: #f44336; }
+
+.red--background.ligh {
+  background: #ff7961; }
+
+.red--color.ligh {
+  color: #ff7961; }
+
+.red--background.dark {
+  background: #ba000d; }
+
+.red--color.dark {
+  color: #ba000d; }
+
+.pink--background.prim {
+  background: #e91e63; }
+
+.pink--color.prim {
+  color: #e91e63; }
+
+.pink--background.ligh {
+  background: #ff6090; }
+
+.pink--color.ligh {
+  color: #ff6090; }
+
+.pink--background.dark {
+  background: #b0003a; }
+
+.pink--color.dark {
+  color: #b0003a; }
+
+.purple--background.prim {
+  background: #9c27b0; }
+
+.purple--color.prim {
+  color: #9c27b0; }
+
+.purple--background.ligh {
+  background: #d05ce3; }
+
+.purple--color.ligh {
+  color: #d05ce3; }
+
+.purple--background.dark {
+  background: #6a0080; }
+
+.purple--color.dark {
+  color: #6a0080; }
+
+.deepPurple--background.prim {
+  background: #673ab7; }
+
+.deepPurple--color.prim {
+  color: #673ab7; }
+
+.deepPurple--background.ligh {
+  background: #9a67ea; }
+
+.deepPurple--color.ligh {
+  color: #9a67ea; }
+
+.deepPurple--background.dark {
+  background: #320b86; }
+
+.deepPurple--color.dark {
+  color: #320b86; }
+
+.indigo--background.prim {
+  background: #3f51b5; }
+
+.indigo--color.prim {
+  color: #3f51b5; }
+
+.indigo--background.ligh {
+  background: #757de8; }
+
+.indigo--color.ligh {
+  color: #757de8; }
+
+.indigo--background.dark {
+  background: #002984; }
+
+.indigo--color.dark {
+  color: #002984; }
+
+.blue--background.prim {
+  background: #2196f3; }
+
+.blue--color.prim {
+  color: #2196f3; }
+
+.blue--background.ligh {
+  background: #6ec6ff; }
+
+.blue--color.ligh {
+  color: #6ec6ff; }
+
+.blue--background.dark {
+  background: #0069c0; }
+
+.blue--color.dark {
+  color: #0069c0; }
+
+.lightBlue--background.prim {
+  background: #03a9f4; }
+
+.lightBlue--color.prim {
+  color: #03a9f4; }
+
+.lightBlue--background.ligh {
+  background: #67daff; }
+
+.lightBlue--color.ligh {
+  color: #67daff; }
+
+.lightBlue--background.dark {
+  background: #007ac1; }
+
+.lightBlue--color.dark {
+  color: #007ac1; }
+
+.cyan--background.prim {
+  background: #00bcd4; }
+
+.cyan--color.prim {
+  color: #00bcd4; }
+
+.cyan--background.ligh {
+  background: #62efff; }
+
+.cyan--color.ligh {
+  color: #62efff; }
+
+.cyan--background.dark {
+  background: #008ba3; }
+
+.cyan--color.dark {
+  color: #008ba3; }
+
+.teal--background.prim {
+  background: #009688; }
+
+.teal--color.prim {
+  color: #009688; }
+
+.teal--background.ligh {
+  background: #52c7b8; }
+
+.teal--color.ligh {
+  color: #52c7b8; }
+
+.teal--background.dark {
+  background: #00675b; }
+
+.teal--color.dark {
+  color: #00675b; }
+
+.green--background.prim {
+  background: #4caf50; }
+
+.green--color.prim {
+  color: #4caf50; }
+
+.green--background.ligh {
+  background: #80e27e; }
+
+.green--color.ligh {
+  color: #80e27e; }
+
+.green--background.dark {
+  background: #087f23; }
+
+.green--color.dark {
+  color: #087f23; }
+
+.lightGreen--background.prim {
+  background: #8bc34a; }
+
+.lightGreen--color.prim {
+  color: #8bc34a; }
+
+.lightGreen--background.ligh {
+  background: #bef67a; }
+
+.lightGreen--color.ligh {
+  color: #bef67a; }
+
+.lightGreen--background.dark {
+  background: #5a9216; }
+
+.lightGreen--color.dark {
+  color: #5a9216; }
+
+.lime--background.prim {
+  background: #cddc39; }
+
+.lime--color.prim {
+  color: #cddc39; }
+
+.lime--background.ligh {
+  background: #ffff6e; }
+
+.lime--color.ligh {
+  color: #ffff6e; }
+
+.lime--background.dark {
+  background: #99aa00; }
+
+.lime--color.dark {
+  color: #99aa00; }
+
+.yellow--background.prim {
+  background: #ffeb3b; }
+
+.yellow--color.prim {
+  color: #ffeb3b; }
+
+.yellow--background.ligh {
+  background: #ffff72; }
+
+.yellow--color.ligh {
+  color: #ffff72; }
+
+.yellow--background.dark {
+  background: #c8b900; }
+
+.yellow--color.dark {
+  color: #c8b900; }
+
+.amber--background.prim {
+  background: #ffc107; }
+
+.amber--color.prim {
+  color: #ffc107; }
+
+.amber--background.ligh {
+  background: #fff350; }
+
+.amber--color.ligh {
+  color: #fff350; }
+
+.amber--background.dark {
+  background: #c79100; }
+
+.amber--color.dark {
+  color: #c79100; }
+
+.orange--background.prim {
+  background: #ff9800; }
+
+.orange--color.prim {
+  color: #ff9800; }
+
+.orange--background.ligh {
+  background: #ffc947; }
+
+.orange--color.ligh {
+  color: #ffc947; }
+
+.orange--background.dark {
+  background: #c66900; }
+
+.orange--color.dark {
+  color: #c66900; }
+
+.deepOrange--background.prim {
+  background: #ff5722; }
+
+.deepOrange--color.prim {
+  color: #ff5722; }
+
+.deepOrange--background.ligh {
+  background: #ff8a50; }
+
+.deepOrange--color.ligh {
+  color: #ff8a50; }
+
+.deepOrange--background.dark {
+  background: #c41c00; }
+
+.deepOrange--color.dark {
+  color: #c41c00; }
+
+.brown--background.prim {
+  background: #795548; }
+
+.brown--color.prim {
+  color: #795548; }
+
+.brown--background.ligh {
+  background: #a98274; }
+
+.brown--color.ligh {
+  color: #a98274; }
+
+.brown--background.dark {
+  background: #4b2c20; }
+
+.brown--color.dark {
+  color: #4b2c20; }
+
+.blueGrey--background.prim {
+  background: #607d8b; }
+
+.blueGrey--color.prim {
+  color: #607d8b; }
+
+.blueGrey--background.ligh {
+  background: #8eacbb; }
+
+.blueGrey--color.ligh {
+  color: #8eacbb; }
+
+.blueGrey--background.dark {
+  background: #34515e; }
+
+.blueGrey--color.dark {
+  color: #34515e; }
+
 @keyframes scroll {
   10%, 90% {
     transform: translateX(0); }
@@ -58,222 +382,186 @@ body {
     white-space: nowrap;
     width: 100%;
     z-index: 1; }
-    body > .menu[theme="red"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="red"] > container > icon:hover {
-        color: #ff7961; }
-      body > .menu[theme="red"] > container > icon:active {
-        color: #ba000d; }
-      body > .menu[theme="red"] > container > icon[enabled] {
-        color: #f44336; }
-        body > .menu[theme="red"] > container > icon[enabled]:hover {
-          color: #ba000d; }
-        body > .menu[theme="red"] > container > icon[enabled]:active {
-          color: #ff7961; }
-    body > .menu[theme="pink"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="pink"] > container > icon:hover {
-        color: #ff6090; }
-      body > .menu[theme="pink"] > container > icon:active {
-        color: #b0003a; }
-      body > .menu[theme="pink"] > container > icon[enabled] {
-        color: #e91e63; }
-        body > .menu[theme="pink"] > container > icon[enabled]:hover {
-          color: #b0003a; }
-        body > .menu[theme="pink"] > container > icon[enabled]:active {
-          color: #ff6090; }
-    body > .menu[theme="purple"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="purple"] > container > icon:hover {
-        color: #d05ce3; }
-      body > .menu[theme="purple"] > container > icon:active {
-        color: #6a0080; }
-      body > .menu[theme="purple"] > container > icon[enabled] {
-        color: #9c27b0; }
-        body > .menu[theme="purple"] > container > icon[enabled]:hover {
-          color: #6a0080; }
-        body > .menu[theme="purple"] > container > icon[enabled]:active {
-          color: #d05ce3; }
-    body > .menu[theme="deepPurple"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="deepPurple"] > container > icon:hover {
-        color: #9a67ea; }
-      body > .menu[theme="deepPurple"] > container > icon:active {
-        color: #320b86; }
-      body > .menu[theme="deepPurple"] > container > icon[enabled] {
-        color: #673ab7; }
-        body > .menu[theme="deepPurple"] > container > icon[enabled]:hover {
-          color: #320b86; }
-        body > .menu[theme="deepPurple"] > container > icon[enabled]:active {
-          color: #9a67ea; }
-    body > .menu[theme="indigo"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="indigo"] > container > icon:hover {
-        color: #757de8; }
-      body > .menu[theme="indigo"] > container > icon:active {
-        color: #002984; }
-      body > .menu[theme="indigo"] > container > icon[enabled] {
-        color: #3f51b5; }
-        body > .menu[theme="indigo"] > container > icon[enabled]:hover {
-          color: #002984; }
-        body > .menu[theme="indigo"] > container > icon[enabled]:active {
-          color: #757de8; }
-    body > .menu[theme="blue"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="blue"] > container > icon:hover {
-        color: #6ec6ff; }
-      body > .menu[theme="blue"] > container > icon:active {
-        color: #0069c0; }
-      body > .menu[theme="blue"] > container > icon[enabled] {
-        color: #2196f3; }
-        body > .menu[theme="blue"] > container > icon[enabled]:hover {
-          color: #0069c0; }
-        body > .menu[theme="blue"] > container > icon[enabled]:active {
-          color: #6ec6ff; }
-    body > .menu[theme="lightBlue"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="lightBlue"] > container > icon:hover {
-        color: #67daff; }
-      body > .menu[theme="lightBlue"] > container > icon:active {
-        color: #007ac1; }
-      body > .menu[theme="lightBlue"] > container > icon[enabled] {
-        color: #03a9f4; }
-        body > .menu[theme="lightBlue"] > container > icon[enabled]:hover {
-          color: #007ac1; }
-        body > .menu[theme="lightBlue"] > container > icon[enabled]:active {
-          color: #67daff; }
-    body > .menu[theme="cyan"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="cyan"] > container > icon:hover {
-        color: #62efff; }
-      body > .menu[theme="cyan"] > container > icon:active {
-        color: #008ba3; }
-      body > .menu[theme="cyan"] > container > icon[enabled] {
-        color: #00bcd4; }
-        body > .menu[theme="cyan"] > container > icon[enabled]:hover {
-          color: #008ba3; }
-        body > .menu[theme="cyan"] > container > icon[enabled]:active {
-          color: #62efff; }
-    body > .menu[theme="teal"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="teal"] > container > icon:hover {
-        color: #52c7b8; }
-      body > .menu[theme="teal"] > container > icon:active {
-        color: #00675b; }
-      body > .menu[theme="teal"] > container > icon[enabled] {
-        color: #009688; }
-        body > .menu[theme="teal"] > container > icon[enabled]:hover {
-          color: #00675b; }
-        body > .menu[theme="teal"] > container > icon[enabled]:active {
-          color: #52c7b8; }
-    body > .menu[theme="green"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="green"] > container > icon:hover {
-        color: #80e27e; }
-      body > .menu[theme="green"] > container > icon:active {
-        color: #087f23; }
-      body > .menu[theme="green"] > container > icon[enabled] {
-        color: #4caf50; }
-        body > .menu[theme="green"] > container > icon[enabled]:hover {
-          color: #087f23; }
-        body > .menu[theme="green"] > container > icon[enabled]:active {
-          color: #80e27e; }
-    body > .menu[theme="lightGreen"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="lightGreen"] > container > icon:hover {
-        color: #bef67a; }
-      body > .menu[theme="lightGreen"] > container > icon:active {
-        color: #5a9216; }
-      body > .menu[theme="lightGreen"] > container > icon[enabled] {
-        color: #8bc34a; }
-        body > .menu[theme="lightGreen"] > container > icon[enabled]:hover {
-          color: #5a9216; }
-        body > .menu[theme="lightGreen"] > container > icon[enabled]:active {
-          color: #bef67a; }
-    body > .menu[theme="lime"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="lime"] > container > icon:hover {
-        color: #ffff6e; }
-      body > .menu[theme="lime"] > container > icon:active {
-        color: #99aa00; }
-      body > .menu[theme="lime"] > container > icon[enabled] {
-        color: #cddc39; }
-        body > .menu[theme="lime"] > container > icon[enabled]:hover {
-          color: #99aa00; }
-        body > .menu[theme="lime"] > container > icon[enabled]:active {
-          color: #ffff6e; }
-    body > .menu[theme="yellow"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="yellow"] > container > icon:hover {
-        color: #ffff72; }
-      body > .menu[theme="yellow"] > container > icon:active {
-        color: #c8b900; }
-      body > .menu[theme="yellow"] > container > icon[enabled] {
-        color: #ffeb3b; }
-        body > .menu[theme="yellow"] > container > icon[enabled]:hover {
-          color: #c8b900; }
-        body > .menu[theme="yellow"] > container > icon[enabled]:active {
-          color: #ffff72; }
-    body > .menu[theme="amber"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="amber"] > container > icon:hover {
-        color: #fff350; }
-      body > .menu[theme="amber"] > container > icon:active {
-        color: #c79100; }
-      body > .menu[theme="amber"] > container > icon[enabled] {
-        color: #ffc107; }
-        body > .menu[theme="amber"] > container > icon[enabled]:hover {
-          color: #c79100; }
-        body > .menu[theme="amber"] > container > icon[enabled]:active {
-          color: #fff350; }
-    body > .menu[theme="orange"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="orange"] > container > icon:hover {
-        color: #ffc947; }
-      body > .menu[theme="orange"] > container > icon:active {
-        color: #c66900; }
-      body > .menu[theme="orange"] > container > icon[enabled] {
-        color: #ff9800; }
-        body > .menu[theme="orange"] > container > icon[enabled]:hover {
-          color: #c66900; }
-        body > .menu[theme="orange"] > container > icon[enabled]:active {
-          color: #ffc947; }
-    body > .menu[theme="deepOrange"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="deepOrange"] > container > icon:hover {
-        color: #ff8a50; }
-      body > .menu[theme="deepOrange"] > container > icon:active {
-        color: #c41c00; }
-      body > .menu[theme="deepOrange"] > container > icon[enabled] {
-        color: #ff5722; }
-        body > .menu[theme="deepOrange"] > container > icon[enabled]:hover {
-          color: #c41c00; }
-        body > .menu[theme="deepOrange"] > container > icon[enabled]:active {
-          color: #ff8a50; }
-    body > .menu[theme="brown"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="brown"] > container > icon:hover {
-        color: #a98274; }
-      body > .menu[theme="brown"] > container > icon:active {
-        color: #4b2c20; }
-      body > .menu[theme="brown"] > container > icon[enabled] {
-        color: #795548; }
-        body > .menu[theme="brown"] > container > icon[enabled]:hover {
-          color: #4b2c20; }
-        body > .menu[theme="brown"] > container > icon[enabled]:active {
-          color: #a98274; }
-    body > .menu[theme="blueGrey"] > container > icon {
-      color: #fff; }
-      body > .menu[theme="blueGrey"] > container > icon:hover {
-        color: #8eacbb; }
-      body > .menu[theme="blueGrey"] > container > icon:active {
-        color: #34515e; }
-      body > .menu[theme="blueGrey"] > container > icon[enabled] {
-        color: #607d8b; }
-        body > .menu[theme="blueGrey"] > container > icon[enabled]:hover {
-          color: #34515e; }
-        body > .menu[theme="blueGrey"] > container > icon[enabled]:active {
-          color: #8eacbb; }
+    body > .menu[data-theme="red"] > .container > x-icon[data-enabled] {
+      color: #f44336; }
+    body > .menu[data-theme="red"] > .container > x-icon:hover {
+      color: #ff7961; }
+    body > .menu[data-theme="red"] > .container > x-icon[data-enabled]:active {
+      color: #ff7961; }
+    body > .menu[data-theme="red"] > .container > x-icon:active {
+      color: #ba000d; }
+    body > .menu[data-theme="red"] > .container > x-icon[data-enabled]:hover {
+      color: #ba000d; }
+    body > .menu[data-theme="pink"] > .container > x-icon[data-enabled] {
+      color: #e91e63; }
+    body > .menu[data-theme="pink"] > .container > x-icon:hover {
+      color: #ff6090; }
+    body > .menu[data-theme="pink"] > .container > x-icon[data-enabled]:active {
+      color: #ff6090; }
+    body > .menu[data-theme="pink"] > .container > x-icon:active {
+      color: #b0003a; }
+    body > .menu[data-theme="pink"] > .container > x-icon[data-enabled]:hover {
+      color: #b0003a; }
+    body > .menu[data-theme="purple"] > .container > x-icon[data-enabled] {
+      color: #9c27b0; }
+    body > .menu[data-theme="purple"] > .container > x-icon:hover {
+      color: #d05ce3; }
+    body > .menu[data-theme="purple"] > .container > x-icon[data-enabled]:active {
+      color: #d05ce3; }
+    body > .menu[data-theme="purple"] > .container > x-icon:active {
+      color: #6a0080; }
+    body > .menu[data-theme="purple"] > .container > x-icon[data-enabled]:hover {
+      color: #6a0080; }
+    body > .menu[data-theme="deepPurple"] > .container > x-icon[data-enabled] {
+      color: #673ab7; }
+    body > .menu[data-theme="deepPurple"] > .container > x-icon:hover {
+      color: #9a67ea; }
+    body > .menu[data-theme="deepPurple"] > .container > x-icon[data-enabled]:active {
+      color: #9a67ea; }
+    body > .menu[data-theme="deepPurple"] > .container > x-icon:active {
+      color: #320b86; }
+    body > .menu[data-theme="deepPurple"] > .container > x-icon[data-enabled]:hover {
+      color: #320b86; }
+    body > .menu[data-theme="indigo"] > .container > x-icon[data-enabled] {
+      color: #3f51b5; }
+    body > .menu[data-theme="indigo"] > .container > x-icon:hover {
+      color: #757de8; }
+    body > .menu[data-theme="indigo"] > .container > x-icon[data-enabled]:active {
+      color: #757de8; }
+    body > .menu[data-theme="indigo"] > .container > x-icon:active {
+      color: #002984; }
+    body > .menu[data-theme="indigo"] > .container > x-icon[data-enabled]:hover {
+      color: #002984; }
+    body > .menu[data-theme="blue"] > .container > x-icon[data-enabled] {
+      color: #2196f3; }
+    body > .menu[data-theme="blue"] > .container > x-icon:hover {
+      color: #6ec6ff; }
+    body > .menu[data-theme="blue"] > .container > x-icon[data-enabled]:active {
+      color: #6ec6ff; }
+    body > .menu[data-theme="blue"] > .container > x-icon:active {
+      color: #0069c0; }
+    body > .menu[data-theme="blue"] > .container > x-icon[data-enabled]:hover {
+      color: #0069c0; }
+    body > .menu[data-theme="lightBlue"] > .container > x-icon[data-enabled] {
+      color: #03a9f4; }
+    body > .menu[data-theme="lightBlue"] > .container > x-icon:hover {
+      color: #67daff; }
+    body > .menu[data-theme="lightBlue"] > .container > x-icon[data-enabled]:active {
+      color: #67daff; }
+    body > .menu[data-theme="lightBlue"] > .container > x-icon:active {
+      color: #007ac1; }
+    body > .menu[data-theme="lightBlue"] > .container > x-icon[data-enabled]:hover {
+      color: #007ac1; }
+    body > .menu[data-theme="cyan"] > .container > x-icon[data-enabled] {
+      color: #00bcd4; }
+    body > .menu[data-theme="cyan"] > .container > x-icon:hover {
+      color: #62efff; }
+    body > .menu[data-theme="cyan"] > .container > x-icon[data-enabled]:active {
+      color: #62efff; }
+    body > .menu[data-theme="cyan"] > .container > x-icon:active {
+      color: #008ba3; }
+    body > .menu[data-theme="cyan"] > .container > x-icon[data-enabled]:hover {
+      color: #008ba3; }
+    body > .menu[data-theme="teal"] > .container > x-icon[data-enabled] {
+      color: #009688; }
+    body > .menu[data-theme="teal"] > .container > x-icon:hover {
+      color: #52c7b8; }
+    body > .menu[data-theme="teal"] > .container > x-icon[data-enabled]:active {
+      color: #52c7b8; }
+    body > .menu[data-theme="teal"] > .container > x-icon:active {
+      color: #00675b; }
+    body > .menu[data-theme="teal"] > .container > x-icon[data-enabled]:hover {
+      color: #00675b; }
+    body > .menu[data-theme="green"] > .container > x-icon[data-enabled] {
+      color: #4caf50; }
+    body > .menu[data-theme="green"] > .container > x-icon:hover {
+      color: #80e27e; }
+    body > .menu[data-theme="green"] > .container > x-icon[data-enabled]:active {
+      color: #80e27e; }
+    body > .menu[data-theme="green"] > .container > x-icon:active {
+      color: #087f23; }
+    body > .menu[data-theme="green"] > .container > x-icon[data-enabled]:hover {
+      color: #087f23; }
+    body > .menu[data-theme="lightGreen"] > .container > x-icon[data-enabled] {
+      color: #8bc34a; }
+    body > .menu[data-theme="lightGreen"] > .container > x-icon:hover {
+      color: #bef67a; }
+    body > .menu[data-theme="lightGreen"] > .container > x-icon[data-enabled]:active {
+      color: #bef67a; }
+    body > .menu[data-theme="lightGreen"] > .container > x-icon:active {
+      color: #5a9216; }
+    body > .menu[data-theme="lightGreen"] > .container > x-icon[data-enabled]:hover {
+      color: #5a9216; }
+    body > .menu[data-theme="lime"] > .container > x-icon[data-enabled] {
+      color: #cddc39; }
+    body > .menu[data-theme="lime"] > .container > x-icon:hover {
+      color: #ffff6e; }
+    body > .menu[data-theme="lime"] > .container > x-icon[data-enabled]:active {
+      color: #ffff6e; }
+    body > .menu[data-theme="lime"] > .container > x-icon:active {
+      color: #99aa00; }
+    body > .menu[data-theme="lime"] > .container > x-icon[data-enabled]:hover {
+      color: #99aa00; }
+    body > .menu[data-theme="yellow"] > .container > x-icon[data-enabled] {
+      color: #ffeb3b; }
+    body > .menu[data-theme="yellow"] > .container > x-icon:hover {
+      color: #ffff72; }
+    body > .menu[data-theme="yellow"] > .container > x-icon[data-enabled]:active {
+      color: #ffff72; }
+    body > .menu[data-theme="yellow"] > .container > x-icon:active {
+      color: #c8b900; }
+    body > .menu[data-theme="yellow"] > .container > x-icon[data-enabled]:hover {
+      color: #c8b900; }
+    body > .menu[data-theme="amber"] > .container > x-icon[data-enabled] {
+      color: #ffc107; }
+    body > .menu[data-theme="amber"] > .container > x-icon:hover {
+      color: #fff350; }
+    body > .menu[data-theme="amber"] > .container > x-icon[data-enabled]:active {
+      color: #fff350; }
+    body > .menu[data-theme="amber"] > .container > x-icon:active {
+      color: #c79100; }
+    body > .menu[data-theme="amber"] > .container > x-icon[data-enabled]:hover {
+      color: #c79100; }
+    body > .menu[data-theme="orange"] > .container > x-icon[data-enabled] {
+      color: #ff9800; }
+    body > .menu[data-theme="orange"] > .container > x-icon:hover {
+      color: #ffc947; }
+    body > .menu[data-theme="orange"] > .container > x-icon[data-enabled]:active {
+      color: #ffc947; }
+    body > .menu[data-theme="orange"] > .container > x-icon:active {
+      color: #c66900; }
+    body > .menu[data-theme="orange"] > .container > x-icon[data-enabled]:hover {
+      color: #c66900; }
+    body > .menu[data-theme="deepOrange"] > .container > x-icon[data-enabled] {
+      color: #ff5722; }
+    body > .menu[data-theme="deepOrange"] > .container > x-icon:hover {
+      color: #ff8a50; }
+    body > .menu[data-theme="deepOrange"] > .container > x-icon[data-enabled]:active {
+      color: #ff8a50; }
+    body > .menu[data-theme="deepOrange"] > .container > x-icon:active {
+      color: #c41c00; }
+    body > .menu[data-theme="deepOrange"] > .container > x-icon[data-enabled]:hover {
+      color: #c41c00; }
+    body > .menu[data-theme="brown"] > .container > x-icon[data-enabled] {
+      color: #795548; }
+    body > .menu[data-theme="brown"] > .container > x-icon:hover {
+      color: #a98274; }
+    body > .menu[data-theme="brown"] > .container > x-icon[data-enabled]:active {
+      color: #a98274; }
+    body > .menu[data-theme="brown"] > .container > x-icon:active {
+      color: #4b2c20; }
+    body > .menu[data-theme="brown"] > .container > x-icon[data-enabled]:hover {
+      color: #4b2c20; }
+    body > .menu[data-theme="blueGrey"] > .container > x-icon[data-enabled] {
+      color: #607d8b; }
+    body > .menu[data-theme="blueGrey"] > .container > x-icon:hover {
+      color: #8eacbb; }
+    body > .menu[data-theme="blueGrey"] > .container > x-icon[data-enabled]:active {
+      color: #8eacbb; }
+    body > .menu[data-theme="blueGrey"] > .container > x-icon:active {
+      color: #34515e; }
+    body > .menu[data-theme="blueGrey"] > .container > x-icon[data-enabled]:hover {
+      color: #34515e; }
     body > .menu > .container {
       display: inline-flex; }
       body > .menu > .container > x-icon {
@@ -339,11 +627,11 @@ body {
       padding-right: 40px;
       padding-bottom: 0;
       background-position: 50%; }
-      body > .osu-wiki > .heading article-title {
+      body > .osu-wiki > .heading .article-title {
         bottom: 0;
         font-family: "Exo 2", "Arial Grande", Tahoma, Helvetica, Arial, "Microsoft YaHei", SimHei, "Arial Unicode MS", sans-serif;
         position: absolute; }
-        body > .osu-wiki > .heading article-title h1 {
+        body > .osu-wiki > .heading .article-title h1 {
           text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
           font-size: 32px;
           margin: -5px -5px 5px;
@@ -354,9 +642,9 @@ body {
           padding-bottom: 15px;
           border-bottom: 5px solid #fc2;
           font-weight: 400; }
-          body > .osu-wiki > .heading article-title h1:empty {
+          body > .osu-wiki > .heading .article-title h1:empty {
             display: none; }
-        body > .osu-wiki > .heading article-title h2 {
+        body > .osu-wiki > .heading .article-title h2 {
           font-size: 16px;
           text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
           margin: -5px -5px 5px;
@@ -520,81 +808,117 @@ body {
     width: 75%;
     word-break: break-word;
     z-index: 1; }
+    body > .errors[data-theme="red"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #f44336; }
+    body > .errors[data-theme="red"] > .tabs > .tab {
+      border-bottom-color: #ff7961; }
+    body > .errors[data-theme="red"] > .tabs > .tab:hover {
+      border-bottom-color: #ba000d; }
+    body > .errors[data-theme="pink"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #e91e63; }
+    body > .errors[data-theme="pink"] > .tabs > .tab {
+      border-bottom-color: #ff6090; }
+    body > .errors[data-theme="pink"] > .tabs > .tab:hover {
+      border-bottom-color: #b0003a; }
+    body > .errors[data-theme="purple"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #9c27b0; }
+    body > .errors[data-theme="purple"] > .tabs > .tab {
+      border-bottom-color: #d05ce3; }
+    body > .errors[data-theme="purple"] > .tabs > .tab:hover {
+      border-bottom-color: #6a0080; }
+    body > .errors[data-theme="deepPurple"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #673ab7; }
+    body > .errors[data-theme="deepPurple"] > .tabs > .tab {
+      border-bottom-color: #9a67ea; }
+    body > .errors[data-theme="deepPurple"] > .tabs > .tab:hover {
+      border-bottom-color: #320b86; }
+    body > .errors[data-theme="indigo"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #3f51b5; }
+    body > .errors[data-theme="indigo"] > .tabs > .tab {
+      border-bottom-color: #757de8; }
+    body > .errors[data-theme="indigo"] > .tabs > .tab:hover {
+      border-bottom-color: #002984; }
+    body > .errors[data-theme="blue"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #2196f3; }
+    body > .errors[data-theme="blue"] > .tabs > .tab {
+      border-bottom-color: #6ec6ff; }
+    body > .errors[data-theme="blue"] > .tabs > .tab:hover {
+      border-bottom-color: #0069c0; }
+    body > .errors[data-theme="lightBlue"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #03a9f4; }
+    body > .errors[data-theme="lightBlue"] > .tabs > .tab {
+      border-bottom-color: #67daff; }
+    body > .errors[data-theme="lightBlue"] > .tabs > .tab:hover {
+      border-bottom-color: #007ac1; }
+    body > .errors[data-theme="cyan"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #00bcd4; }
+    body > .errors[data-theme="cyan"] > .tabs > .tab {
+      border-bottom-color: #62efff; }
+    body > .errors[data-theme="cyan"] > .tabs > .tab:hover {
+      border-bottom-color: #008ba3; }
+    body > .errors[data-theme="teal"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #009688; }
+    body > .errors[data-theme="teal"] > .tabs > .tab {
+      border-bottom-color: #52c7b8; }
+    body > .errors[data-theme="teal"] > .tabs > .tab:hover {
+      border-bottom-color: #00675b; }
+    body > .errors[data-theme="green"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #4caf50; }
+    body > .errors[data-theme="green"] > .tabs > .tab {
+      border-bottom-color: #80e27e; }
+    body > .errors[data-theme="green"] > .tabs > .tab:hover {
+      border-bottom-color: #087f23; }
+    body > .errors[data-theme="lightGreen"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #8bc34a; }
+    body > .errors[data-theme="lightGreen"] > .tabs > .tab {
+      border-bottom-color: #bef67a; }
+    body > .errors[data-theme="lightGreen"] > .tabs > .tab:hover {
+      border-bottom-color: #5a9216; }
+    body > .errors[data-theme="lime"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #cddc39; }
+    body > .errors[data-theme="lime"] > .tabs > .tab {
+      border-bottom-color: #ffff6e; }
+    body > .errors[data-theme="lime"] > .tabs > .tab:hover {
+      border-bottom-color: #99aa00; }
+    body > .errors[data-theme="yellow"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #ffeb3b; }
+    body > .errors[data-theme="yellow"] > .tabs > .tab {
+      border-bottom-color: #ffff72; }
+    body > .errors[data-theme="yellow"] > .tabs > .tab:hover {
+      border-bottom-color: #c8b900; }
+    body > .errors[data-theme="amber"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #ffc107; }
+    body > .errors[data-theme="amber"] > .tabs > .tab {
+      border-bottom-color: #fff350; }
+    body > .errors[data-theme="amber"] > .tabs > .tab:hover {
+      border-bottom-color: #c79100; }
+    body > .errors[data-theme="orange"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #ff9800; }
+    body > .errors[data-theme="orange"] > .tabs > .tab {
+      border-bottom-color: #ffc947; }
+    body > .errors[data-theme="orange"] > .tabs > .tab:hover {
+      border-bottom-color: #c66900; }
+    body > .errors[data-theme="deepOrange"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #ff5722; }
+    body > .errors[data-theme="deepOrange"] > .tabs > .tab {
+      border-bottom-color: #ff8a50; }
+    body > .errors[data-theme="deepOrange"] > .tabs > .tab:hover {
+      border-bottom-color: #c41c00; }
+    body > .errors[data-theme="brown"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #795548; }
+    body > .errors[data-theme="brown"] > .tabs > .tab {
+      border-bottom-color: #a98274; }
+    body > .errors[data-theme="brown"] > .tabs > .tab:hover {
+      border-bottom-color: #4b2c20; }
+    body > .errors[data-theme="blueGrey"] > .tabs > .tab[data-enabled] {
+      border-bottom-color: #607d8b; }
+    body > .errors[data-theme="blueGrey"] > .tabs > .tab {
+      border-bottom-color: #8eacbb; }
+    body > .errors[data-theme="blueGrey"] > .tabs > .tab:hover {
+      border-bottom-color: #34515e; }
     body > .errors[data-active] {
       opacity: 1;
       transform: translateX(0); }
-    body > .errors[theme="red"] > tabs > tab {
-      border-bottom-color: #ff7961; }
-      body > .errors[theme="red"] > tabs > tab[enabled] {
-        border-bottom-color: #f44336; }
-    body > .errors[theme="pink"] > tabs > tab {
-      border-bottom-color: #ff6090; }
-      body > .errors[theme="pink"] > tabs > tab[enabled] {
-        border-bottom-color: #e91e63; }
-    body > .errors[theme="purple"] > tabs > tab {
-      border-bottom-color: #d05ce3; }
-      body > .errors[theme="purple"] > tabs > tab[enabled] {
-        border-bottom-color: #9c27b0; }
-    body > .errors[theme="deepPurple"] > tabs > tab {
-      border-bottom-color: #9a67ea; }
-      body > .errors[theme="deepPurple"] > tabs > tab[enabled] {
-        border-bottom-color: #673ab7; }
-    body > .errors[theme="indigo"] > tabs > tab {
-      border-bottom-color: #757de8; }
-      body > .errors[theme="indigo"] > tabs > tab[enabled] {
-        border-bottom-color: #3f51b5; }
-    body > .errors[theme="blue"] > tabs > tab {
-      border-bottom-color: #6ec6ff; }
-      body > .errors[theme="blue"] > tabs > tab[enabled] {
-        border-bottom-color: #2196f3; }
-    body > .errors[theme="lightBlue"] > tabs > tab {
-      border-bottom-color: #67daff; }
-      body > .errors[theme="lightBlue"] > tabs > tab[enabled] {
-        border-bottom-color: #03a9f4; }
-    body > .errors[theme="cyan"] > tabs > tab {
-      border-bottom-color: #62efff; }
-      body > .errors[theme="cyan"] > tabs > tab[enabled] {
-        border-bottom-color: #00bcd4; }
-    body > .errors[theme="teal"] > tabs > tab {
-      border-bottom-color: #52c7b8; }
-      body > .errors[theme="teal"] > tabs > tab[enabled] {
-        border-bottom-color: #009688; }
-    body > .errors[theme="green"] > tabs > tab {
-      border-bottom-color: #80e27e; }
-      body > .errors[theme="green"] > tabs > tab[enabled] {
-        border-bottom-color: #4caf50; }
-    body > .errors[theme="lightGreen"] > tabs > tab {
-      border-bottom-color: #bef67a; }
-      body > .errors[theme="lightGreen"] > tabs > tab[enabled] {
-        border-bottom-color: #8bc34a; }
-    body > .errors[theme="lime"] > tabs > tab {
-      border-bottom-color: #ffff6e; }
-      body > .errors[theme="lime"] > tabs > tab[enabled] {
-        border-bottom-color: #cddc39; }
-    body > .errors[theme="yellow"] > tabs > tab {
-      border-bottom-color: #ffff72; }
-      body > .errors[theme="yellow"] > tabs > tab[enabled] {
-        border-bottom-color: #ffeb3b; }
-    body > .errors[theme="amber"] > tabs > tab {
-      border-bottom-color: #fff350; }
-      body > .errors[theme="amber"] > tabs > tab[enabled] {
-        border-bottom-color: #ffc107; }
-    body > .errors[theme="orange"] > tabs > tab {
-      border-bottom-color: #ffc947; }
-      body > .errors[theme="orange"] > tabs > tab[enabled] {
-        border-bottom-color: #ff9800; }
-    body > .errors[theme="deepOrange"] > tabs > tab {
-      border-bottom-color: #ff8a50; }
-      body > .errors[theme="deepOrange"] > tabs > tab[enabled] {
-        border-bottom-color: #ff5722; }
-    body > .errors[theme="brown"] > tabs > tab {
-      border-bottom-color: #a98274; }
-      body > .errors[theme="brown"] > tabs > tab[enabled] {
-        border-bottom-color: #795548; }
-    body > .errors[theme="blueGrey"] > tabs > tab {
-      border-bottom-color: #8eacbb; }
-      body > .errors[theme="blueGrey"] > tabs > tab[enabled] {
-        border-bottom-color: #607d8b; }
     body > .errors > .tabs {
       align-items: center;
       display: flex;
@@ -641,7 +965,7 @@ body {
         flex-direction: column; }
         body > .errors > .lists > .list[data-active] {
           display: flex; }
-        body > .errors > .lists > .list > .group[collapsed] > ul {
+        body > .errors > .lists > .list > .group[data-collapsed] > ul {
           display: none; }
         body > .errors > .lists > .list > .group > ul {
           list-style: square;
@@ -723,42 +1047,6 @@ body {
       width: 150px; }
       body > .settings x-dropdown[data-active] > x-options {
         display: inline-flex; }
-      body > .settings x-dropdown[theme="red"] > options > item[selected] {
-        background: #f44336; }
-      body > .settings x-dropdown[theme="pink"] > options > item[selected] {
-        background: #e91e63; }
-      body > .settings x-dropdown[theme="purple"] > options > item[selected] {
-        background: #9c27b0; }
-      body > .settings x-dropdown[theme="deepPurple"] > options > item[selected] {
-        background: #673ab7; }
-      body > .settings x-dropdown[theme="indigo"] > options > item[selected] {
-        background: #3f51b5; }
-      body > .settings x-dropdown[theme="blue"] > options > item[selected] {
-        background: #2196f3; }
-      body > .settings x-dropdown[theme="lightBlue"] > options > item[selected] {
-        background: #03a9f4; }
-      body > .settings x-dropdown[theme="cyan"] > options > item[selected] {
-        background: #00bcd4; }
-      body > .settings x-dropdown[theme="teal"] > options > item[selected] {
-        background: #009688; }
-      body > .settings x-dropdown[theme="green"] > options > item[selected] {
-        background: #4caf50; }
-      body > .settings x-dropdown[theme="lightGreen"] > options > item[selected] {
-        background: #8bc34a; }
-      body > .settings x-dropdown[theme="lime"] > options > item[selected] {
-        background: #cddc39; }
-      body > .settings x-dropdown[theme="yellow"] > options > item[selected] {
-        background: #ffeb3b; }
-      body > .settings x-dropdown[theme="amber"] > options > item[selected] {
-        background: #ffc107; }
-      body > .settings x-dropdown[theme="orange"] > options > item[selected] {
-        background: #ff9800; }
-      body > .settings x-dropdown[theme="deepOrange"] > options > item[selected] {
-        background: #ff5722; }
-      body > .settings x-dropdown[theme="brown"] > options > item[selected] {
-        background: #795548; }
-      body > .settings x-dropdown[theme="blueGrey"] > options > item[selected] {
-        background: #607d8b; }
       body > .settings x-dropdown > x-selected {
         display: flex;
         justify-content: space-between;
@@ -777,10 +1065,9 @@ body {
         width: inherit; }
         body > .settings x-dropdown > x-options > x-item:hover {
           background: #ccc; }
-        body > .settings x-dropdown > x-options > x-item[selected] {
+        body > .settings x-dropdown > x-options > x-item[data-selected] {
           color: #fff; }
-        body > .settings x-dropdown > x-options > x-item[value="red"]:before {
-          background: #f44336;
+        body > .settings x-dropdown > x-options > x-item:before {
           border: 1px solid #000;
           content: " ";
           display: inline-block;
@@ -788,160 +1075,79 @@ body {
           margin: 0 2px;
           position: relative;
           width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="pink"]:before {
-          background: #e91e63;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="purple"]:before {
-          background: #9c27b0;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="deepPurple"]:before {
-          background: #673ab7;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="indigo"]:before {
-          background: #3f51b5;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="blue"]:before {
-          background: #2196f3;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="lightBlue"]:before {
-          background: #03a9f4;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="cyan"]:before {
-          background: #00bcd4;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="teal"]:before {
-          background: #009688;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="green"]:before {
-          background: #4caf50;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="lightGreen"]:before {
-          background: #8bc34a;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="lime"]:before {
-          background: #cddc39;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="yellow"]:before {
-          background: #ffeb3b;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="amber"]:before {
-          background: #ffc107;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="orange"]:before {
-          background: #ff9800;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="deepOrange"]:before {
-          background: #ff5722;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="brown"]:before {
-          background: #795548;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-        body > .settings x-dropdown > x-options > x-item[value="blueGrey"]:before {
-          background: #607d8b;
-          border: 1px solid #000;
-          content: " ";
-          display: inline-block;
-          height: 10px;
-          margin: 0 2px;
-          position: relative;
-          width: 10px; }
-  body > snackbar {
+        body > .settings x-dropdown > x-options > x-item[data-value="red"][data-selected] {
+          background: #f44336; }
+        body > .settings x-dropdown > x-options > x-item[data-value="red"]:before {
+          background: #f44336; }
+        body > .settings x-dropdown > x-options > x-item[data-value="pink"][data-selected] {
+          background: #e91e63; }
+        body > .settings x-dropdown > x-options > x-item[data-value="pink"]:before {
+          background: #e91e63; }
+        body > .settings x-dropdown > x-options > x-item[data-value="purple"][data-selected] {
+          background: #9c27b0; }
+        body > .settings x-dropdown > x-options > x-item[data-value="purple"]:before {
+          background: #9c27b0; }
+        body > .settings x-dropdown > x-options > x-item[data-value="deepPurple"][data-selected] {
+          background: #673ab7; }
+        body > .settings x-dropdown > x-options > x-item[data-value="deepPurple"]:before {
+          background: #673ab7; }
+        body > .settings x-dropdown > x-options > x-item[data-value="indigo"][data-selected] {
+          background: #3f51b5; }
+        body > .settings x-dropdown > x-options > x-item[data-value="indigo"]:before {
+          background: #3f51b5; }
+        body > .settings x-dropdown > x-options > x-item[data-value="blue"][data-selected] {
+          background: #2196f3; }
+        body > .settings x-dropdown > x-options > x-item[data-value="blue"]:before {
+          background: #2196f3; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lightBlue"][data-selected] {
+          background: #03a9f4; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lightBlue"]:before {
+          background: #03a9f4; }
+        body > .settings x-dropdown > x-options > x-item[data-value="cyan"][data-selected] {
+          background: #00bcd4; }
+        body > .settings x-dropdown > x-options > x-item[data-value="cyan"]:before {
+          background: #00bcd4; }
+        body > .settings x-dropdown > x-options > x-item[data-value="teal"][data-selected] {
+          background: #009688; }
+        body > .settings x-dropdown > x-options > x-item[data-value="teal"]:before {
+          background: #009688; }
+        body > .settings x-dropdown > x-options > x-item[data-value="green"][data-selected] {
+          background: #4caf50; }
+        body > .settings x-dropdown > x-options > x-item[data-value="green"]:before {
+          background: #4caf50; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lightGreen"][data-selected] {
+          background: #8bc34a; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lightGreen"]:before {
+          background: #8bc34a; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lime"][data-selected] {
+          background: #cddc39; }
+        body > .settings x-dropdown > x-options > x-item[data-value="lime"]:before {
+          background: #cddc39; }
+        body > .settings x-dropdown > x-options > x-item[data-value="yellow"][data-selected] {
+          background: #ffeb3b; }
+        body > .settings x-dropdown > x-options > x-item[data-value="yellow"]:before {
+          background: #ffeb3b; }
+        body > .settings x-dropdown > x-options > x-item[data-value="amber"][data-selected] {
+          background: #ffc107; }
+        body > .settings x-dropdown > x-options > x-item[data-value="amber"]:before {
+          background: #ffc107; }
+        body > .settings x-dropdown > x-options > x-item[data-value="orange"][data-selected] {
+          background: #ff9800; }
+        body > .settings x-dropdown > x-options > x-item[data-value="orange"]:before {
+          background: #ff9800; }
+        body > .settings x-dropdown > x-options > x-item[data-value="deepOrange"][data-selected] {
+          background: #ff5722; }
+        body > .settings x-dropdown > x-options > x-item[data-value="deepOrange"]:before {
+          background: #ff5722; }
+        body > .settings x-dropdown > x-options > x-item[data-value="brown"][data-selected] {
+          background: #795548; }
+        body > .settings x-dropdown > x-options > x-item[data-value="brown"]:before {
+          background: #795548; }
+        body > .settings x-dropdown > x-options > x-item[data-value="blueGrey"][data-selected] {
+          background: #607d8b; }
+        body > .settings x-dropdown > x-options > x-item[data-value="blueGrey"]:before {
+          background: #607d8b; }
+  body > .snackbar {
     align-items: center;
     background: #323232;
     border-radius: 2px;
@@ -952,56 +1158,20 @@ body {
     padding: 24px;
     position: absolute;
     cursor: default;
-    transform: translateY(0);
+    transform: translateY(calc(100% + 24px));
     transition: 1s transform;
     user-select: none;
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
-    body > snackbar[sleep] {
-      transform: translateY(calc(100% + 24px)); }
-    body > snackbar[theme="red"] > text > download {
-      color: #f44336; }
-    body > snackbar[theme="pink"] > text > download {
-      color: #e91e63; }
-    body > snackbar[theme="purple"] > text > download {
-      color: #9c27b0; }
-    body > snackbar[theme="deepPurple"] > text > download {
-      color: #673ab7; }
-    body > snackbar[theme="indigo"] > text > download {
-      color: #3f51b5; }
-    body > snackbar[theme="blue"] > text > download {
-      color: #2196f3; }
-    body > snackbar[theme="lightBlue"] > text > download {
-      color: #03a9f4; }
-    body > snackbar[theme="cyan"] > text > download {
-      color: #00bcd4; }
-    body > snackbar[theme="teal"] > text > download {
-      color: #009688; }
-    body > snackbar[theme="green"] > text > download {
-      color: #4caf50; }
-    body > snackbar[theme="lightGreen"] > text > download {
-      color: #8bc34a; }
-    body > snackbar[theme="lime"] > text > download {
-      color: #cddc39; }
-    body > snackbar[theme="yellow"] > text > download {
-      color: #ffeb3b; }
-    body > snackbar[theme="amber"] > text > download {
-      color: #ffc107; }
-    body > snackbar[theme="orange"] > text > download {
-      color: #ff9800; }
-    body > snackbar[theme="deepOrange"] > text > download {
-      color: #ff5722; }
-    body > snackbar[theme="brown"] > text > download {
-      color: #795548; }
-    body > snackbar[theme="blueGrey"] > text > download {
-      color: #607d8b; }
-    body > snackbar > text > download {
+    body > .snackbar[data-active] {
+      transform: translateY(0); }
+    body > .snackbar > .text > .download {
       cursor: pointer;
       padding-left: 8px;
       padding-right: 4px;
       text-decoration: none; }
-      body > snackbar > text > download:hover {
+      body > .snackbar > .text > .download:hover {
         text-decoration: underline; }
-    body > snackbar > icon {
+    body > .snackbar > x-icon {
       cursor: pointer;
       font-size: 24px; }
 
