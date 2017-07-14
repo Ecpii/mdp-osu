@@ -1,59 +1,106 @@
-$redP: #f44336;
-$redL: #ff7961;
-$redD: #ba000d;
-$pinkP: #e91e63;
-$pinkL: #ff6090;
-$pinkD: #b0003a;
-$purpleP: #9c27b0;
-$purpleL: #d05ce3;
-$purpleD: #6a0080;
-$deepPurpleP: #673ab7;
-$deepPurpleL: #9a67ea;
-$deepPurpleD: #320b86;
-$indigoP: #3f51b5;
-$indigoL: #757de8;
-$indigoD: #002984;
-$blueP: #2196f3;
-$blueL: #6ec6ff;
-$blueD: #0069c0;
-$lightBlueP: #03a9f4;
-$lightBlueL: #67daff;
-$lightBlueD: #007ac1;
-$cyanP: #00bcd4;
-$cyanL: #62efff;
-$cyanD: #008ba3;
-$tealP: #009688;
-$tealL: #52c7b8;
-$tealD: #00675b;
-$greenP: #4caf50;
-$greenL: #80e27e;
-$greenD: #087f23;
-$lightGreenP: #8bc34a;
-$lightGreenL: #bef67a;
-$lightGreenD: #5a9216;
-$limeP: #cddc39;
-$limeL: #ffff6e;
-$limeD: #99aa00;
-$yellowP: #ffeb3b;
-$yellowL: #ffff72;
-$yellowD: #c8b900;
-$amberP: #ffc107;
-$amberL: #fff350;
-$amberD: #c79100;
-$orangeP: #ff9800;
-$orangeL: #ffc947;
-$orangeD: #c66900;
-$deepOrangeP: #ff5722;
-$deepOrangeL: #ff8a50;
-$deepOrangeD: #c41c00;
-$brownP: #795548;
-$brownL: #a98274;
-$brownD: #4b2c20;
-$blueGreyP: #607d8b;
-$blueGreyL: #8eacbb;
-$blueGreyD: #34515e;
+$colours: (
+  "red":(
+    "prim": #f44336,
+    "ligh": #ff7961,
+    "dark": #ba000d
+  ),
+  "pink":(
+    "prim": #e91e63,
+    "ligh": #ff6090,
+    "dark": #b0003a
+  ),
+  "purple":(
+    "prim": #9c27b0,
+    "ligh": #d05ce3,
+    "dark": #6a0080
+  ),
+  "deepPurple":(
+    "prim": #673ab7,
+    "ligh": #9a67ea,
+    "dark": #320b86
+  ),
+  "indigo":(
+    "prim": #3f51b5,
+    "ligh": #757de8,
+    "dark": #002984
+  ),
+  "blue":(
+    "prim": #2196f3,
+    "ligh": #6ec6ff,
+    "dark": #0069c0
+  ),
+  "lightBlue":(
+    "prim": #03a9f4,
+    "ligh": #67daff,
+    "dark": #007ac1
+  ),
+  "cyan":(
+    "prim": #00bcd4,
+    "ligh": #62efff,
+    "dark": #008ba3
+  ),
+  "teal":(
+    "prim": #009688,
+    "ligh": #52c7b8,
+    "dark": #00675b
+  ),
+  "green":(
+    "prim": #4caf50,
+    "ligh": #80e27e,
+    "dark": #087f23
+  ),
+  "lightGreen":(
+    "prim": #8bc34a,
+    "ligh": #bef67a,
+    "dark": #5a9216
+  ),
+  "lime":(
+    "prim": #cddc39,
+    "ligh": #ffff6e,
+    "dark": #99aa00
+  ),
+  "yellow":(
+    "prim": #ffeb3b,
+    "ligh": #ffff72,
+    "dark": #c8b900
+  ),
+  "amber":(
+    "prim": #ffc107,
+    "ligh": #fff350,
+    "dark": #c79100
+  ),
+  "orange":(
+    "prim": #ff9800,
+    "ligh": #ffc947,
+    "dark": #c66900
+  ),
+  "deepOrange":(
+    "prim": #ff5722,
+    "ligh": #ff8a50,
+    "dark": #c41c00
+  ),
+  "brown":(
+    "prim": #795548,
+    "ligh": #a98274,
+    "dark": #4b2c20
+  ),
+  "blueGrey":(
+    "prim": #607d8b,
+    "ligh": #8eacbb,
+    "dark": #34515e
+  )
+);
 
-//$colours: "red", "pink", "purple", "deepPurple", "indigo", "blue", "lightBlue", "cyan", "teal", "green", "lightGreen", "lime", "yellow", "amber", "orange", "deepOrange", "brown", "blueGrey";
+@each $group, $values in $colours{
+  @each $type, $value in $values{
+    .#{$group}--background.#{$type}{
+      background: $value;
+    }
+    .#{$group}--color.#{$type}{
+      color: $value;
+    }
+  }
+}
 
 $body--background: #111;
 
@@ -62,215 +109,14 @@ $menu--color: #fff;
 $menu-path--background: #444;
 $menu-path-icon--background: $menu-path--background;
 
-$menu_theme__red-container-icon--color: #fff;
-$menu_theme__red-container-icon_hover--color: $redL;
-$menu_theme__red-container-icon_active--color: $redD;
-$menu_theme__red-container-icon__enabled--color: $redP;
-$menu_theme__red-container-icon__enabled_hover--color: $redD;
-$menu_theme__red-container-icon__enabled_active--color: $redL;
-
-$menu_theme__pink-container-icon--color: #fff;
-$menu_theme__pink-container-icon_hover--color: $pinkL;
-$menu_theme__pink-container-icon_active--color: $pinkD;
-$menu_theme__pink-container-icon__enabled--color: $pinkP;
-$menu_theme__pink-container-icon__enabled_hover--color: $pinkD;
-$menu_theme__pink-container-icon__enabled_active--color: $pinkL;
-
-$menu_theme__purple-container-icon--color: #fff;
-$menu_theme__purple-container-icon_hover--color: $purpleL;
-$menu_theme__purple-container-icon_active--color: $purpleD;
-$menu_theme__purple-container-icon__enabled--color: $purpleP;
-$menu_theme__purple-container-icon__enabled_hover--color: $purpleD;
-$menu_theme__purple-container-icon__enabled_active--color: $purpleL;
-
-$menu_theme__deepPurple-container-icon--color: #fff;
-$menu_theme__deepPurple-container-icon_hover--color: $deepPurpleL;
-$menu_theme__deepPurple-container-icon_active--color: $deepPurpleD;
-$menu_theme__deepPurple-container-icon__enabled--color: $deepPurpleP;
-$menu_theme__deepPurple-container-icon__enabled_hover--color: $deepPurpleD;
-$menu_theme__deepPurple-container-icon__enabled_active--color: $deepPurpleL;
-
-$menu_theme__indigo-container-icon--color: #fff;
-$menu_theme__indigo-container-icon_hover--color: $indigoL;
-$menu_theme__indigo-container-icon_active--color: $indigoD;
-$menu_theme__indigo-container-icon__enabled--color: $indigoP;
-$menu_theme__indigo-container-icon__enabled_hover--color: $indigoD;
-$menu_theme__indigo-container-icon__enabled_active--color: $indigoL;
-
-$menu_theme__blue-container-icon--color: #fff;
-$menu_theme__blue-container-icon_hover--color: $blueL;
-$menu_theme__blue-container-icon_active--color: $blueD;
-$menu_theme__blue-container-icon__enabled--color: $blueP;
-$menu_theme__blue-container-icon__enabled_hover--color: $blueD;
-$menu_theme__blue-container-icon__enabled_active--color: $blueL;
-
-$menu_theme__lightBlue-container-icon--color: #fff;
-$menu_theme__lightBlue-container-icon_hover--color: $lightBlueL;
-$menu_theme__lightBlue-container-icon_active--color: $lightBlueD;
-$menu_theme__lightBlue-container-icon__enabled--color: $lightBlueP;
-$menu_theme__lightBlue-container-icon__enabled_hover--color: $lightBlueD;
-$menu_theme__lightBlue-container-icon__enabled_active--color: $lightBlueL;
-
-$menu_theme__cyan-container-icon--color: #fff;
-$menu_theme__cyan-container-icon_hover--color: $cyanL;
-$menu_theme__cyan-container-icon_active--color: $cyanD;
-$menu_theme__cyan-container-icon__enabled--color: $cyanP;
-$menu_theme__cyan-container-icon__enabled_hover--color: $cyanD;
-$menu_theme__cyan-container-icon__enabled_active--color: $cyanL;
-
-$menu_theme__teal-container-icon--color: #fff;
-$menu_theme__teal-container-icon_hover--color: $tealL;
-$menu_theme__teal-container-icon_active--color: $tealD;
-$menu_theme__teal-container-icon__enabled--color: $tealP;
-$menu_theme__teal-container-icon__enabled_hover--color: $tealD;
-$menu_theme__teal-container-icon__enabled_active--color: $tealL;
-
-$menu_theme__green-container-icon--color: #fff;
-$menu_theme__green-container-icon_hover--color: $greenL;
-$menu_theme__green-container-icon_active--color: $greenD;
-$menu_theme__green-container-icon__enabled--color: $greenP;
-$menu_theme__green-container-icon__enabled_hover--color: $greenD;
-$menu_theme__green-container-icon__enabled_active--color: $greenL;
-
-$menu_theme__lightGreen-container-icon--color: #fff;
-$menu_theme__lightGreen-container-icon_hover--color: $lightGreenL;
-$menu_theme__lightGreen-container-icon_active--color: $lightGreenD;
-$menu_theme__lightGreen-container-icon__enabled--color: $lightGreenP;
-$menu_theme__lightGreen-container-icon__enabled_hover--color: $lightGreenD;
-$menu_theme__lightGreen-container-icon__enabled_active--color: $lightGreenL;
-
-$menu_theme__lime-container-icon--color: #fff;
-$menu_theme__lime-container-icon_hover--color: $limeL;
-$menu_theme__lime-container-icon_active--color: $limeD;
-$menu_theme__lime-container-icon__enabled--color: $limeP;
-$menu_theme__lime-container-icon__enabled_hover--color: $limeD;
-$menu_theme__lime-container-icon__enabled_active--color: $limeL;
-
-$menu_theme__yellow-container-icon--color: #fff;
-$menu_theme__yellow-container-icon_hover--color: $yellowL;
-$menu_theme__yellow-container-icon_active--color: $yellowD;
-$menu_theme__yellow-container-icon__enabled--color: $yellowP;
-$menu_theme__yellow-container-icon__enabled_hover--color: $yellowD;
-$menu_theme__yellow-container-icon__enabled_active--color: $yellowL;
-
-$menu_theme__amber-container-icon--color: #fff;
-$menu_theme__amber-container-icon_hover--color: $amberL;
-$menu_theme__amber-container-icon_active--color: $amberD;
-$menu_theme__amber-container-icon__enabled--color: $amberP;
-$menu_theme__amber-container-icon__enabled_hover--color: $amberD;
-$menu_theme__amber-container-icon__enabled_active--color: $amberL;
-
-$menu_theme__orange-container-icon--color: #fff;
-$menu_theme__orange-container-icon_hover--color: $orangeL;
-$menu_theme__orange-container-icon_active--color: $orangeD;
-$menu_theme__orange-container-icon__enabled--color: $orangeP;
-$menu_theme__orange-container-icon__enabled_hover--color: $orangeD;
-$menu_theme__orange-container-icon__enabled_active--color: $orangeL;
-
-$menu_theme__deepOrange-container-icon--color: #fff;
-$menu_theme__deepOrange-container-icon_hover--color: $deepOrangeL;
-$menu_theme__deepOrange-container-icon_active--color: $deepOrangeD;
-$menu_theme__deepOrange-container-icon__enabled--color: $deepOrangeP;
-$menu_theme__deepOrange-container-icon__enabled_hover--color: $deepOrangeD;
-$menu_theme__deepOrange-container-icon__enabled_active--color: $deepOrangeL;
-
-$menu_theme__brown-container-icon--color: #fff;
-$menu_theme__brown-container-icon_hover--color: $brownL;
-$menu_theme__brown-container-icon_active--color: $brownD;
-$menu_theme__brown-container-icon__enabled--color: $brownP;
-$menu_theme__brown-container-icon__enabled_hover--color: $brownD;
-$menu_theme__brown-container-icon__enabled_active--color: $brownL;
-
-$menu_theme__blueGrey-container-icon--color: #fff;
-$menu_theme__blueGrey-container-icon_hover--color: $blueGreyL;
-$menu_theme__blueGrey-container-icon_active--color: $blueGreyD;
-$menu_theme__blueGrey-container-icon__enabled--color: $blueGreyP;
-$menu_theme__blueGrey-container-icon__enabled_hover--color: $blueGreyD;
-$menu_theme__blueGrey-container-icon__enabled_active--color: $blueGreyL;
-
 $snackbar--background: #323232;
 $snackbar--color: #fff;
 
-$snackbar_theme__red-text-download--color: $redP;
-$snackbar_theme__pink-text-download--color: $pinkP;
-$snackbar_theme__purple-text-download--color: $purpleP;
-$snackbar_theme__deepPurple-text-download--color: $deepPurpleP;
-$snackbar_theme__indigo-text-download--color: $indigoP;
-$snackbar_theme__blue-text-download--color: $blueP;
-$snackbar_theme__lightBlue-text-download--color: $lightBlueP;
-$snackbar_theme__cyan-text-download--color: $cyanP;
-$snackbar_theme__teal-text-download--color: $tealP;
-$snackbar_theme__green-text-download--color: $greenP;
-$snackbar_theme__lightGreen-text-download--color: $lightGreenP;
-$snackbar_theme__lime-text-download--color: $limeP;
-$snackbar_theme__yellow-text-download--color: $yellowP;
-$snackbar_theme__amber-text-download--color: $amberP;
-$snackbar_theme__orange-text-download--color: $orangeP;
-$snackbar_theme__deepOrange-text-download--color: $deepOrangeP;
-$snackbar_theme__brown-text-download--color: $brownP;
-$snackbar_theme__blueGrey-text-download--color: $blueGreyP;
-
 $errors--background: rgba(0, 0, 0, 0.75);
 $errors--color: #fff;
-
-$errors_theme__red-tabs-tab-borderBottomColor: $redL;
-$errors_theme__red-tabs-tab-borderBottomColor__enabled: $redP;
-$errors_theme__pink-tabs-tab-borderBottomColor: $pinkL;
-$errors_theme__pink-tabs-tab-borderBottomColor__enabled: $pinkP;
-$errors_theme__purple-tabs-tab-borderBottomColor: $purpleL;
-$errors_theme__purple-tabs-tab-borderBottomColor__enabled: $purpleP;
-$errors_theme__deepPurple-tabs-tab-borderBottomColor: $deepPurpleL;
-$errors_theme__deepPurple-tabs-tab-borderBottomColor__enabled: $deepPurpleP;
-$errors_theme__indigo-tabs-tab-borderBottomColor: $indigoL;
-$errors_theme__indigo-tabs-tab-borderBottomColor__enabled: $indigoP;
-$errors_theme__blue-tabs-tab-borderBottomColor: $blueL;
-$errors_theme__blue-tabs-tab-borderBottomColor__enabled: $blueP;
-$errors_theme__lightBlue-tabs-tab-borderBottomColor: $lightBlueL;
-$errors_theme__lightBlue-tabs-tab-borderBottomColor__enabled: $lightBlueP;
-$errors_theme__cyan-tabs-tab-borderBottomColor: $cyanL;
-$errors_theme__cyan-tabs-tab-borderBottomColor__enabled: $cyanP;
-$errors_theme__teal-tabs-tab-borderBottomColor: $tealL;
-$errors_theme__teal-tabs-tab-borderBottomColor__enabled: $tealP;
-$errors_theme__green-tabs-tab-borderBottomColor: $greenL;
-$errors_theme__green-tabs-tab-borderBottomColor__enabled: $greenP;
-$errors_theme__lightGreen-tabs-tab-borderBottomColor: $lightGreenL;
-$errors_theme__lightGreen-tabs-tab-borderBottomColor__enabled: $lightGreenP;
-$errors_theme__lime-tabs-tab-borderBottomColor: $limeL;
-$errors_theme__lime-tabs-tab-borderBottomColor__enabled: $limeP;
-$errors_theme__yellow-tabs-tab-borderBottomColor: $yellowL;
-$errors_theme__yellow-tabs-tab-borderBottomColor__enabled: $yellowP;
-$errors_theme__amber-tabs-tab-borderBottomColor: $amberL;
-$errors_theme__amber-tabs-tab-borderBottomColor__enabled: $amberP;
-$errors_theme__orange-tabs-tab-borderBottomColor: $orangeL;
-$errors_theme__orange-tabs-tab-borderBottomColor__enabled: $orangeP;
-$errors_theme__deepOrange-tabs-tab-borderBottomColor: $deepOrangeL;
-$errors_theme__deepOrange-tabs-tab-borderBottomColor__enabled: $deepOrangeP;
-$errors_theme__brown-tabs-tab-borderBottomColor: $brownL;
-$errors_theme__brown-tabs-tab-borderBottomColor__enabled: $brownP;
-$errors_theme__blueGrey-tabs-tab-borderBottomColor: $blueGreyL;
-$errors_theme__blueGrey-tabs-tab-borderBottomColor__enabled: $blueGreyP;
 
 $errors-lists-list-group-ul-li-code--background: #2052ff;
 $errors-lists-list-group-ul-li-code--color: #fff;
 
 $settings--background: rgba(0, 0, 0, 0.75);
 $settings--color: #fff;
-
-$dropdown_theme__red-options-item_selected--color: $redP;
-$dropdown_theme__pink-options-item_selected--color: $pinkP;
-$dropdown_theme__purple-options-item_selected--color: $purpleP;
-$dropdown_theme__deepPurple-options-item_selected--color: $deepPurpleP;
-$dropdown_theme__indigo-options-item_selected--color: $indigoP;
-$dropdown_theme__blue-options-item_selected--color: $blueP;
-$dropdown_theme__lightBlue-options-item_selected--color: $lightBlueP;
-$dropdown_theme__cyan-options-item_selected--color: $cyanP;
-$dropdown_theme__teal-options-item_selected--color: $tealP;
-$dropdown_theme__green-options-item_selected--color: $greenP;
-$dropdown_theme__lightGreen-options-item_selected--color: $lightGreenP;
-$dropdown_theme__lime-options-item_selected--color: $limeP;
-$dropdown_theme__yellow-options-item_selected--color: $yellowP;
-$dropdown_theme__amber-options-item_selected--color: $amberP;
-$dropdown_theme__orange-options-item_selected--color: $orangeP;
-$dropdown_theme__deepOrange-options-item_selected--color: $deepOrangeP;
-$dropdown_theme__brown-options-item_selected--color: $brownP;
-$dropdown_theme__blueGrey-options-item_selected--color: $blueGreyP;
