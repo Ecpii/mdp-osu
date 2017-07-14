@@ -58,11 +58,35 @@ function inspect(lines){
       }
     }
     /* jshint ignore:start */
-    if( /\b(?<!osu!)(Standard|Taiko|Catch\sthe\sBeat|ctb|Mania)\b/ig.test(lines[i]) ){
-      let matches = lines[i].match(/\b(?<!osu!)(Standard|Taiko|Catch\sthe\sBeat|ctb|Mania)\b/ig);
+    if( /\b(?<!osu!)(Standard)\b/ig.test(lines[i]) ){
+      let matches = lines[i].match(/\b(?<!osu!)(Standard)\b/ig);
       if( matches ){
         for( let j = 0; j < matches.length; j++ ){
-          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="game-modes"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li><code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="game-modes"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Use osu!:<code>" + matches[j] + "</code> (line: " + line_number + ")</li>");
+        }
+      }
+    }
+    if( /\b(?<!osu!)(Taiko)\b/ig.test(lines[i]) ){
+      let matches = lines[i].match(/\b(?<!osu!)(Taiko)\b/ig);
+      if( matches ){
+        for( let j = 0; j < matches.length; j++ ){
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="game-modes"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Use osu!taiko:<code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+        }
+      }
+    }
+    if( /\b(?<!osu!)(Catch\sthe\sBeat|ctb)\b/ig.test(lines[i]) ){
+      let matches = lines[i].match(/\b(?<!osu!)(Catch\sthe\sBeat|ctb)\b/ig);
+      if( matches ){
+        for( let j = 0; j < matches.length; j++ ){
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="game-modes"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Use osu!catch:<code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+        }
+      }
+    }
+    if( /\b(?<!osu!)(Mania)\b/ig.test(lines[i]) ){
+      let matches = lines[i].match(/\b(?<!osu!)(Mania)\b/ig);
+      if( matches ){
+        for( let j = 0; j < matches.length; j++ ){
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="game-modes"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Use osu!mania:<code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
         }
       }
     }
@@ -79,15 +103,15 @@ function inspect(lines){
       let matches = lines[i].match(/(beat)?mappers?/ig);
       if( matches ){
         for( let j = 0; j < matches.length; j++ ){
-          _body._errors._lists["_list[asg]"]["_group[terminology]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Replace with creator(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="terminology"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Replace with creator(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
         }
       }
     }
-    if( /(beat)?maps?/ig.test(lines[i]) ){
-      let matches = lines[i].match(/(beat)?maps?/ig);
+    if( /\bmaps?\b/ig.test(lines[i]) ){
+      let matches = lines[i].match(/\bmaps?\b/ig);
       if( matches ){
         for( let j = 0; j < matches.length; j++ ){
-          _body._errors._lists["_list[asg]"]["_group[terminology]"].$ul.insertAdjacentHTML('beforeEnd', "<li>Replace with beatmap(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
+          $('.errors > .lists > .list[data-item="asg"] > .group[data-item="terminology"] > ul')[0].insertAdjacentHTML('beforeEnd', "<li>Replace with beatmap(s): <code>" + matches[j] + "</code> (line:" + line_number + ")</li>")
         }
       }
     }
